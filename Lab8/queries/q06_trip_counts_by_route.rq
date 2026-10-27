@@ -1,0 +1,11 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+SELECT ?route (COUNT(DISTINCT ?trip) AS ?trips)
+WHERE {
+  ?route a mm:TransportRoute ;
+         mm:hasTrip ?trip .
+  ?trip ?p ?o .
+  ?o ?p2 ?o2 .
+}
+GROUP BY ?route
+ORDER BY DESC(?trips) ?route

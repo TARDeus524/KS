@@ -1,0 +1,21 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT ?local ?external ?externalLabel
+WHERE {
+  VALUES ?external {
+    wd:Q36036 wd:Q5532250 wd:Q5638 wd:Q3407658
+    wd:Q548662 wd:Q178512 wd:Q113379415
+  }
+  ?local mm:linkStatus "verified" .
+  { ?local skos:exactMatch ?external }
+  UNION
+  { ?local skos:closeMatch ?external }
+  SERVICE <http://127.0.0.1:3031/sparql> {
+    ?external rdfs:label ?externalLabel .
+    FILTER(LANG(?externalLabel) = "en")
+  }
+}
+ORDER BY ?local

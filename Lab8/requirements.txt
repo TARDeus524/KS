@@ -1,0 +1,5 @@
+rdflib==7.6.0
+pyshacl==0.40.1
+requests==2.34.2
+matplotlib==3.11.2
+python-docx==1.2.0

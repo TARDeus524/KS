@@ -1,0 +1,33 @@
+{
+  "shapes": 7,
+  "property_shapes": 26,
+  "constraint_triples": 158,
+  "valid": {
+    "conforms": true,
+    "violations": 0
+  },
+  "invalid": {
+    "conforms": false,
+    "violations": 3,
+    "items": [
+      {
+        "focus": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal",
+        "path": "https://knowledge.uni.lviv.ua/mobility#stopId",
+        "message": "stopId має бути один рядок формату S###",
+        "severity": "http://www.w3.org/ns/shacl#Violation"
+      },
+      {
+        "focus": "https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska",
+        "path": "https://knowledge.uni.lviv.ua/mobility#eventTime",
+        "message": "Подія повинна мати eventTime типу xsd:dateTime",
+        "severity": "http://www.w3.org/ns/shacl#Violation"
+      },
+      {
+        "focus": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800",
+        "path": "https://knowledge.uni.lviv.ua/mobility#hasState",
+        "message": "Рейс повинен мати рівно один стан",
+        "severity": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  }
+}

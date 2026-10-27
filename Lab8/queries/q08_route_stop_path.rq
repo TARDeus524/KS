@@ -1,0 +1,8 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+SELECT DISTINCT ?route ?stop
+WHERE {
+  ?route a mm:TransportRoute ;
+         mm:hasTrip/mm:hasStopTime/mm:atStop ?stop .
+}
+ORDER BY ?route ?stop

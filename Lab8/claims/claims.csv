@@ -1,0 +1,17 @@
+﻿id,claim,type,source,verification,status,comment
+L8-01,RDF-граф kb.ttl містить 1146 триплетів,факт,build_data.py,V1,verified,Перевірено повторним COUNT у rdflib.
+L8-02,Після завантаження kb.ttl + links.ttl + links_rejected.ttl Fuseki повертає COUNT=1206,факт,"Fuseki 4.10.0, results/triple_count.json",V1,verified,COUNT виконано після чистого DELETE і завантаження.
+L8-03,JSON-LD містить 185 типізованих сутностей,факт,data/kb.jsonld,V1,verified,Пораховано @graph-вузли з @id і @type.
+L8-04,"У RDF матеріалізовано 9 типів, потрібних запитам без reasoner",факт,data/kb.ttl,V1,verified,"InterchangeStop, AccessibleStop, DelayedTrip, CongestedSegment, TransportRoute."
+L8-05,Q01 повертає дві пересадочні зупинки,факт,queries/q01_interchange_stops.rq,V1,verified,"Stop_Rynok, Stop_Vokzal; ручна звірка."
+L8-06,"Оптимізований Q06 дає ті самі 3 рядки, що й baseline",факт,results/query_results.json,V2,verified,"In-process медіана 8.56 мс → 5.15 мс, прискорення 1.66x."
+L8-07,Валідний набір проходить SHACL-валідацію,факт,results/shacl_summary.json,V1,verified,"7 NodeShape, 26 property shapes, 0 порушень."
+L8-08,Дефектний набір дає 3 порушення,факт,results/shacl_summary.json,V1,verified,"Порушено pattern, datatype і minCount."
+L8-09,"SHACL придатний для closed-world перевірки обов’язкових полів, OWL — для відкритого світу логічних висновків",правило,W3C SHACL; W3C OWL 2,V2,verified,Форми перевіряють наявність/тип/діапазон; OWL не робить closed-world припущень.
+L8-10,До покращення підказки LLM мала 1/15 правильних результатів,факт,results/t2s_results.json,V1,verified,"15 синтаксично коректних, 11 схемно коректних, 1 правильний."
+L8-11,Після покращення підказки LLM має 15/15 правильних результатів,факт,results/t2s_results.json,V1,verified,Усі 15 запитів виконано через Fuseki з LIMIT.
+L8-12,LLM може писати правильні SPARQL-запити без передачі схеми властивостей,гіпотеза,LLM prompt v1,V2,rejected,4/15 запитів містили незадекларовані mm-терміни; prompt v2 виправив.
+L8-13,Знайдено 7 підтверджених зв’язків із Wikidata,факт,data/links.ttl,V1,verified,"Q36036, Q5532250, Q5638, Q3407658, Q548662, Q178512, Q113379415."
+L8-14,Два кандидати зв’язків відхилено після V1,факт,data/links_rejected.ttl,V1,verified,Lviv Oblast і Lviv Bus terminal не тотожні відповідним локальним поняттям.
+L8-15,Federated-запит повертає 7 рядків із Wikidata,факт,queries/q11_federated_wikidata.rq,V1,verified,"SERVICE через локальний проксі, що додає User-Agent."
+L8-16,Wikidata приймає стандартний User-Agent Jena без додаткових заголовків,гіпотеза,Fuseki + Wikidata,V1,rejected,"Отримано 403; додано проксі з User-Agent, upstream залишився Wikidata."

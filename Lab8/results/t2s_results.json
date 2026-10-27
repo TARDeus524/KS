@@ -1,0 +1,711 @@
+{
+  "pipeline": [
+    "prompt+schema",
+    "LLM",
+    "SPARQL parser",
+    "schema check",
+    "Fuseki LIMIT 100",
+    "result comparison"
+  ],
+  "total": 15,
+  "summary": {
+    "before": {
+      "syntax": 15,
+      "schema": 11,
+      "correct": 1,
+      "total": 15
+    },
+    "after": {
+      "syntax": 15,
+      "schema": 15,
+      "correct": 15,
+      "total": 15
+    }
+  },
+  "records": [
+    {
+      "id": "T2S01",
+      "difficulty": "easy",
+      "question": "Які зупинки є пересадочними?",
+      "reference_query": "SELECT DISTINCT ?stop WHERE { ?stop a mm:InterchangeStop . } ORDER BY ?stop",
+      "expected": [
+        {
+          "stop": "mm:Stop_Rynok"
+        },
+        {
+          "stop": "mm:Stop_Vokzal"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?stop WHERE { ?stop mm:hasInterchange true . } ORDER BY ?stop",
+          "syntax": true,
+          "schema": false,
+          "bad_terms": [
+            "hasInterchange"
+          ],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?stop WHERE { ?stop a mm:InterchangeStop . } ORDER BY ?stop",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "stop": "mm:Stop_Rynok"
+            },
+            {
+              "stop": "mm:Stop_Vokzal"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S02",
+      "difficulty": "easy",
+      "question": "Які маршрути обслуговують зупинку «Вокзал»?",
+      "reference_query": "SELECT DISTINCT ?route WHERE { ?route mm:servesStop mm:Stop_Vokzal . } ORDER BY ?route",
+      "expected": [
+        {
+          "route": "mm:Route_25"
+        },
+        {
+          "route": "mm:Route_31"
+        },
+        {
+          "route": "mm:Route_9"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?route WHERE { ?route mm:servedByRoute mm:Stop_Vokzal . } ORDER BY ?route",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?route WHERE { ?route mm:servesStop mm:Stop_Vokzal . } ORDER BY ?route",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "route": "mm:Route_25"
+            },
+            {
+              "route": "mm:Route_31"
+            },
+            {
+              "route": "mm:Route_9"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S03",
+      "difficulty": "medium",
+      "question": "Які рейси мають стан затримки?",
+      "reference_query": "SELECT DISTINCT ?trip WHERE { ?trip mm:hasState ?state . ?state a mm:DelayedState . } ORDER BY ?trip",
+      "expected": [
+        {
+          "trip": "mm:Trip_9_0800"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?trip WHERE { ?trip mm:hasState mm:OnTimeState . } ORDER BY ?trip",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?trip WHERE { ?trip mm:hasState ?state . ?state a mm:DelayedState . } ORDER BY ?trip",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "trip": "mm:Trip_9_0800"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S04",
+      "difficulty": "easy",
+      "question": "Які зупинки доступні для маломобільних пасажирів?",
+      "reference_query": "SELECT DISTINCT ?stop WHERE { ?stop mm:wheelchairAccessible true . } ORDER BY ?stop",
+      "expected": [
+        {
+          "stop": "mm:Stop_Politekhnika"
+        },
+        {
+          "stop": "mm:Stop_Vokzal"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?stop WHERE { ?stop mm:wheelchairAccessible \"true\" . } ORDER BY ?stop",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?stop WHERE { ?stop mm:wheelchairAccessible true . } ORDER BY ?stop",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "stop": "mm:Stop_Politekhnika"
+            },
+            {
+              "stop": "mm:Stop_Vokzal"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S05",
+      "difficulty": "medium",
+      "question": "Які маршрути мають інтервал руху не більше 10 хвилин?",
+      "reference_query": "SELECT DISTINCT ?route WHERE { ?f a mm:Frequency ; mm:frequencyOfRoute ?route ; mm:headwayMinutes ?h . FILTER(?h <= 10) } ORDER BY ?route",
+      "expected": [
+        {
+          "route": "mm:Route_9"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?route WHERE { ?f a mm:Frequency ; mm:frequencyOfRoute ?route ; mm:headwayMinutes ?h . FILTER(?h < 10) } ORDER BY ?route",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?route WHERE { ?f a mm:Frequency ; mm:frequencyOfRoute ?route ; mm:headwayMinutes ?h . FILTER(?h <= 10) } ORDER BY ?route",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "route": "mm:Route_9"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S06",
+      "difficulty": "easy",
+      "question": "Які рейси виконуються автобусами?",
+      "reference_query": "SELECT DISTINCT ?trip WHERE { ?trip mm:usesVehicle ?v . ?v a mm:Bus . } ORDER BY ?trip",
+      "expected": [
+        {
+          "trip": "mm:Trip_25_0815"
+        },
+        {
+          "trip": "mm:Trip_9_0800"
+        },
+        {
+          "trip": "mm:Trip_9_0830"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?trip WHERE { ?trip a mm:BusTrip . } ORDER BY ?trip",
+          "syntax": true,
+          "schema": false,
+          "bad_terms": [
+            "BusTrip"
+          ],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?trip WHERE { ?trip mm:usesVehicle ?v . ?v a mm:Bus . } ORDER BY ?trip",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "trip": "mm:Trip_25_0815"
+            },
+            {
+              "trip": "mm:Trip_9_0800"
+            },
+            {
+              "trip": "mm:Trip_9_0830"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S07",
+      "difficulty": "medium",
+      "question": "Скільки рейсів має кожен маршрут?",
+      "reference_query": "SELECT ?route (COUNT(?trip) AS ?trips) WHERE { ?trip mm:tripOfRoute ?route . } GROUP BY ?route ORDER BY DESC(?trips) ?route",
+      "expected": [
+        {
+          "route": "mm:Route_9",
+          "trips": "2"
+        },
+        {
+          "route": "mm:Route_25",
+          "trips": "1"
+        },
+        {
+          "route": "mm:Route_31",
+          "trips": "1"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT ?route (COUNT(?trip) AS ?trips) WHERE { ?trip mm:tripOfRoute ?route . } ORDER BY DESC(?trips)",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "400 Client Error: Bad Request for url: http://127.0.0.1:3030/ds/query?query=PREFIX+mm%3A+%3Chttps%3A%2F%2Fknowledge.uni.lviv.ua%2Fmobility%23%3E%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX+rdfs%3",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT ?route (COUNT(?trip) AS ?trips) WHERE { ?trip mm:tripOfRoute ?route . } GROUP BY ?route ORDER BY DESC(?trips) ?route",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "route": "mm:Route_9",
+              "trips": "2"
+            },
+            {
+              "route": "mm:Route_25",
+              "trips": "1"
+            },
+            {
+              "route": "mm:Route_31",
+              "trips": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S08",
+      "difficulty": "easy",
+      "question": "Які зупинки не доступні для маломобільних пасажирів?",
+      "reference_query": "SELECT DISTINCT ?stop WHERE { ?stop mm:wheelchairAccessible false . } ORDER BY ?stop",
+      "expected": [
+        {
+          "stop": "mm:Stop_Rynok"
+        },
+        {
+          "stop": "mm:Stop_Universytet"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?stop WHERE { ?stop mm:accessible false . } ORDER BY ?stop",
+          "syntax": true,
+          "schema": false,
+          "bad_terms": [
+            "accessible"
+          ],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?stop WHERE { ?stop mm:wheelchairAccessible false . } ORDER BY ?stop",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "stop": "mm:Stop_Rynok"
+            },
+            {
+              "stop": "mm:Stop_Universytet"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S09",
+      "difficulty": "medium",
+      "question": "Які рейси прямують від «Вокзалу» до «Площі Ринок»?",
+      "reference_query": "SELECT DISTINCT ?trip WHERE { ?trip mm:startsAt mm:Stop_Vokzal ; mm:endsAt mm:Stop_Rynok . } ORDER BY ?trip",
+      "expected": [
+        {
+          "trip": "mm:Trip_31_0700"
+        },
+        {
+          "trip": "mm:Trip_9_0800"
+        },
+        {
+          "trip": "mm:Trip_9_0830"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?trip WHERE { ?trip mm:startsAt mm:Stop_Vokzal . } ORDER BY ?trip",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "",
+          "rows": [
+            {
+              "trip": "mm:Trip_25_0815"
+            },
+            {
+              "trip": "mm:Trip_31_0700"
+            },
+            {
+              "trip": "mm:Trip_9_0800"
+            },
+            {
+              "trip": "mm:Trip_9_0830"
+            }
+          ]
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?trip WHERE { ?trip mm:startsAt mm:Stop_Vokzal ; mm:endsAt mm:Stop_Rynok . } ORDER BY ?trip",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "trip": "mm:Trip_31_0700"
+            },
+            {
+              "trip": "mm:Trip_9_0800"
+            },
+            {
+              "trip": "mm:Trip_9_0830"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S10",
+      "difficulty": "medium",
+      "question": "Який маршрут рекомендовано пасажиру Passenger_P01?",
+      "reference_query": "SELECT DISTINCT ?route WHERE { ?rec mm:forPassenger mm:Passenger_P01 ; mm:recommends ?route . } ORDER BY ?route",
+      "expected": [
+        {
+          "route": "mm:Route_31"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?route WHERE { mm:Passenger_P01 mm:forPassenger ?rec . ?rec mm:recommends ?route . } ORDER BY ?route",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?route WHERE { ?rec mm:forPassenger mm:Passenger_P01 ; mm:recommends ?route . } ORDER BY ?route",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "route": "mm:Route_31"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S11",
+      "difficulty": "medium",
+      "question": "Яка затримка рейсу Trip_9_0800 у хвилинах?",
+      "reference_query": "SELECT ?minutes WHERE { ?d a mm:Delay ; mm:measurementOf mm:Trip_9_0800 ; mm:delayMinutes ?minutes . }",
+      "expected": [
+        {
+          "minutes": "12"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT ?minutes WHERE { mm:Trip_9_0800 mm:travelTimeMinutes ?minutes . }",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT ?minutes WHERE { ?d a mm:Delay ; mm:measurementOf mm:Trip_9_0800 ; mm:delayMinutes ?minutes . }",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "minutes": "12"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S12",
+      "difficulty": "medium",
+      "question": "Яка ділянка і який рейс зазнали впливу затору?",
+      "reference_query": "SELECT DISTINCT ?segment ?trip WHERE { ?segment mm:hasEvent mm:Congestion_Horodotska . mm:Congestion_Horodotska mm:affectsTrip ?trip . } ORDER BY ?segment ?trip",
+      "expected": [
+        {
+          "segment": "mm:Seg_Vokzal_Rynok",
+          "trip": "mm:Trip_9_0800"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?segment ?trip WHERE { ?segment mm:hasEvent ?event . OPTIONAL { ?event mm:affectsTrip ?trip } } ORDER BY ?segment ?trip",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "",
+          "rows": [
+            {
+              "segment": "mm:Seg_Rynok_Politekhnika"
+            },
+            {
+              "segment": "mm:Seg_Vokzal_Rynok",
+              "trip": "mm:Trip_9_0800"
+            }
+          ]
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?segment ?trip WHERE { ?segment mm:hasEvent mm:Congestion_Horodotska . mm:Congestion_Horodotska mm:affectsTrip ?trip . } ORDER BY ?segment ?trip",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "segment": "mm:Seg_Vokzal_Rynok",
+              "trip": "mm:Trip_9_0800"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S13",
+      "difficulty": "hard",
+      "question": "Який маршрут обслуговує найбільше зупинок?",
+      "reference_query": "SELECT ?route (COUNT(DISTINCT ?stop) AS ?stops) WHERE { ?route mm:servesStop ?stop . } GROUP BY ?route ORDER BY DESC(?stops) ?route LIMIT 1",
+      "expected": [
+        {
+          "route": "mm:Route_9",
+          "stops": "3"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT ?route ?stop WHERE { ?route mm:servesStop ?stop . } ORDER BY ?route",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": false,
+          "error": "",
+          "rows": [
+            {
+              "route": "mm:Route_25",
+              "stop": "mm:Stop_Universytet"
+            },
+            {
+              "route": "mm:Route_25",
+              "stop": "mm:Stop_Vokzal"
+            },
+            {
+              "route": "mm:Route_31",
+              "stop": "mm:Stop_Rynok"
+            },
+            {
+              "route": "mm:Route_31",
+              "stop": "mm:Stop_Vokzal"
+            },
+            {
+              "route": "mm:Route_9",
+              "stop": "mm:Stop_Politekhnika"
+            },
+            {
+              "route": "mm:Route_9",
+              "stop": "mm:Stop_Rynok"
+            },
+            {
+              "route": "mm:Route_9",
+              "stop": "mm:Stop_Vokzal"
+            }
+          ]
+        },
+        "after": {
+          "query": "SELECT ?route (COUNT(DISTINCT ?stop) AS ?stops) WHERE { ?route mm:servesStop ?stop . } GROUP BY ?route ORDER BY DESC(?stops) ?route LIMIT 1",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "route": "mm:Route_9",
+              "stops": "3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S14",
+      "difficulty": "hard",
+      "question": "Які зупинки обслуговують і маршрут 9, і маршрут 31?",
+      "reference_query": "SELECT DISTINCT ?stop WHERE { mm:Route_9 mm:servesStop ?stop . mm:Route_31 mm:servesStop ?stop . } ORDER BY ?stop",
+      "expected": [
+        {
+          "stop": "mm:Stop_Rynok"
+        },
+        {
+          "stop": "mm:Stop_Vokzal"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?stop WHERE { ?stop mm:servedByRoute mm:Route_9 ; mm:servedByRoute mm:Route_31 . } ORDER BY ?stop",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "stop": "mm:Stop_Rynok"
+            },
+            {
+              "stop": "mm:Stop_Vokzal"
+            }
+          ]
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?stop WHERE { mm:Route_9 mm:servesStop ?stop . mm:Route_31 mm:servesStop ?stop . } ORDER BY ?stop",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "stop": "mm:Stop_Rynok"
+            },
+            {
+              "stop": "mm:Stop_Vokzal"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "T2S15",
+      "difficulty": "medium",
+      "question": "Які джерела даних описують транспортну мережу Львова?",
+      "reference_query": "SELECT DISTINCT ?ds WHERE { ?ds mm:datasetDescribes mm:Network_Lviv . } ORDER BY ?ds",
+      "expected": [
+        {
+          "ds": "mm:GTFS_Lviv"
+        },
+        {
+          "ds": "mm:NeTEx_Lviv"
+        },
+        {
+          "ds": "mm:SIRI_Lviv"
+        }
+      ],
+      "variants": {
+        "before": {
+          "query": "SELECT DISTINCT ?ds WHERE { ?ds mm:describes mm:Network_Lviv . } ORDER BY ?ds",
+          "syntax": true,
+          "schema": false,
+          "bad_terms": [
+            "describes"
+          ],
+          "correct": false,
+          "error": "",
+          "rows": []
+        },
+        "after": {
+          "query": "SELECT DISTINCT ?ds WHERE { ?ds mm:datasetDescribes mm:Network_Lviv . } ORDER BY ?ds",
+          "syntax": true,
+          "schema": true,
+          "bad_terms": [],
+          "correct": true,
+          "error": "",
+          "rows": [
+            {
+              "ds": "mm:GTFS_Lviv"
+            },
+            {
+              "ds": "mm:NeTEx_Lviv"
+            },
+            {
+              "ds": "mm:SIRI_Lviv"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

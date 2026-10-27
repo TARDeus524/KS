@@ -1,0 +1,15 @@
+{"id": "T2S01", "question": "Які зупинки є пересадочними?", "query": "SELECT DISTINCT ?stop WHERE { ?stop a mm:InterchangeStop . } ORDER BY ?stop"}
+{"id": "T2S02", "question": "Які маршрути обслуговують зупинку «Вокзал»?", "query": "SELECT DISTINCT ?route WHERE { ?route mm:servesStop mm:Stop_Vokzal . } ORDER BY ?route"}
+{"id": "T2S03", "question": "Які рейси мають стан затримки?", "query": "SELECT DISTINCT ?trip WHERE { ?trip mm:hasState ?state . ?state a mm:DelayedState . } ORDER BY ?trip"}
+{"id": "T2S04", "question": "Які зупинки доступні для маломобільних пасажирів?", "query": "SELECT DISTINCT ?stop WHERE { ?stop mm:wheelchairAccessible true . } ORDER BY ?stop"}
+{"id": "T2S05", "question": "Які маршрути мають інтервал руху не більше 10 хвилин?", "query": "SELECT DISTINCT ?route WHERE { ?f a mm:Frequency ; mm:frequencyOfRoute ?route ; mm:headwayMinutes ?h . FILTER(?h <= 10) } ORDER BY ?route"}
+{"id": "T2S06", "question": "Які рейси виконуються автобусами?", "query": "SELECT DISTINCT ?trip WHERE { ?trip mm:usesVehicle ?v . ?v a mm:Bus . } ORDER BY ?trip"}
+{"id": "T2S07", "question": "Скільки рейсів має кожен маршрут?", "query": "SELECT ?route (COUNT(?trip) AS ?trips) WHERE { ?trip mm:tripOfRoute ?route . } GROUP BY ?route ORDER BY DESC(?trips) ?route"}
+{"id": "T2S08", "question": "Які зупинки не доступні для маломобільних пасажирів?", "query": "SELECT DISTINCT ?stop WHERE { ?stop mm:wheelchairAccessible false . } ORDER BY ?stop"}
+{"id": "T2S09", "question": "Які рейси прямують від «Вокзалу» до «Площі Ринок»?", "query": "SELECT DISTINCT ?trip WHERE { ?trip mm:startsAt mm:Stop_Vokzal ; mm:endsAt mm:Stop_Rynok . } ORDER BY ?trip"}
+{"id": "T2S10", "question": "Який маршрут рекомендовано пасажиру Passenger_P01?", "query": "SELECT DISTINCT ?route WHERE { ?rec mm:forPassenger mm:Passenger_P01 ; mm:recommends ?route . } ORDER BY ?route"}
+{"id": "T2S11", "question": "Яка затримка рейсу Trip_9_0800 у хвилинах?", "query": "SELECT ?minutes WHERE { ?d a mm:Delay ; mm:measurementOf mm:Trip_9_0800 ; mm:delayMinutes ?minutes . }"}
+{"id": "T2S12", "question": "Яка ділянка і який рейс зазнали впливу затору?", "query": "SELECT DISTINCT ?segment ?trip WHERE { ?segment mm:hasEvent mm:Congestion_Horodotska . mm:Congestion_Horodotska mm:affectsTrip ?trip . } ORDER BY ?segment ?trip"}
+{"id": "T2S13", "question": "Який маршрут обслуговує найбільше зупинок?", "query": "SELECT ?route (COUNT(DISTINCT ?stop) AS ?stops) WHERE { ?route mm:servesStop ?stop . } GROUP BY ?route ORDER BY DESC(?stops) ?route LIMIT 1"}
+{"id": "T2S14", "question": "Які зупинки обслуговують і маршрут 9, і маршрут 31?", "query": "SELECT DISTINCT ?stop WHERE { mm:Route_9 mm:servesStop ?stop . mm:Route_31 mm:servesStop ?stop . } ORDER BY ?stop"}
+{"id": "T2S15", "question": "Які джерела даних описують транспортну мережу Львова?", "query": "SELECT DISTINCT ?ds WHERE { ?ds mm:datasetDescribes mm:Network_Lviv . } ORDER BY ?ds"}

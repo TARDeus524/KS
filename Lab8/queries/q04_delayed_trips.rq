@@ -1,0 +1,8 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+SELECT DISTINCT ?trip
+WHERE {
+  ?trip mm:hasState ?state .
+  ?state a mm:DelayedState .
+}
+ORDER BY ?trip

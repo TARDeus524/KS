@@ -1,0 +1,42 @@
+@prefix mm: <https://knowledge.uni.lviv.ua/mobility#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode mm:Stop_Vokzal ;
+            sh:resultMessage "stopId має бути один рядок формату S###" ;
+            sh:resultPath mm:stopId ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:PatternConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:message "stopId має бути один рядок формату S###" ;
+                    sh:minCount 1 ;
+                    sh:path mm:stopId ;
+                    sh:pattern "^S[0-9]{3}$" ] ;
+            sh:value "VOKZAL" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode mm:Trip_9_0800 ;
+            sh:resultMessage "Рейс повинен мати рівно один стан" ;
+            sh:resultPath mm:hasState ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class mm:TransportState ;
+                    sh:maxCount 1 ;
+                    sh:message "Рейс повинен мати рівно один стан" ;
+                    sh:minCount 1 ;
+                    sh:path mm:hasState ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode mm:Congestion_Horodotska ;
+            sh:resultMessage "Подія повинна мати eventTime типу xsd:dateTime" ;
+            sh:resultPath mm:eventTime ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:dateTime ;
+                    sh:message "Подія повинна мати eventTime типу xsd:dateTime" ;
+                    sh:minCount 1 ;
+                    sh:path mm:eventTime ] ;
+            sh:value "not-a-date" ] .
+

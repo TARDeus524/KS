@@ -1,0 +1,23 @@
+Validation Report
+Conforms: False
+Results (3):
+Constraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:dateTime ; sh:message Literal("Подія повинна мати eventTime типу xsd:dateTime") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path mm:eventTime ]
+	Focus Node: mm:Congestion_Horodotska
+	Value Node: Literal("not-a-date")
+	Result Path: mm:eventTime
+	Message: Подія повинна мати eventTime типу xsd:dateTime
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:class mm:TransportState ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("Рейс повинен мати рівно один стан") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path mm:hasState ]
+	Focus Node: mm:Trip_9_0800
+	Result Path: mm:hasState
+	Message: Рейс повинен мати рівно один стан
+Constraint Violation in PatternConstraintComponent (http://www.w3.org/ns/shacl#PatternConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:datatype xsd:string ; sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("stopId має бути один рядок формату S###") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path mm:stopId ; sh:pattern Literal("^S[0-9]{3}$") ]
+	Focus Node: mm:Stop_Vokzal
+	Value Node: Literal("VOKZAL")
+	Result Path: mm:stopId
+	Message: stopId має бути один рядок формату S###

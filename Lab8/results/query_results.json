@@ -1,0 +1,402 @@
+{
+  "endpoint": "http://127.0.0.1:3030/ds/query",
+  "dataset": "ds",
+  "query_count": 12,
+  "timing": {
+    "baseline_file": "q06_trip_counts_by_route.rq",
+    "optimized_file": "q06_trip_counts_by_route_opt.rq",
+    "baseline_median_ms": 7.84,
+    "optimized_median_ms": 6.47,
+    "http_runs": 10,
+    "http_speedup": 1.21,
+    "inprocess_baseline_median_ms": 8.564,
+    "inprocess_optimized_median_ms": 5.15,
+    "inprocess_runs": 30,
+    "inprocess_speedup": 1.66
+  },
+  "queries": [
+    {
+      "id": "Q01",
+      "file": "q01_interchange_stops.rq",
+      "cq": "CQ1",
+      "question": "Які зупинки є пересадочними?",
+      "purpose": "Перелік пересадочних зупинок; перевірка класу InterchangeStop.",
+      "type": "SELECT",
+      "elapsed_ms": 6.51,
+      "count": 2,
+      "rows": [
+        {
+          "stop": "mm:Stop_Rynok"
+        },
+        {
+          "stop": "mm:Stop_Vokzal"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "expected_count": 2,
+        "expected_values": [
+          "Stop_Rynok",
+          "Stop_Vokzal"
+        ],
+        "status": "PASS"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nSELECT DISTINCT ?stop\nWHERE {\n  ?stop a mm:InterchangeStop .\n}\nORDER BY ?stop"
+    },
+    {
+      "id": "Q02",
+      "file": "q02_routes_at_vokzal.rq",
+      "cq": "CQ2",
+      "question": "Які маршрути обслуговують зупинку «Вокзал»?",
+      "purpose": "Маршрути, що мають пряме відношення servesStop до Stop_Vokzal.",
+      "type": "SELECT",
+      "elapsed_ms": 7.49,
+      "count": 3,
+      "rows": [
+        {
+          "route": "mm:Route_25"
+        },
+        {
+          "route": "mm:Route_31"
+        },
+        {
+          "route": "mm:Route_9"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "expected_count": 3,
+        "expected_values": [
+          "Route_25",
+          "Route_31",
+          "Route_9"
+        ],
+        "status": "PASS"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nSELECT DISTINCT ?route\nWHERE {\n  ?route mm:servesStop mm:Stop_Vokzal .\n}\nORDER BY ?route"
+    },
+    {
+      "id": "Q03",
+      "file": "q03_accessible_stops.rq",
+      "cq": "CQ5",
+      "question": "Які зупинки доступні для маломобільних пасажирів?",
+      "purpose": "Фільтр за булевим значенням wheelchairAccessible.",
+      "type": "SELECT",
+      "elapsed_ms": 5.97,
+      "count": 2,
+      "rows": [
+        {
+          "stop": "mm:Stop_Politekhnika"
+        },
+        {
+          "stop": "mm:Stop_Vokzal"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "status": "not_checked"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nSELECT DISTINCT ?stop\nWHERE {\n  ?stop mm:wheelchairAccessible true .\n}\nORDER BY ?stop"
+    },
+    {
+      "id": "Q04",
+      "file": "q04_delayed_trips.rq",
+      "cq": "CQ3",
+      "question": "Які рейси мають стан затримки?",
+      "purpose": "Рейс із станом DelayedState через hasState.",
+      "type": "SELECT",
+      "elapsed_ms": 8.55,
+      "count": 1,
+      "rows": [
+        {
+          "trip": "mm:Trip_9_0800"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "expected_count": 1,
+        "expected_values": [
+          "Trip_9_0800"
+        ],
+        "status": "PASS"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nSELECT DISTINCT ?trip\nWHERE {\n  ?trip mm:hasState ?state .\n  ?state a mm:DelayedState .\n}\nORDER BY ?trip"
+    },
+    {
+      "id": "Q05",
+      "file": "q05_delay_over_10.rq",
+      "cq": "CQ9",
+      "question": "Які рейси мають затримку понад 10 хвилин?",
+      "purpose": "Агрегат Delay + FILTER(?minutes > 10).",
+      "type": "SELECT",
+      "elapsed_ms": 5.82,
+      "count": 1,
+      "rows": [
+        {
+          "trip": "mm:Trip_9_0800",
+          "minutes": "12"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "status": "not_checked"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nSELECT DISTINCT ?trip ?minutes\nWHERE {\n  ?delay a mm:Delay ;\n         mm:measurementOf ?trip ;\n         mm:delayMinutes ?minutes .\n  FILTER(?minutes > 10)\n}\nORDER BY DESC(?minutes) ?trip"
+    },
+    {
+      "id": "Q06",
+      "file": "q06_trip_counts_by_route.rq",
+      "cq": "CQ11",
+      "question": "Скільки рейсів має кожен маршрут?",
+      "purpose": "Агрегація COUNT із GROUP BY; базовий варіант для оптимізації.",
+      "type": "SELECT",
+      "elapsed_ms": 8.49,
+      "count": 3,
+      "rows": [
+        {
+          "route": "mm:Route_9",
+          "trips": "2"
+        },
+        {
+          "route": "mm:Route_25",
+          "trips": "1"
+        },
+        {
+          "route": "mm:Route_31",
+          "trips": "1"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "expected_count": 3,
+        "expected_values": [
+          "Route_9:2",
+          "Route_25:1",
+          "Route_31:1"
+        ],
+        "status": "PASS"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nSELECT ?route (COUNT(DISTINCT ?trip) AS ?trips)\nWHERE {\n  ?route a mm:TransportRoute ;\n         mm:hasTrip ?trip .\n  ?trip ?p ?o .\n  ?o ?p2 ?o2 .\n}\nGROUP BY ?route\nORDER BY DESC(?trips) ?route"
+    },
+    {
+      "id": "Q06-OPT",
+      "file": "q06_trip_counts_by_route_opt.rq",
+      "cq": "CQ11",
+      "question": "Скільки рейсів має кожен маршрут? (оптимізовано)",
+      "purpose": "Те саме без зайвого класу та з прямим hasTrip.",
+      "type": "SELECT",
+      "elapsed_ms": 6.46,
+      "count": 3,
+      "rows": [
+        {
+          "route": "mm:Route_9",
+          "trips": "2"
+        },
+        {
+          "route": "mm:Route_25",
+          "trips": "1"
+        },
+        {
+          "route": "mm:Route_31",
+          "trips": "1"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "status": "not_checked"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nSELECT ?route (COUNT(?trip) AS ?trips)\nWHERE {\n  ?route mm:hasTrip ?trip .\n}\nGROUP BY ?route\nORDER BY DESC(?trips) ?route"
+    },
+    {
+      "id": "Q07",
+      "file": "q07_stops_with_optional_access.rq",
+      "cq": "CQ12",
+      "question": "Які зупинки мають маршрути та ознаку доступності?",
+      "purpose": "OPTIONAL для доступності й маршрутів; рядки без значень не губляться.",
+      "type": "SELECT",
+      "elapsed_ms": 7.75,
+      "count": 7,
+      "rows": [
+        {
+          "stop": "mm:Stop_Politekhnika",
+          "name": "Політехніка",
+          "accessible": "true",
+          "route": "mm:Route_9"
+        },
+        {
+          "stop": "mm:Stop_Rynok",
+          "name": "Площа Ринок",
+          "accessible": "false",
+          "route": "mm:Route_31"
+        },
+        {
+          "stop": "mm:Stop_Rynok",
+          "name": "Площа Ринок",
+          "accessible": "false",
+          "route": "mm:Route_9"
+        },
+        {
+          "stop": "mm:Stop_Universytet",
+          "name": "Університет",
+          "accessible": "false",
+          "route": "mm:Route_25"
+        },
+        {
+          "stop": "mm:Stop_Vokzal",
+          "name": "Вокзал",
+          "accessible": "true",
+          "route": "mm:Route_25"
+        },
+        {
+          "stop": "mm:Stop_Vokzal",
+          "name": "Вокзал",
+          "accessible": "true",
+          "route": "mm:Route_31"
+        },
+        {
+          "stop": "mm:Stop_Vokzal",
+          "name": "Вокзал",
+          "accessible": "true",
+          "route": "mm:Route_9"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "status": "not_checked"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nSELECT ?stop ?name ?accessible ?route\nWHERE {\n  ?stop a mm:Stop ;\n        mm:stopName ?name .\n  OPTIONAL { ?stop mm:wheelchairAccessible ?accessible }\n  OPTIONAL { ?stop mm:servedByRoute ?route }\n}\nORDER BY ?stop ?route"
+    },
+    {
+      "id": "Q08",
+      "file": "q08_route_stop_path.rq",
+      "cq": "CQ13",
+      "question": "Які зупинки входять до маршруту через рейс і stop time?",
+      "purpose": "Property path hasTrip/hasStopTime/atStop.",
+      "type": "SELECT",
+      "elapsed_ms": 10.66,
+      "count": 3,
+      "rows": [
+        {
+          "route": "mm:Route_9",
+          "stop": "mm:Stop_Politekhnika"
+        },
+        {
+          "route": "mm:Route_9",
+          "stop": "mm:Stop_Rynok"
+        },
+        {
+          "route": "mm:Route_9",
+          "stop": "mm:Stop_Vokzal"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "expected_count": 3,
+        "expected_values": [
+          "Route_9:Stop_Politekhnika",
+          "Route_9:Stop_Rynok",
+          "Route_9:Stop_Vokzal"
+        ],
+        "status": "PASS"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nSELECT DISTINCT ?route ?stop\nWHERE {\n  ?route a mm:TransportRoute ;\n         mm:hasTrip/mm:hasStopTime/mm:atStop ?stop .\n}\nORDER BY ?route ?stop"
+    },
+    {
+      "id": "Q09",
+      "file": "q09_ask_accessible.rq",
+      "cq": "CQ14",
+      "question": "Чи доступний «Вокзал» для маломобільних пасажирів?",
+      "purpose": "ASK-перевірка одного факту без побудови таблиці.",
+      "type": "ASK",
+      "elapsed_ms": 6.22,
+      "count": 1,
+      "boolean": true,
+      "rows": [
+        {
+          "ask": "true"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "expected_count": 1,
+        "expected_values": [
+          "true"
+        ],
+        "status": "PASS"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nASK {\n  mm:Stop_Vokzal mm:wheelchairAccessible true .\n}"
+    },
+    {
+      "id": "Q10",
+      "file": "q10_construct_route_trip.rq",
+      "cq": "CQ15",
+      "question": "Побудувати підграф маршрут → рейс → початкова/кінцева зупинка.",
+      "purpose": "CONSTRUCT повертає RDF-граф для повторного використання.",
+      "type": "CONSTRUCT",
+      "elapsed_ms": 9.23,
+      "count": 12,
+      "rows": [],
+      "status": "PASS",
+      "manual": {
+        "expected_count": 12,
+        "expected_values": [],
+        "status": "PASS"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\n\nCONSTRUCT {\n  ?route mm:hasTrip ?trip .\n  ?trip mm:startsAt ?start ;\n        mm:endsAt ?end .\n}\nWHERE {\n  ?route a mm:TransportRoute ;\n         mm:hasTrip ?trip .\n  ?trip mm:startsAt ?start ;\n        mm:endsAt ?end .\n}"
+    },
+    {
+      "id": "Q11",
+      "file": "q11_federated_wikidata.rq",
+      "cq": "CQ16",
+      "question": "Які локальні поняття мають підтверджені відповідники у Wikidata?",
+      "purpose": "Federated SERVICE до Wikidata через проксі з User-Agent.",
+      "type": "SELECT",
+      "elapsed_ms": 2201.13,
+      "count": 7,
+      "rows": [
+        {
+          "local": "mm:Bus",
+          "external": "wd:Q5638",
+          "externalLabel": "bus"
+        },
+        {
+          "local": "mm:GTFSDataset",
+          "external": "wd:Q113379415",
+          "externalLabel": "General Transit Feed Specification feed"
+        },
+        {
+          "local": "mm:GTFSDataset",
+          "external": "wd:Q5532250",
+          "externalLabel": "General Transit Feed Specification"
+        },
+        {
+          "local": "mm:Network_Lviv",
+          "external": "wd:Q36036",
+          "externalLabel": "Lviv"
+        },
+        {
+          "local": "mm:Stop",
+          "external": "wd:Q548662",
+          "externalLabel": "public transport stop"
+        },
+        {
+          "local": "mm:Tram",
+          "external": "wd:Q3407658",
+          "externalLabel": "tram"
+        },
+        {
+          "local": "mm:TransportSystem",
+          "external": "wd:Q178512",
+          "externalLabel": "public transport"
+        }
+      ],
+      "status": "PASS",
+      "manual": {
+        "expected_count": 7,
+        "expected_values": [],
+        "status": "PASS"
+      },
+      "query": "PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX wd: <http://www.wikidata.org/entity/>\n\nSELECT ?local ?external ?externalLabel\nWHERE {\n  VALUES ?external {\n    wd:Q36036 wd:Q5532250 wd:Q5638 wd:Q3407658\n    wd:Q548662 wd:Q178512 wd:Q113379415\n  }\n  ?local mm:linkStatus \"verified\" .\n  { ?local skos:exactMatch ?external }\n  UNION\n  { ?local skos:closeMatch ?external }\n  SERVICE <http://127.0.0.1:3031/sparql> {\n    ?external rdfs:label ?externalLabel .\n    FILTER(LANG(?externalLabel) = \"en\")\n  }\n}\nORDER BY ?local"
+    }
+  ]
+}

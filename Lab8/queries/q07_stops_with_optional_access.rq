@@ -1,0 +1,10 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+SELECT ?stop ?name ?accessible ?route
+WHERE {
+  ?stop a mm:Stop ;
+        mm:stopName ?name .
+  OPTIONAL { ?stop mm:wheelchairAccessible ?accessible }
+  OPTIONAL { ?stop mm:servedByRoute ?route }
+}
+ORDER BY ?stop ?route

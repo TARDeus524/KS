@@ -1,0 +1,5815 @@
+[
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Route_31",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#TramRoute",
+      "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#routeId": [
+      {
+        "@value": "31"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#routeType": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 0
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#servesStop": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#startsAt",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс починається на заданій зупинці."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "починається на"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#isStartOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_25_0815",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Trip"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#endsAt": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Universytet"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasState": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#State_OnTime_25"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#operatedBy": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#startsAt": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#tripId": [
+      {
+        "@value": "T250815"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#tripOfRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_25"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#usesVehicle": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Bus_2502"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#InterchangeStop",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6; GTFS transfers.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Зупинка, яку обслуговують щонайменше два різні транспортні маршрути і на якій можлива пересадка."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Пересадочна зупинка"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/BusStop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb13"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://schema.org/BusStop"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb13",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+          },
+          {
+            "@id": "_:na75acc11d363484db3408e57fc05ad8bb14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb14",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#minQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "2"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#servedByRoute"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#routeId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Унікальний ідентифікатор маршруту з GTFS routes.txt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ідентифікатор маршруту"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Flow_Vokzal_0800",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#PassengerFlow"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#measuredBy": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Validator_Vokzal"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#passengerCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 120
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Delay_9_0800",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Delay"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#delayMinutes": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 12
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#measuredBy": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#GPS_2501"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#measurementOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#State_OnTime_31",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#OnTimeState"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stateOfTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#locatedAt",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Зупинка розташована в місці, поданому зовнішнім словником Schema.org."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "розташована в"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://schema.org/Place"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#DelayedTrip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6; SIRI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс, фактичний стан якого відхилено від розкладу щонайменше на порогову величину затримки."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Затриманий рейс"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb9"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+          },
+          {
+            "@id": "_:na75acc11d363484db3408e57fc05ad8bb10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb10",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasState"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DelayedState"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TrolleybusRoute",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS routes.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний маршрут, що обслуговується тролейбусами і має GTFS route_type = 11."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Тролейбусний маршрут"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#routeType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Код виду транспорту GTFS: 3 — автобус, 0 — трамвай, 11 — тролейбус."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "тип маршруту"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Rynok",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Stop",
+      "https://knowledge.uni.lviv.ua/mobility#InterchangeStop"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#latitude": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "49.8419"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#longitude": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "24.0315"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#servedByRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_31"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_9"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopId": [
+      {
+        "@value": "S002"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopName": [
+      {
+        "@value": "Площа Ринок"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#wheelchairAccessible": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#frequencyOfRoute",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Запис інтервалу руху належить конкретному маршруту."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Frequency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є інтервалом маршруту"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#routeFrequency"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Forecast_9_Peak",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Forecast"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#confidence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0.87"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#forecastFor": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS routes.txt; schema:Route"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Упорядкована послідовність зупинок, що обслуговується рейсами під спільним ідентифікатором."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний маршрут"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/Route"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb21"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportNetwork"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://schema.org/Route"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb21",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#servesStop"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Agency_LvivElektrotrans",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#TransportAgency"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#agencyName": [
+      {
+        "@value": "ЛьвівЕлектротранс"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#operatesTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Vokzal",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#StopTime"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#atStop": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#departureTime": [
+      {
+        "@value": "08:00:00"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopSequence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopTimeOfTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Vehicle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6; GTFS trips.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рухомий склад, що виконує рейси на маршрутах і має ідентифікатор та пасажиромісткість."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний засіб"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Counter_2501",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#PassengerCounter"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#measures": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Load_9_0800"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#sensorId": [
+      {
+        "@value": "CNT-2501"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#forPassenger",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рекомендація адресована конкретному пасажиру."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "призначена пасажиру"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Passenger"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#passengerRecommendation"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#SIRIFeed",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "SIRI; Transmodel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Джерело даних, що містить повідомлення SIRI про рух транспорту в реальному часі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Потік SIRI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DataAsset"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Dispatcher_01",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Dispatcher"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#personName": [
+      {
+        "@value": "Марія Шевчук"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#respondsTo": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#recommendedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Маршрут пропонується рекомендацією."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "рекомендований"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#recommends"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#describedByDataset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Транспортна мережа описана конкретним джерелом даних."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportNetwork"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "описана джерелом"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DataAsset"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#datasetDescribes"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#tripId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Унікальний ідентифікатор рейсу з GTFS trips.txt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ідентифікатор рейсу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Load_9_0800",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#LoadFactor"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#loadFactor": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0.92"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#measuredBy": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Counter_2501"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#measurementOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Rynok",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#StopTime"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#atStop": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#departureTime": [
+      {
+        "@value": "08:20:00"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopSequence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopTimeOfTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#SIRI_Lviv",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#SIRIFeed"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#datasetDescribes": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Network_Lviv"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#datasetName": [
+      {
+        "@value": "SIRI Lviv realtime"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#vehicleId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Унікальний ідентифікатор рухомого складу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Vehicle"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ідентифікатор транспортного засобу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Actor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Особа або організація, що бере участь у транспортному процесі та прийнятті рішень."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Учасник процесу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Sensor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Пристрій, що автоматично вимірює стан транспортного процесу та передає дані в систему."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Сенсор"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DataAsset"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#latitude",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Географічна широта зупинки в градусах."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "широта"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#hasPart",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Відношення ціле-частина між елементами предметної області."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#MobilitySystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "містить"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#MobilitySystem"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#partOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6; GTFS Reference 2026"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Система, що об’єднує транспортну мережу, рухомий склад, рейси, учасників і управлінські процеси міста."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Транспортна система"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#MobilitySystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#PassengerFlow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Вимірювання кількості пасажирів, що проходять через зупинку або ділянку за одиницю часу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Пасажиропотік"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Measurement"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Congestion"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#affectsSegment": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Seg_Vokzal_Rynok"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#affectsTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#eventTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-10-27T08:10:00"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#handledBy": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Dispatcher_01"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#capacity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Максимальна кількість пасажирів транспортного засобу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Vehicle"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "місткість"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#datasetName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Людиночитана назва джерела даних."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DataAsset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "назва набору даних"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#affectsSegment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Подія впливає на конкретну ділянку транспортної мережі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "впливає на ділянку"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#NetworkSegment"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasEvent"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Trip",
+      "https://knowledge.uni.lviv.ua/mobility#DelayedTrip"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#affectedByEvent": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#endsAt": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasDriver": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Driver_01"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasMeasurement": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Delay_9_0800"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Load_9_0800"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TravelTime_9_0800"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasState": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#State_Delayed_9"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasStopTime": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Politekhnika"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Rynok"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Vokzal"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#operatedBy": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#startsAt": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#tripId": [
+      {
+        "@value": "T090800"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#tripOfRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_9"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#usesVehicle": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Bus_2501"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#stopSequence",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Номер зупинки в послідовності рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "порядковий номер зупинки"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb56",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Passenger"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Driver"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Dispatcher"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#TransportAgency"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#delayMinutes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Відхилення фактичного часу відправлення від планового в хвилинах."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Delay"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "затримка, хв"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#State_OnTime_9_0830",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#OnTimeState"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stateOfTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#hasDriver",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс обслуговує конкретний водій."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має водія"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Driver"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#drivesTrip"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#departureTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Плановий час відправлення рейсу з зупинки."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "час відправлення"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#DecisionSupport",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Аналітичний процес, що поєднує прогнози й правила для вибору управлінської дії."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Підтримка рішень"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Analytics"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#partOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#TransitiveProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Обернене до hasPart транзитивне відношення належності цілому."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#MobilitySystem"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є частиною"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#MobilitySystem"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasPart"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#measurementOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Вимірювання стосується конкретного рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Measurement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є вимірюванням"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasMeasurement"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Forecast",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Аналітичний результат, що оцінює майбутній пасажиропотік, затримку або час у дорозі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Прогноз"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb17"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Analytics"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb17",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#forecastFor"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#GPSTracker",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6; GTFS realtime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Сенсор, що визначає координати, швидкість і час руху транспортного засобу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "GPS-трекер"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Sensor"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TravelTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Вимірювання тривалості проходження ділянки або виконання поїздки між зупинками."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Час у дорозі"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Measurement"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#personName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Людиночитане ім’я пасажира, водія або диспетчера."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Actor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ім’я учасника"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#longitude",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Географічна довгота зупинки в градусах."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "довгота"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#operatesTrip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Перевізник виконує конкретний рейс."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportAgency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "виконує рейс"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#operatedBy"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#WeatherEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "SIRI; ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Подія, за якої погодні умови знижують швидкість або надійність руху транспорту."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Погіршення погоди"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Roadwork",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Подія, що тимчасово обмежує пропускну здатність ділянки мережі через ремонтні роботи."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Ремонт дороги"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#isEndOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Зупинка є кінцевою для рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є завершенням"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#endsAt"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Trolleybus_1101",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Trolleybus"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#capacity": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 110
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#vehicleId": [
+      {
+        "@value": "TB1101"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb29",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#GTFSDataset"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#SIRIFeed"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#NeTExDataset"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#recommendationOfDecision",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рекомендація походить від управлінського рішення."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є рекомендацією рішення"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DecisionSupport"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasRecommendation"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Tram",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS route_type = 0"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейковий транспортний засіб, що рухається трамвайною колією у міській мережі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Трамвай"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Vehicle"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Politekhnika",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Stop",
+      "https://knowledge.uni.lviv.ua/mobility#AccessibleStop"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#latitude": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "49.8355"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#longitude": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "24.012"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#servedByRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_9"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopId": [
+      {
+        "@value": "S003"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopName": [
+      {
+        "@value": "Політехніка"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#wheelchairAccessible": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#passengerCount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Кількість валідованих пасажирів за інтервал спостереження."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#PassengerFlow"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "кількість пасажирів"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#hasState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс перебуває в конкретному стані виконання."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має стан"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportState"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#stateOfTrip"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#affectedByEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс зазнає впливу події на мережі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "зазнає впливу події"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#affectsTrip"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#OnTimeState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6; SIRI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Стан рейсу, за якого фактичний час виконання відповідає плановому часу розкладу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Стан за розкладом"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportState"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#agencyName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Офіційна назва транспортного перевізника."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportAgency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "назва перевізника"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#stopTimeOfTrip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Запис часу зупинки належить конкретному рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є часом рейсу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasStopTime"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Stop",
+      "https://knowledge.uni.lviv.ua/mobility#InterchangeStop",
+      "https://knowledge.uni.lviv.ua/mobility#AccessibleStop"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#latitude": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "49.8397"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#longitude": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "24.0045"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#servedByRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_25"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_31"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_9"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopId": [
+      {
+        "@value": "S001"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopName": [
+      {
+        "@value": "Вокзал"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#wheelchairAccessible": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Route_9",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#BusRoute",
+      "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#routeFrequency": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Frequency_R9"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#routeId": [
+      {
+        "@value": "9"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#routeType": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 3
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#servesStop": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Politekhnika"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TravelTime_9_0800",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#TravelTime"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#measurementOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#travelTimeMinutes": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 38
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Trolleybus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS route_type = 11"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний засіб з електроживленням від контактної мережі, що використовується на тролейбусних маршрутах."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Тролейбус"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Vehicle"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#isStartOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Зупинка є початковою для рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є початком"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#startsAt"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#TransportAgency"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#agencyName": [
+      {
+        "@value": "ЛьвівАвтобус"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#operatesTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#stopName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Людиночитана назва зупинки."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "назва зупинки"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#PassengerSurge",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6; SIRI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Подія, за якої попит на перевезення різко перевищує плановий пасажиропотік."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Сплеск пасажиропотоку"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#DataAsset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Ресурс, що містить структуровані дані про мережу, рух або пасажирів і використовується аналітикою."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Джерело даних"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#basedOnForecast",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рішення використовує конкретний прогноз."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DecisionSupport"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ґрунтується на прогнозі"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Forecast"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#supportsDecision"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#MobilitySystem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6; Domain Knowledge Hub"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Предметна область, що охоплює транспортну систему, дані, учасників і процеси прийняття рішень для управління міською мобільністю."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Інтелектуальна мобільність"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Calendar_2026",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#ServiceCalendar"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Будні 2026"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#validFrom": [
+      {
+        "@value": "2026-01-01"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#validTo": [
+      {
+        "@value": "2026-12-31"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#handledBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Подія опрацьована конкретним диспетчером."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "опрацьована диспетчером"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Dispatcher"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#respondsTo"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#stateOfTrip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Стан описує конкретний рейс."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є станом рейсу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasState"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#loadFactor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Відношення кількості пасажирів до місткості транспортного засобу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#LoadFactor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "коефіцієнт завантаженості"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#NeTExDataset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "NeTEx; Transmodel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Джерело даних, що містить XML-описи мережі, розкладів і тарифів за стандартом NeTEx."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Набір NeTEx"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DataAsset"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#CrowdedState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6; SIRI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Стан рейсу, за якого завантаженість перевищує допустимий рівень комфорту."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Стан перевантаження"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportState"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb52",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Bus"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Tram"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Trolleybus"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#forecastFor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Прогноз стосується конкретного рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Forecast"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "прогнозує рейс"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#forecastOfTrip"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Passenger_P02",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Passenger"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#personName": [
+      {
+        "@value": "Софія Бондар"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#AccessibleStop",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS stops.txt; schema:BusStop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Зупинка, обладнана для посадки та висадки маломобільних пасажирів, зокрема з ознакою доступності."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Доступна зупинка"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb1"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+          },
+          {
+            "@id": "_:na75acc11d363484db3408e57fc05ad8bb2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#hasValue": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#wheelchairAccessible"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Passenger",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6; schema:Person"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Учасник процесу, що користується транспортом і здійснює поїздку між зупинками."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Пасажир"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/Person"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Actor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://schema.org/Person"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation_R1",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Recommendation"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#forPassenger": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Passenger_P01"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#recommendationOfDecision": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Decision_D1"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#recommends": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_31"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Decision_D1",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#DecisionSupport"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#basedOnForecast": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Forecast_9_Peak"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasRecommendation": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation_R1"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility/data",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-10-27"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР7: models/onto.owl + models/onto_data.ttl"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "1.0"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#snapshotDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-10-27"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#snapshotName": [
+      {
+        "@value": "Domain Knowledge Hub — Lviv mobility"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#snapshotVersion": [
+      {
+        "@value": "1.0"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Congestion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Подія, що спричиняє зниження швидкості руху на ділянці мережі та збільшення затримки."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Затор"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#GTFS_Lviv",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#GTFSDataset"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#datasetDescribes": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Network_Lviv"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#datasetName": [
+      {
+        "@value": "GTFS Lviv 2026"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb46",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Congestion"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Roadwork"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#VehicleFailure"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#PassengerSurge"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#WeatherEvent"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Driver",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Учасник процесу, що керує транспортним засобом під час виконання рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Водій"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Actor"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#hasMeasurement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс має кількісні вимірювання затримки, завантаженості або часу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має вимірювання"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Measurement"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#measurementOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#PassengerCounter",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Сенсор, що вимірює кількість пасажирів у транспортному засобі або на зупинці."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Лічильник пасажирів"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Sensor"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#respondsTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Диспетчер реагує на подію в реальному часі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Dispatcher"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "реагує на подію"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#handledBy"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#System_Lviv",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Транспортна система Львова"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasPart": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Network_Lviv"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#headwayMinutes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Проміжок між послідовними відправленнями рейсів у хвилинах."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Frequency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "інтервал, хв"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Stop",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS stops.txt; schema:BusStop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний вузол, у якому пасажири здійснюють посадку або висадку, а транспортні засоби зупиняються за розкладом."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Зупинка"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/BusStop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportNode"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://schema.org/BusStop"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Driver_02",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Driver"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#drivesTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#personName": [
+      {
+        "@value": "Олена Коваль"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0830",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Trip"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#endsAt": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasState": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#State_OnTime_9_0830"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#operatedBy": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#startsAt": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#tripId": [
+      {
+        "@value": "T090830"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#tripOfRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_9"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#usesVehicle": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Bus_2502"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#operatedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс виконується транспортним перевізником."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "виконується перевізником"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportAgency"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#operatesTrip"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#drivesTrip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Водій виконує конкретний рейс."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Driver"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "керує рейсом"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasDriver"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#stopAtTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Зупинка має записи часу прибуття та відправлення."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має запис часу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#atStop"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Tram_0903",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Tram"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#assignedToTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#capacity": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 180
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#vehicleId": [
+      {
+        "@value": "T0903"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#affectsTrip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Подія спричиняє зміну виконання конкретного рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "впливає на рейс"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#affectedByEvent"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Dispatcher",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Учасник процесу, що контролює виконання рейсів і реагує на події в реальному часі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Диспетчер"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Actor"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#measures",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Сенсор формує конкретне вимірювання."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Sensor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "вимірює"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Measurement"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#measuredBy"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#validTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Остання дата дії календаря обслуговування."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#ServiceCalendar"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "дійсний до"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#hasStopTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс містить записи часу прибуття та відправлення на зупинках."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має зупиночний час"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#stopTimeOfTrip"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#ServiceCalendar",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS calendar.txt, calendar_dates.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Розклад, що визначає множину дат, у які доступне обслуговування маршруту."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Календар обслуговування"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Schedule"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#recommends",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рекомендація пропонує конкретний маршрут."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "рекомендує маршрут"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#recommendedBy"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#measuredBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Вимірювання отримане конкретним сенсором."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Measurement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "виміряне сенсором"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Sensor"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#measures"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#BusRoute",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS routes.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний маршрут, що обслуговується автобусами і має GTFS route_type = 3."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Автобусний маршрут"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#confidence",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Оцінка достовірності прогнозу від 0 до 1."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Forecast"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "впевненість прогнозу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Bus_2501",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Bus"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#assignedToTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#capacity": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 90
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#vehicleId": [
+      {
+        "@value": "B2501"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Delay",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6; SIRI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Вимірювання відхилення фактичного часу руху рейсу від планового часу розкладу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Затримка"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Measurement"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Analytics",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Процес обробки даних, що перетворює вимірювання на прогнози, оцінки та рекомендації."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Аналітика"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Seg_Vokzal_Rynok",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#NetworkSegment",
+      "https://knowledge.uni.lviv.ua/mobility#CongestedSegment"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Вокзал — Площа Ринок"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasEvent": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Politekhnika",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#StopTime"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#atStop": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Politekhnika"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#departureTime": [
+      {
+        "@value": "08:30:00"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopSequence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 3
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopTimeOfTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#hasRecommendation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рішення породжує конкретну рекомендацію."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DecisionSupport"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має рекомендацію"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#recommendationOfDecision"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#NetworkSegment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР5, ЛР6; GTFS shapes.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Частина транспортної мережі між двома сусідніми зупинками, що має час і відстань проходження."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Ділянка мережі"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/Place"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb18"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportNetwork"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://schema.org/Place"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb18",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasEvent"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Roadwork_Stryiska",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Roadwork"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#affectsSegment": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Seg_Rynok_Politekhnika"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#eventTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-10-27T07:00:00"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime_T31_Vokzal",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#StopTime"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#atStop": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#departureTime": [
+      {
+        "@value": "07:00:00"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopSequence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopTimeOfTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#usesVehicle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс виконується конкретним транспортним засобом."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "використовує транспортний засіб"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Vehicle"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#assignedToTrip"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#servedByRoute",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Зупинка обслуговується транспортним маршрутом."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "обслуговується маршрутом"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#servesStop"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#hasEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Ділянка мережі має пов’язану подію, що змінює умови руху."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#NetworkSegment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має подію"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#affectsSegment"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#travelTimeMinutes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Тривалість проходження ділянки або рейсу в хвилинах."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TravelTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "час у дорозі, хв"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#routeFrequency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Маршрут має заданий інтервал руху."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має інтервал"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Frequency"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#frequencyOfRoute"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#DelayedState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6; SIRI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Стан рейсу, за якого фактичний час виконання перевищує плановий час розкладу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Стан затримки"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportState"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Аналітичний результат, що пропонує пасажиру або диспетчеру конкретну дію щодо маршруту чи рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Рекомендація"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb19"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Analytics"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#recommends"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#hasTrip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Маршрут містить конкретні рейси, що його виконують."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має рейс"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#tripOfRoute"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#GPS_2501",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#GPSTracker"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#measures": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Delay_9_0800"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TravelTime_9_0800"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#sensorId": [
+      {
+        "@value": "GPS-2501"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#servesStop",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Маршрут обслуговує зупинку, на якій зупиняються його рейси."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "обслуговує зупинку"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#servedByRoute"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Driver_01",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Driver"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#drivesTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#personName": [
+      {
+        "@value": "Іван Петренко"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Validator_Vokzal",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#TicketValidator"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#measures": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Flow_Vokzal_0800"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#sensorId": [
+      {
+        "@value": "VAL-S001"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#forecastOfTrip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс має прогнозне значення."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має прогноз"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Forecast"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#forecastFor"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#NeTEx_Lviv",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#NeTExDataset"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#datasetDescribes": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Network_Lviv"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#datasetName": [
+      {
+        "@value": "NeTEx Lviv 2026"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Network_Lviv",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#TransportNetwork"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#partOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#System_Lviv"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Event",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6; schema:Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Зміна умов транспортного процесу, що виникає в часі та впливає на мережу або рейс."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Подія"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://schema.org/Event"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Bus_2502",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Bus"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#assignedToTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#capacity": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 85
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#vehicleId": [
+      {
+        "@value": "B2502"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Frequency_R9",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Frequency"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#frequencyOfRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_9"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#headwayMinutes": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 10
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#CongestedSegment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6; GTFS Reference 2026"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Ділянка мережі, на якій зафіксовано подію затору, що впливає на час руху."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Завантажена ділянка"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#NetworkSegment"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb5"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb5",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#intersectionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#NetworkSegment"
+          },
+          {
+            "@id": "_:na75acc11d363484db3408e57fc05ad8bb6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasEvent"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Congestion"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#DispatchDecision",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Аналітичний результат, що визначає управлінську дію диспетчера на подію або відхилення від розкладу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Диспетчерське рішення"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Analytics"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TransportAgency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS agency.txt; schema:Organization"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Організація, що надає транспортні послуги, володіє рухомим складом і публікує дані."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Перевізник"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/Organization"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Actor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://schema.org/Organization"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb33",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#DelayedState"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#OnTimeState"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#CrowdedState"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#GTFSDataset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS Reference 2026"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Джерело даних, що складається з CSV-файлів GTFS для опису маршрутів, рейсів, зупинок і розкладів."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Набір GTFS"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/Dataset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DataAsset"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://schema.org/Dataset"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb42",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#BusRoute"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#TramRoute"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#TrolleybusRoute"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS stop_times.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Запис розкладу про прибуття або відправлення рейсу на конкретній зупинці."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Зупиночний час"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb20"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Schedule"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb20",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#atStop"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#sensorId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Унікальний ідентифікатор пристрою вимірювання."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Sensor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ідентифікатор сенсора"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Frequency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS frequencies.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Запис розкладу про проміжок часу між послідовними відправленнями рейсів на маршруті."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Інтервал руху"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Schedule"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Seg_Rynok_Politekhnika",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#NetworkSegment"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Площа Ринок — Політехніка"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasEvent": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Roadwork_Stryiska"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#assignedToTrip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний засіб призначено на виконання рейсу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Vehicle"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "призначений на рейс"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#usesVehicle"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TramRoute",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS routes.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний маршрут, що обслуговується трамваями і має GTFS route_type = 0."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Трамвайний маршрут"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Frequency_R25",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Frequency"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#frequencyOfRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_25"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#headwayMinutes": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 15
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#State_Delayed_9",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#DelayedState"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stateOfTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Trip",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS trips.txt, stop_times.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Конкретне виконання маршруту в певний час, що складається з послідовності зупинок і зупиночних часів."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Рейс"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb22"
+      },
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb23"
+      },
+      {
+        "@id": "_:na75acc11d363484db3408e57fc05ad8bb24"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://schema.org/Trip"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb22",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Vehicle"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#usesVehicle"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb23",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasStopTime"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb24",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onClass": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportAgency"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#operatedBy"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#qualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#tripOfRoute",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс належить транспортному маршруту."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "є рейсом маршруту"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#hasTrip"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#VehicleFailure",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "SIRI; ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Подія, за якої транспортний засіб не може продовжити виконання рейсу без заміни."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Поломка транспортного засобу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Bus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS route_type = 3"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний засіб, що рухається автомобільною дорогою і використовується на автобусних маршрутах."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Автобус"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Vehicle"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#stopId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Унікальний ідентифікатор зупинки з GTFS stops.txt."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "ідентифікатор зупинки"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#supportsDecision",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Прогноз є підставою для управлінського рішення."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Forecast"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "підтримує рішення"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DecisionSupport"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#basedOnForecast"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#interchangesWith",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "http://www.w3.org/2002/07/owl#SymmetricProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Симетричне відношення між зупинками, між якими можлива пересадка."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має пересадку з"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#endsAt",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Рейс завершується на заданій зупинці."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "завершується на"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#isEndOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TransportState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6; SIRI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Стан виконання рейсу, що характеризує його відповідність розкладу та завантаженість."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Стан рейсу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Schedule",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS calendar.txt, frequencies.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "План виконання рейсів, що визначає дати, часи та інтервали руху на маршрутах."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Розклад"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#datasetDescribes",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Джерело даних описує транспортну мережу."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#DataAsset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "описує мережу"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportNetwork"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#describedByDataset"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#RouteShape",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS shapes.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Геометрія шляху руху транспортного засобу, подана послідовністю координат."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Форма маршруту"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb25",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#NetworkSegment"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Measurement",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Кількісна характеристика транспортного процесу, отримана від сенсора або обчислена аналітикою."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Вимірювання"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#wheelchairAccessible",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Ознака доступності зупинки для маломобільних пасажирів."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "доступність"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TransportNode",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Елемент транспортної мережі, що є зупинкою або пересадочним вузлом і з’єднує ділянки мережі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Транспортний вузол"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportNetwork"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Passenger_P01",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Passenger"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#passengerRecommendation": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation_R1"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#personName": [
+      {
+        "@value": "Андрій Мельник"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#atStop",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Запис часу зупинки стосується конкретної зупинки."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#StopTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "на зупинці"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#stopAtTime"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#passengerRecommendation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Пасажир отримує конкретну рекомендацію."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Passenger"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "має рекомендацію"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Recommendation"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#forPassenger"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Route_25",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#BusRoute",
+      "https://knowledge.uni.lviv.ua/mobility#TransportRoute"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#routeId": [
+      {
+        "@value": "25"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#routeType": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 3
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#servesStop": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Universytet"
+      },
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#validFrom",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Перша дата дії календаря обслуговування."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#ServiceCalendar"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "дійсний від"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#eventTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "http://www.w3.org/2002/07/owl#FunctionalProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Дата й час виникнення події на мережі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "час події"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#LoadFactor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Вимірювання частки використаної місткості транспортного засобу на рейсі."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Завантаженість"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Measurement"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#State_OnTime_25",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#OnTimeState"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stateOfTrip": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TicketValidator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Сенсор, що фіксує факти валідації квитків і посадки пасажирів на зупинці."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Валідатор квитків"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Sensor"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#TransportNetwork",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "ЛР4, ЛР6; GTFS Reference 2026"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Транспортна система, що складається з вузлів, ділянок і маршрутів та утворює граф міста."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Транспортна мережа"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Trip_31_0700",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Trip"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#endsAt": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasDriver": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Driver_02"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#hasState": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#State_OnTime_31"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#operatedBy": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Agency_LvivElektrotrans"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#startsAt": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#tripId": [
+      {
+        "@value": "T310700"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#tripOfRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_31"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#usesVehicle": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Tram_0903"
+      }
+    ]
+  },
+  {
+    "@id": "_:na75acc11d363484db3408e57fc05ad8bb37",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#PassengerFlow"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#LoadFactor"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#Delay"
+          },
+          {
+            "@id": "https://knowledge.uni.lviv.ua/mobility#TravelTime"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Fare",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "GTFS fare_attributes.txt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "uk",
+        "@value": "Правила та вартість оплати проїзду, що застосовуються до маршрутів або поїздок."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "uk",
+        "@value": "Тариф"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#TransportSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@value": "Невмержицький Максим Миколайович"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "uk",
+        "@value": "Онтологія інтелектуального управління міською мобільністю"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://schema.org/"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "1.0"
+      }
+    ]
+  },
+  {
+    "@id": "https://knowledge.uni.lviv.ua/mobility#Stop_Universytet",
+    "@type": [
+      "https://knowledge.uni.lviv.ua/mobility#Stop"
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#latitude": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "49.838"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#longitude": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "24.022"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#servedByRoute": [
+      {
+        "@id": "https://knowledge.uni.lviv.ua/mobility#Route_25"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopId": [
+      {
+        "@value": "S004"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#stopName": [
+      {
+        "@value": "Університет"
+      }
+    ],
+    "https://knowledge.uni.lviv.ua/mobility#wheelchairAccessible": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ]
+  }
+]

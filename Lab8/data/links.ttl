@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mm: <https://knowledge.uni.lviv.ua/mobility#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mm:Bus dcterms:source <https://www.wikidata.org/wiki/Q5638> ;
+    rdfs:comment "Клас Bus відповідає загальному поняттю bus; у Wikidata це транспортний засіб, у нас — клас рухомого складу."@uk ;
+    skos:closeMatch wd:Q5638 ;
+    mm:linkConfidence 0.95 ;
+    mm:linkExternalLabel "bus" ;
+    mm:linkStatus "verified" ;
+    mm:linkVerifiedAt "2026-10-27"^^xsd:date .
+
+mm:GTFSDataset dcterms:source <https://www.wikidata.org/wiki/Q113379415>,
+        <https://www.wikidata.org/wiki/Q5532250> ;
+    rdfs:comment "GTFS feed: локальний клас описує набір даних, а Wikidata — конкретний feed; зв’язок збережено як closeMatch."@uk,
+        "General Transit Feed Specification: точний збіг стандарту GTFS, на який посилається онтологія."@uk ;
+    skos:closeMatch wd:Q113379415 ;
+    skos:exactMatch wd:Q5532250 ;
+    mm:linkConfidence 0.72,
+        0.98 ;
+    mm:linkExternalLabel "General Transit Feed Specification",
+        "General Transit Feed Specification feed" ;
+    mm:linkStatus "verified" ;
+    mm:linkVerifiedAt "2026-10-27"^^xsd:date .
+
+mm:Network_Lviv dcterms:source <https://www.wikidata.org/wiki/Q36036> ;
+    rdfs:comment "Місто Львів: збіг назви, адміністративного центру та предметної області; перевірено опис Wikidata."@uk ;
+    skos:exactMatch wd:Q36036 ;
+    mm:linkConfidence 0.97 ;
+    mm:linkExternalLabel "Lviv" ;
+    mm:linkStatus "verified" ;
+    mm:linkVerifiedAt "2026-10-27"^^xsd:date .
+
+mm:Stop dcterms:source <https://www.wikidata.org/wiki/Q548662> ;
+    rdfs:comment "public transport stop: локальний клас Stop охоплює зупинки громадського транспорту."@uk ;
+    skos:closeMatch wd:Q548662 ;
+    mm:linkConfidence 0.88 ;
+    mm:linkExternalLabel "public transport stop" ;
+    mm:linkStatus "verified" ;
+    mm:linkVerifiedAt "2026-10-27"^^xsd:date .
+
+mm:Tram dcterms:source <https://www.wikidata.org/wiki/Q3407658> ;
+    rdfs:comment "Клас Tram відповідає поняттю tram; Wikidata описує транспортний засіб, локальний клас — тип ТЗ."@uk ;
+    skos:closeMatch wd:Q3407658 ;
+    mm:linkConfidence 0.90 ;
+    mm:linkExternalLabel "tram" ;
+    mm:linkStatus "verified" ;
+    mm:linkVerifiedAt "2026-10-27"^^xsd:date .
+
+mm:TransportSystem dcterms:source <https://www.wikidata.org/wiki/Q178512> ;
+    rdfs:comment "public transport: локальний TransportSystem ширший за послугу, тому closeMatch, не exactMatch."@uk ;
+    skos:closeMatch wd:Q178512 ;
+    mm:linkConfidence 0.80 ;
+    mm:linkExternalLabel "public transport" ;
+    mm:linkStatus "verified" ;
+    mm:linkVerifiedAt "2026-10-27"^^xsd:date .
+

@@ -1,0 +1,1259 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mm: <https://knowledge.uni.lviv.ua/mobility#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mm:Calendar_2026 a mm:ServiceCalendar ;
+    rdfs:label "Будні 2026"@uk ;
+    mm:validFrom "2026-01-01" ;
+    mm:validTo "2026-12-31" .
+
+mm:DispatchDecision a owl:Class ;
+    rdfs:label "Диспетчерське рішення"@uk ;
+    dcterms:source "ЛР6" ;
+    rdfs:comment "Аналітичний результат, що визначає управлінську дію диспетчера на подію або відхилення від розкладу."@uk ;
+    rdfs:subClassOf mm:Analytics .
+
+mm:Fare a owl:Class ;
+    rdfs:label "Тариф"@uk ;
+    dcterms:source "GTFS fare_attributes.txt" ;
+    rdfs:comment "Правила та вартість оплати проїзду, що застосовуються до маршрутів або поїздок."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:Frequency_R25 a mm:Frequency ;
+    mm:frequencyOfRoute mm:Route_25 ;
+    mm:headwayMinutes 15 .
+
+mm:GTFS_Lviv a mm:GTFSDataset ;
+    mm:datasetDescribes mm:Network_Lviv ;
+    mm:datasetName "GTFS Lviv 2026" .
+
+mm:NeTEx_Lviv a mm:NeTExDataset ;
+    mm:datasetDescribes mm:Network_Lviv ;
+    mm:datasetName "NeTEx Lviv 2026" .
+
+mm:Passenger_P02 a mm:Passenger ;
+    mm:personName "Софія Бондар" .
+
+mm:RouteShape a owl:Class ;
+    rdfs:label "Форма маршруту"@uk ;
+    dcterms:source "GTFS shapes.txt" ;
+    rdfs:comment "Геометрія шляху руху транспортного засобу, подана послідовністю координат."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:SIRI_Lviv a mm:SIRIFeed ;
+    mm:datasetDescribes mm:Network_Lviv ;
+    mm:datasetName "SIRI Lviv realtime" .
+
+mm:State_Delayed_9 a mm:DelayedState ;
+    mm:stateOfTrip mm:Trip_9_0800 .
+
+mm:StopTime_T31_Vokzal a mm:StopTime ;
+    mm:atStop mm:Stop_Vokzal ;
+    mm:departureTime "07:00:00" ;
+    mm:stopSequence 1 ;
+    mm:stopTimeOfTrip mm:Trip_31_0700 .
+
+mm:Trolleybus_1101 a mm:Trolleybus ;
+    mm:capacity 110 ;
+    mm:vehicleId "TB1101" .
+
+mm:agencyName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "назва перевізника"@uk ;
+    rdfs:comment "Офіційна назва транспортного перевізника."@uk ;
+    rdfs:domain mm:TransportAgency ;
+    rdfs:range xsd:string .
+
+mm:capacity a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "місткість"@uk ;
+    rdfs:comment "Максимальна кількість пасажирів транспортного засобу."@uk ;
+    rdfs:domain mm:Vehicle ;
+    rdfs:range xsd:integer .
+
+mm:confidence a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "впевненість прогнозу"@uk ;
+    rdfs:comment "Оцінка достовірності прогнозу від 0 до 1."@uk ;
+    rdfs:domain mm:Forecast ;
+    rdfs:range xsd:decimal .
+
+mm:datasetName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "назва набору даних"@uk ;
+    rdfs:comment "Людиночитана назва джерела даних."@uk ;
+    rdfs:domain mm:DataAsset ;
+    rdfs:range xsd:string .
+
+mm:delayMinutes a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "затримка, хв"@uk ;
+    rdfs:comment "Відхилення фактичного часу відправлення від планового в хвилинах."@uk ;
+    rdfs:domain mm:Delay ;
+    rdfs:range xsd:integer .
+
+mm:departureTime a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "час відправлення"@uk ;
+    rdfs:comment "Плановий час відправлення рейсу з зупинки."@uk ;
+    rdfs:domain mm:StopTime ;
+    rdfs:range xsd:string .
+
+mm:eventTime a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "час події"@uk ;
+    rdfs:comment "Дата й час виникнення події на мережі."@uk ;
+    rdfs:domain mm:Event ;
+    rdfs:range xsd:dateTime .
+
+mm:headwayMinutes a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "інтервал, хв"@uk ;
+    rdfs:comment "Проміжок між послідовними відправленнями рейсів у хвилинах."@uk ;
+    rdfs:domain mm:Frequency ;
+    rdfs:range xsd:integer .
+
+mm:interchangesWith a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "має пересадку з"@uk ;
+    rdfs:comment "Симетричне відношення між зупинками, між якими можлива пересадка."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range mm:Stop .
+
+mm:latitude a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "широта"@uk ;
+    rdfs:comment "Географічна широта зупинки в градусах."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range xsd:decimal .
+
+mm:loadFactor a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "коефіцієнт завантаженості"@uk ;
+    rdfs:comment "Відношення кількості пасажирів до місткості транспортного засобу."@uk ;
+    rdfs:domain mm:LoadFactor ;
+    rdfs:range xsd:decimal .
+
+mm:locatedAt a owl:ObjectProperty ;
+    rdfs:label "розташована в"@uk ;
+    rdfs:comment "Зупинка розташована в місці, поданому зовнішнім словником Schema.org."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range schema:Place .
+
+mm:longitude a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "довгота"@uk ;
+    rdfs:comment "Географічна довгота зупинки в градусах."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range xsd:decimal .
+
+mm:passengerCount a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "кількість пасажирів"@uk ;
+    rdfs:comment "Кількість валідованих пасажирів за інтервал спостереження."@uk ;
+    rdfs:domain mm:PassengerFlow ;
+    rdfs:range xsd:integer .
+
+mm:personName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ім’я учасника"@uk ;
+    rdfs:comment "Людиночитане ім’я пасажира, водія або диспетчера."@uk ;
+    rdfs:domain mm:Actor ;
+    rdfs:range xsd:string .
+
+mm:routeId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ідентифікатор маршруту"@uk ;
+    rdfs:comment "Унікальний ідентифікатор маршруту з GTFS routes.txt."@uk ;
+    rdfs:domain mm:TransportRoute ;
+    rdfs:range xsd:string .
+
+mm:routeType a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "тип маршруту"@uk ;
+    rdfs:comment "Код виду транспорту GTFS: 3 — автобус, 0 — трамвай, 11 — тролейбус."@uk ;
+    rdfs:domain mm:TransportRoute ;
+    rdfs:range xsd:integer .
+
+mm:sensorId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ідентифікатор сенсора"@uk ;
+    rdfs:comment "Унікальний ідентифікатор пристрою вимірювання."@uk ;
+    rdfs:domain mm:Sensor ;
+    rdfs:range xsd:string .
+
+mm:stopId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ідентифікатор зупинки"@uk ;
+    rdfs:comment "Унікальний ідентифікатор зупинки з GTFS stops.txt."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range xsd:string .
+
+mm:stopName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "назва зупинки"@uk ;
+    rdfs:comment "Людиночитана назва зупинки."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range xsd:string .
+
+mm:stopSequence a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "порядковий номер зупинки"@uk ;
+    rdfs:comment "Номер зупинки в послідовності рейсу."@uk ;
+    rdfs:domain mm:StopTime ;
+    rdfs:range xsd:integer .
+
+mm:travelTimeMinutes a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "час у дорозі, хв"@uk ;
+    rdfs:comment "Тривалість проходження ділянки або рейсу в хвилинах."@uk ;
+    rdfs:domain mm:TravelTime ;
+    rdfs:range xsd:integer .
+
+mm:tripId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ідентифікатор рейсу"@uk ;
+    rdfs:comment "Унікальний ідентифікатор рейсу з GTFS trips.txt."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range xsd:string .
+
+mm:validFrom a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "дійсний від"@uk ;
+    rdfs:comment "Перша дата дії календаря обслуговування."@uk ;
+    rdfs:domain mm:ServiceCalendar ;
+    rdfs:range xsd:string .
+
+mm:validTo a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "дійсний до"@uk ;
+    rdfs:comment "Остання дата дії календаря обслуговування."@uk ;
+    rdfs:domain mm:ServiceCalendar ;
+    rdfs:range xsd:string .
+
+mm:vehicleId a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ідентифікатор транспортного засобу"@uk ;
+    rdfs:comment "Унікальний ідентифікатор рухомого складу."@uk ;
+    rdfs:domain mm:Vehicle ;
+    rdfs:range xsd:string .
+
+<https://knowledge.uni.lviv.ua/mobility/data> a owl:Ontology ;
+    dcterms:modified "2026-10-27"^^xsd:date ;
+    dcterms:source "ЛР7: models/onto.owl + models/onto_data.ttl" ;
+    owl:imports <https://knowledge.uni.lviv.ua/mobility> ;
+    owl:versionInfo "1.0" ;
+    mm:snapshotDate "2026-10-27"^^xsd:date ;
+    mm:snapshotName "Domain Knowledge Hub — Lviv mobility" ;
+    mm:snapshotVersion "1.0" .
+
+<https://knowledge.uni.lviv.ua/mobility> a owl:Ontology ;
+    dcterms:creator "Невмержицький Максим Миколайович" ;
+    dcterms:title "Онтологія інтелектуального управління міською мобільністю"@uk ;
+    rdfs:seeAlso schema: ;
+    owl:versionInfo "1.0" .
+
+mm:Agency_LvivElektrotrans a mm:TransportAgency ;
+    mm:agencyName "ЛьвівЕлектротранс" ;
+    mm:operatesTrip mm:Trip_31_0700 .
+
+mm:Bus_2501 a mm:Bus ;
+    mm:assignedToTrip mm:Trip_9_0800 ;
+    mm:capacity 90 ;
+    mm:vehicleId "B2501" .
+
+mm:CongestedSegment a owl:Class ;
+    rdfs:label "Завантажена ділянка"@uk ;
+    dcterms:source "ЛР6; GTFS Reference 2026" ;
+    rdfs:comment "Ділянка мережі, на якій зафіксовано подію затору, що впливає на час руху."@uk ;
+    rdfs:subClassOf mm:NetworkSegment ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( mm:NetworkSegment [ a owl:Restriction ;
+                        owl:onProperty mm:hasEvent ;
+                        owl:someValuesFrom mm:Congestion ] ) ] .
+
+mm:Counter_2501 a mm:PassengerCounter ;
+    mm:measures mm:Load_9_0800 ;
+    mm:sensorId "CNT-2501" .
+
+mm:CrowdedState a owl:Class ;
+    rdfs:label "Стан перевантаження"@uk ;
+    dcterms:source "ЛР6; SIRI" ;
+    rdfs:comment "Стан рейсу, за якого завантаженість перевищує допустимий рівень комфорту."@uk ;
+    rdfs:subClassOf mm:TransportState .
+
+mm:Decision_D1 a mm:DecisionSupport ;
+    mm:basedOnForecast mm:Forecast_9_Peak ;
+    mm:hasRecommendation mm:Recommendation_R1 .
+
+mm:DelayedTrip a owl:Class ;
+    rdfs:label "Затриманий рейс"@uk ;
+    dcterms:source "ЛР6; SIRI" ;
+    rdfs:comment "Рейс, фактичний стан якого відхилено від розкладу щонайменше на порогову величину затримки."@uk ;
+    rdfs:subClassOf mm:Trip ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( mm:Trip [ a owl:Restriction ;
+                        owl:onProperty mm:hasState ;
+                        owl:someValuesFrom mm:DelayedState ] ) ] .
+
+mm:Dispatcher_01 a mm:Dispatcher ;
+    mm:personName "Марія Шевчук" ;
+    mm:respondsTo mm:Congestion_Horodotska .
+
+mm:Driver_01 a mm:Driver ;
+    mm:drivesTrip mm:Trip_9_0800 ;
+    mm:personName "Іван Петренко" .
+
+mm:Driver_02 a mm:Driver ;
+    mm:drivesTrip mm:Trip_31_0700 ;
+    mm:personName "Олена Коваль" .
+
+mm:Flow_Vokzal_0800 a mm:PassengerFlow ;
+    mm:measuredBy mm:Validator_Vokzal ;
+    mm:passengerCount 120 .
+
+mm:Forecast_9_Peak a mm:Forecast ;
+    mm:confidence 0.87 ;
+    mm:forecastFor mm:Trip_9_0800 .
+
+mm:Frequency_R9 a mm:Frequency ;
+    mm:frequencyOfRoute mm:Route_9 ;
+    mm:headwayMinutes 10 .
+
+mm:GPSTracker a owl:Class ;
+    rdfs:label "GPS-трекер"@uk ;
+    dcterms:source "ЛР6; GTFS realtime" ;
+    rdfs:comment "Сенсор, що визначає координати, швидкість і час руху транспортного засобу."@uk ;
+    rdfs:subClassOf mm:Sensor .
+
+mm:GPS_2501 a mm:GPSTracker ;
+    mm:measures mm:Delay_9_0800,
+        mm:TravelTime_9_0800 ;
+    mm:sensorId "GPS-2501" .
+
+mm:PassengerCounter a owl:Class ;
+    rdfs:label "Лічильник пасажирів"@uk ;
+    dcterms:source "ЛР6" ;
+    rdfs:comment "Сенсор, що вимірює кількість пасажирів у транспортному засобі або на зупинці."@uk ;
+    rdfs:subClassOf mm:Sensor .
+
+mm:PassengerSurge a owl:Class ;
+    rdfs:label "Сплеск пасажиропотоку"@uk ;
+    dcterms:source "ЛР6; SIRI" ;
+    rdfs:comment "Подія, за якої попит на перевезення різко перевищує плановий пасажиропотік."@uk ;
+    rdfs:subClassOf mm:Event .
+
+mm:Passenger_P01 a mm:Passenger ;
+    mm:passengerRecommendation mm:Recommendation_R1 ;
+    mm:personName "Андрій Мельник" .
+
+mm:Roadwork_Stryiska a mm:Roadwork ;
+    mm:affectsSegment mm:Seg_Rynok_Politekhnika ;
+    mm:eventTime "2026-10-27T07:00:00"^^xsd:dateTime .
+
+mm:Seg_Rynok_Politekhnika a mm:NetworkSegment ;
+    rdfs:label "Площа Ринок — Політехніка"@uk ;
+    mm:hasEvent mm:Roadwork_Stryiska .
+
+mm:Seg_Vokzal_Rynok a mm:CongestedSegment,
+        mm:NetworkSegment ;
+    rdfs:label "Вокзал — Площа Ринок"@uk ;
+    mm:hasEvent mm:Congestion_Horodotska .
+
+mm:State_OnTime_25 a mm:OnTimeState ;
+    mm:stateOfTrip mm:Trip_25_0815 .
+
+mm:State_OnTime_31 a mm:OnTimeState ;
+    mm:stateOfTrip mm:Trip_31_0700 .
+
+mm:State_OnTime_9_0830 a mm:OnTimeState ;
+    mm:stateOfTrip mm:Trip_9_0830 .
+
+mm:StopTime_T9_Politekhnika a mm:StopTime ;
+    mm:atStop mm:Stop_Politekhnika ;
+    mm:departureTime "08:30:00" ;
+    mm:stopSequence 3 ;
+    mm:stopTimeOfTrip mm:Trip_9_0800 .
+
+mm:StopTime_T9_Rynok a mm:StopTime ;
+    mm:atStop mm:Stop_Rynok ;
+    mm:departureTime "08:20:00" ;
+    mm:stopSequence 2 ;
+    mm:stopTimeOfTrip mm:Trip_9_0800 .
+
+mm:StopTime_T9_Vokzal a mm:StopTime ;
+    mm:atStop mm:Stop_Vokzal ;
+    mm:departureTime "08:00:00" ;
+    mm:stopSequence 1 ;
+    mm:stopTimeOfTrip mm:Trip_9_0800 .
+
+mm:System_Lviv a mm:TransportSystem ;
+    rdfs:label "Транспортна система Львова"@uk ;
+    mm:hasPart mm:Network_Lviv .
+
+mm:TicketValidator a owl:Class ;
+    rdfs:label "Валідатор квитків"@uk ;
+    dcterms:source "ЛР6" ;
+    rdfs:comment "Сенсор, що фіксує факти валідації квитків і посадки пасажирів на зупинці."@uk ;
+    rdfs:subClassOf mm:Sensor .
+
+mm:Tram_0903 a mm:Tram ;
+    mm:assignedToTrip mm:Trip_31_0700 ;
+    mm:capacity 180 ;
+    mm:vehicleId "T0903" .
+
+mm:TransportNode a owl:Class ;
+    rdfs:label "Транспортний вузол"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Елемент транспортної мережі, що є зупинкою або пересадочним вузлом і з’єднує ділянки мережі."@uk ;
+    rdfs:subClassOf mm:TransportNetwork .
+
+mm:TrolleybusRoute a owl:Class ;
+    rdfs:label "Тролейбусний маршрут"@uk ;
+    dcterms:source "GTFS routes.txt" ;
+    rdfs:comment "Транспортний маршрут, що обслуговується тролейбусами і має GTFS route_type = 11."@uk ;
+    rdfs:subClassOf mm:TransportRoute .
+
+mm:Validator_Vokzal a mm:TicketValidator ;
+    mm:measures mm:Flow_Vokzal_0800 ;
+    mm:sensorId "VAL-S001" .
+
+mm:VehicleFailure a owl:Class ;
+    rdfs:label "Поломка транспортного засобу"@uk ;
+    dcterms:source "SIRI; ЛР6" ;
+    rdfs:comment "Подія, за якої транспортний засіб не може продовжити виконання рейсу без заміни."@uk ;
+    rdfs:subClassOf mm:Event .
+
+mm:WeatherEvent a owl:Class ;
+    rdfs:label "Погіршення погоди"@uk ;
+    dcterms:source "SIRI; ЛР6" ;
+    rdfs:comment "Подія, за якої погодні умови знижують швидкість або надійність руху транспорту."@uk ;
+    rdfs:subClassOf mm:Event .
+
+mm:affectedByEvent a owl:ObjectProperty ;
+    rdfs:label "зазнає впливу події"@uk ;
+    rdfs:comment "Рейс зазнає впливу події на мережі."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:Event ;
+    owl:inverseOf mm:affectsTrip .
+
+mm:affectsSegment a owl:ObjectProperty ;
+    rdfs:label "впливає на ділянку"@uk ;
+    rdfs:comment "Подія впливає на конкретну ділянку транспортної мережі."@uk ;
+    rdfs:domain mm:Event ;
+    rdfs:range mm:NetworkSegment ;
+    owl:inverseOf mm:hasEvent .
+
+mm:affectsTrip a owl:ObjectProperty ;
+    rdfs:label "впливає на рейс"@uk ;
+    rdfs:comment "Подія спричиняє зміну виконання конкретного рейсу."@uk ;
+    rdfs:domain mm:Event ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:affectedByEvent .
+
+mm:assignedToTrip a owl:ObjectProperty ;
+    rdfs:label "призначений на рейс"@uk ;
+    rdfs:comment "Транспортний засіб призначено на виконання рейсу."@uk ;
+    rdfs:domain mm:Vehicle ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:usesVehicle .
+
+mm:basedOnForecast a owl:ObjectProperty ;
+    rdfs:label "ґрунтується на прогнозі"@uk ;
+    rdfs:comment "Рішення використовує конкретний прогноз."@uk ;
+    rdfs:domain mm:DecisionSupport ;
+    rdfs:range mm:Forecast ;
+    owl:inverseOf mm:supportsDecision .
+
+mm:datasetDescribes a owl:ObjectProperty ;
+    rdfs:label "описує мережу"@uk ;
+    rdfs:comment "Джерело даних описує транспортну мережу."@uk ;
+    rdfs:domain mm:DataAsset ;
+    rdfs:range mm:TransportNetwork ;
+    owl:inverseOf mm:describedByDataset .
+
+mm:describedByDataset a owl:ObjectProperty ;
+    rdfs:label "описана джерелом"@uk ;
+    rdfs:comment "Транспортна мережа описана конкретним джерелом даних."@uk ;
+    rdfs:domain mm:TransportNetwork ;
+    rdfs:range mm:DataAsset ;
+    owl:inverseOf mm:datasetDescribes .
+
+mm:drivesTrip a owl:ObjectProperty ;
+    rdfs:label "керує рейсом"@uk ;
+    rdfs:comment "Водій виконує конкретний рейс."@uk ;
+    rdfs:domain mm:Driver ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:hasDriver .
+
+mm:endsAt a owl:ObjectProperty ;
+    rdfs:label "завершується на"@uk ;
+    rdfs:comment "Рейс завершується на заданій зупинці."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:Stop ;
+    owl:inverseOf mm:isEndOf .
+
+mm:forPassenger a owl:ObjectProperty ;
+    rdfs:label "призначена пасажиру"@uk ;
+    rdfs:comment "Рекомендація адресована конкретному пасажиру."@uk ;
+    rdfs:domain mm:Recommendation ;
+    rdfs:range mm:Passenger ;
+    owl:inverseOf mm:passengerRecommendation .
+
+mm:forecastOfTrip a owl:ObjectProperty ;
+    rdfs:label "має прогноз"@uk ;
+    rdfs:comment "Рейс має прогнозне значення."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:Forecast ;
+    owl:inverseOf mm:forecastFor .
+
+mm:frequencyOfRoute a owl:ObjectProperty ;
+    rdfs:label "є інтервалом маршруту"@uk ;
+    rdfs:comment "Запис інтервалу руху належить конкретному маршруту."@uk ;
+    rdfs:domain mm:Frequency ;
+    rdfs:range mm:TransportRoute ;
+    owl:inverseOf mm:routeFrequency .
+
+mm:handledBy a owl:ObjectProperty ;
+    rdfs:label "опрацьована диспетчером"@uk ;
+    rdfs:comment "Подія опрацьована конкретним диспетчером."@uk ;
+    rdfs:domain mm:Event ;
+    rdfs:range mm:Dispatcher ;
+    owl:inverseOf mm:respondsTo .
+
+mm:hasDriver a owl:ObjectProperty ;
+    rdfs:label "має водія"@uk ;
+    rdfs:comment "Рейс обслуговує конкретний водій."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:Driver ;
+    owl:inverseOf mm:drivesTrip .
+
+mm:hasMeasurement a owl:ObjectProperty ;
+    rdfs:label "має вимірювання"@uk ;
+    rdfs:comment "Рейс має кількісні вимірювання затримки, завантаженості або часу."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:Measurement ;
+    owl:inverseOf mm:measurementOf .
+
+mm:hasPart a owl:ObjectProperty ;
+    rdfs:label "містить"@uk ;
+    rdfs:comment "Відношення ціле-частина між елементами предметної області."@uk ;
+    rdfs:domain mm:MobilitySystem ;
+    rdfs:range mm:MobilitySystem ;
+    owl:inverseOf mm:partOf .
+
+mm:hasRecommendation a owl:ObjectProperty ;
+    rdfs:label "має рекомендацію"@uk ;
+    rdfs:comment "Рішення породжує конкретну рекомендацію."@uk ;
+    rdfs:domain mm:DecisionSupport ;
+    rdfs:range mm:Recommendation ;
+    owl:inverseOf mm:recommendationOfDecision .
+
+mm:hasTrip a owl:ObjectProperty ;
+    rdfs:label "має рейс"@uk ;
+    rdfs:comment "Маршрут містить конкретні рейси, що його виконують."@uk ;
+    rdfs:domain mm:TransportRoute ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:tripOfRoute .
+
+mm:isEndOf a owl:ObjectProperty ;
+    rdfs:label "є завершенням"@uk ;
+    rdfs:comment "Зупинка є кінцевою для рейсу."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:endsAt .
+
+mm:isStartOf a owl:ObjectProperty ;
+    rdfs:label "є початком"@uk ;
+    rdfs:comment "Зупинка є початковою для рейсу."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:startsAt .
+
+mm:measuredBy a owl:ObjectProperty ;
+    rdfs:label "виміряне сенсором"@uk ;
+    rdfs:comment "Вимірювання отримане конкретним сенсором."@uk ;
+    rdfs:domain mm:Measurement ;
+    rdfs:range mm:Sensor ;
+    owl:inverseOf mm:measures .
+
+mm:measurementOf a owl:ObjectProperty ;
+    rdfs:label "є вимірюванням"@uk ;
+    rdfs:comment "Вимірювання стосується конкретного рейсу."@uk ;
+    rdfs:domain mm:Measurement ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:hasMeasurement .
+
+mm:measures a owl:ObjectProperty ;
+    rdfs:label "вимірює"@uk ;
+    rdfs:comment "Сенсор формує конкретне вимірювання."@uk ;
+    rdfs:domain mm:Sensor ;
+    rdfs:range mm:Measurement ;
+    owl:inverseOf mm:measuredBy .
+
+mm:operatesTrip a owl:ObjectProperty ;
+    rdfs:label "виконує рейс"@uk ;
+    rdfs:comment "Перевізник виконує конкретний рейс."@uk ;
+    rdfs:domain mm:TransportAgency ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:operatedBy .
+
+mm:partOf a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "є частиною"@uk ;
+    rdfs:comment "Обернене до hasPart транзитивне відношення належності цілому."@uk ;
+    rdfs:domain mm:MobilitySystem ;
+    rdfs:range mm:MobilitySystem ;
+    owl:inverseOf mm:hasPart .
+
+mm:passengerRecommendation a owl:ObjectProperty ;
+    rdfs:label "має рекомендацію"@uk ;
+    rdfs:comment "Пасажир отримує конкретну рекомендацію."@uk ;
+    rdfs:domain mm:Passenger ;
+    rdfs:range mm:Recommendation ;
+    owl:inverseOf mm:forPassenger .
+
+mm:recommendationOfDecision a owl:ObjectProperty ;
+    rdfs:label "є рекомендацією рішення"@uk ;
+    rdfs:comment "Рекомендація походить від управлінського рішення."@uk ;
+    rdfs:domain mm:Recommendation ;
+    rdfs:range mm:DecisionSupport ;
+    owl:inverseOf mm:hasRecommendation .
+
+mm:recommendedBy a owl:ObjectProperty ;
+    rdfs:label "рекомендований"@uk ;
+    rdfs:comment "Маршрут пропонується рекомендацією."@uk ;
+    rdfs:domain mm:TransportRoute ;
+    rdfs:range mm:Recommendation ;
+    owl:inverseOf mm:recommends .
+
+mm:respondsTo a owl:ObjectProperty ;
+    rdfs:label "реагує на подію"@uk ;
+    rdfs:comment "Диспетчер реагує на подію в реальному часі."@uk ;
+    rdfs:domain mm:Dispatcher ;
+    rdfs:range mm:Event ;
+    owl:inverseOf mm:handledBy .
+
+mm:routeFrequency a owl:ObjectProperty ;
+    rdfs:label "має інтервал"@uk ;
+    rdfs:comment "Маршрут має заданий інтервал руху."@uk ;
+    rdfs:domain mm:TransportRoute ;
+    rdfs:range mm:Frequency ;
+    owl:inverseOf mm:frequencyOfRoute .
+
+mm:startsAt a owl:ObjectProperty ;
+    rdfs:label "починається на"@uk ;
+    rdfs:comment "Рейс починається на заданій зупинці."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:Stop ;
+    owl:inverseOf mm:isStartOf .
+
+mm:stateOfTrip a owl:ObjectProperty ;
+    rdfs:label "є станом рейсу"@uk ;
+    rdfs:comment "Стан описує конкретний рейс."@uk ;
+    rdfs:domain mm:TransportState ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:hasState .
+
+mm:stopAtTime a owl:ObjectProperty ;
+    rdfs:label "має запис часу"@uk ;
+    rdfs:comment "Зупинка має записи часу прибуття та відправлення."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range mm:StopTime ;
+    owl:inverseOf mm:atStop .
+
+mm:stopTimeOfTrip a owl:ObjectProperty ;
+    rdfs:label "є часом рейсу"@uk ;
+    rdfs:comment "Запис часу зупинки належить конкретному рейсу."@uk ;
+    rdfs:domain mm:StopTime ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:hasStopTime .
+
+mm:supportsDecision a owl:ObjectProperty ;
+    rdfs:label "підтримує рішення"@uk ;
+    rdfs:comment "Прогноз є підставою для управлінського рішення."@uk ;
+    rdfs:domain mm:Forecast ;
+    rdfs:range mm:DecisionSupport ;
+    owl:inverseOf mm:basedOnForecast .
+
+mm:tripOfRoute a owl:ObjectProperty ;
+    rdfs:label "є рейсом маршруту"@uk ;
+    rdfs:comment "Рейс належить транспортному маршруту."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:TransportRoute ;
+    owl:inverseOf mm:hasTrip .
+
+mm:wheelchairAccessible a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "доступність"@uk ;
+    rdfs:comment "Ознака доступності зупинки для маломобільних пасажирів."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range xsd:boolean .
+
+mm:AccessibleStop a owl:Class ;
+    rdfs:label "Доступна зупинка"@uk ;
+    dcterms:source "GTFS stops.txt; schema:BusStop" ;
+    rdfs:comment "Зупинка, обладнана для посадки та висадки маломобільних пасажирів, зокрема з ознакою доступності."@uk ;
+    rdfs:subClassOf mm:Stop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( mm:Stop [ a owl:Restriction ;
+                        owl:hasValue true ;
+                        owl:onProperty mm:wheelchairAccessible ] ) ] .
+
+mm:Bus_2502 a mm:Bus ;
+    mm:assignedToTrip mm:Trip_25_0815,
+        mm:Trip_9_0830 ;
+    mm:capacity 85 ;
+    mm:vehicleId "B2502" .
+
+mm:Delay_9_0800 a mm:Delay ;
+    mm:delayMinutes 12 ;
+    mm:measuredBy mm:GPS_2501 ;
+    mm:measurementOf mm:Trip_9_0800 .
+
+mm:GTFSDataset a owl:Class ;
+    rdfs:label "Набір GTFS"@uk ;
+    dcterms:source "GTFS Reference 2026" ;
+    rdfs:comment "Джерело даних, що складається з CSV-файлів GTFS для опису маршрутів, рейсів, зупинок і розкладів."@uk ;
+    rdfs:seeAlso schema:Dataset ;
+    rdfs:subClassOf mm:DataAsset ;
+    skos:closeMatch schema:Dataset .
+
+mm:InterchangeStop a owl:Class ;
+    rdfs:label "Пересадочна зупинка"@uk ;
+    dcterms:source "ЛР4, ЛР6; GTFS transfers.txt" ;
+    rdfs:comment "Зупинка, яку обслуговують щонайменше два різні транспортні маршрути і на якій можлива пересадка."@uk ;
+    rdfs:seeAlso schema:BusStop ;
+    rdfs:subClassOf mm:Stop ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( mm:Stop [ a owl:Restriction ;
+                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                        owl:onClass mm:TransportRoute ;
+                        owl:onProperty mm:servedByRoute ] ) ] ;
+    skos:closeMatch schema:BusStop .
+
+mm:Load_9_0800 a mm:LoadFactor ;
+    mm:loadFactor 0.92 ;
+    mm:measuredBy mm:Counter_2501 ;
+    mm:measurementOf mm:Trip_9_0800 .
+
+mm:NeTExDataset a owl:Class ;
+    rdfs:label "Набір NeTEx"@uk ;
+    dcterms:source "NeTEx; Transmodel" ;
+    rdfs:comment "Джерело даних, що містить XML-описи мережі, розкладів і тарифів за стандартом NeTEx."@uk ;
+    rdfs:subClassOf mm:DataAsset .
+
+mm:Recommendation_R1 a mm:Recommendation ;
+    mm:forPassenger mm:Passenger_P01 ;
+    mm:recommendationOfDecision mm:Decision_D1 ;
+    mm:recommends mm:Route_31 .
+
+mm:Roadwork a owl:Class ;
+    rdfs:label "Ремонт дороги"@uk ;
+    dcterms:source "ЛР6" ;
+    rdfs:comment "Подія, що тимчасово обмежує пропускну здатність ділянки мережі через ремонтні роботи."@uk ;
+    rdfs:subClassOf mm:Event .
+
+mm:SIRIFeed a owl:Class ;
+    rdfs:label "Потік SIRI"@uk ;
+    dcterms:source "SIRI; Transmodel" ;
+    rdfs:comment "Джерело даних, що містить повідомлення SIRI про рух транспорту в реальному часі."@uk ;
+    rdfs:subClassOf mm:DataAsset .
+
+mm:Stop_Politekhnika a mm:AccessibleStop,
+        mm:Stop ;
+    mm:latitude 49.8355 ;
+    mm:longitude 24.012 ;
+    mm:servedByRoute mm:Route_9 ;
+    mm:stopId "S003" ;
+    mm:stopName "Політехніка" ;
+    mm:wheelchairAccessible true .
+
+mm:Stop_Universytet a mm:Stop ;
+    mm:latitude 49.838 ;
+    mm:longitude 24.022 ;
+    mm:servedByRoute mm:Route_25 ;
+    mm:stopId "S004" ;
+    mm:stopName "Університет" ;
+    mm:wheelchairAccessible false .
+
+mm:Tram a owl:Class ;
+    rdfs:label "Трамвай"@uk ;
+    dcterms:source "GTFS route_type = 0" ;
+    rdfs:comment "Рейковий транспортний засіб, що рухається трамвайною колією у міській мережі."@uk ;
+    rdfs:subClassOf mm:Vehicle .
+
+mm:TramRoute a owl:Class ;
+    rdfs:label "Трамвайний маршрут"@uk ;
+    dcterms:source "GTFS routes.txt" ;
+    rdfs:comment "Транспортний маршрут, що обслуговується трамваями і має GTFS route_type = 0."@uk ;
+    rdfs:subClassOf mm:TransportRoute .
+
+mm:TravelTime_9_0800 a mm:TravelTime ;
+    mm:measurementOf mm:Trip_9_0800 ;
+    mm:travelTimeMinutes 38 .
+
+mm:Trolleybus a owl:Class ;
+    rdfs:label "Тролейбус"@uk ;
+    dcterms:source "GTFS route_type = 11" ;
+    rdfs:comment "Транспортний засіб з електроживленням від контактної мережі, що використовується на тролейбусних маршрутах."@uk ;
+    rdfs:subClassOf mm:Vehicle .
+
+mm:atStop a owl:ObjectProperty ;
+    rdfs:label "на зупинці"@uk ;
+    rdfs:comment "Запис часу зупинки стосується конкретної зупинки."@uk ;
+    rdfs:domain mm:StopTime ;
+    rdfs:range mm:Stop ;
+    owl:inverseOf mm:stopAtTime .
+
+mm:forecastFor a owl:ObjectProperty ;
+    rdfs:label "прогнозує рейс"@uk ;
+    rdfs:comment "Прогноз стосується конкретного рейсу."@uk ;
+    rdfs:domain mm:Forecast ;
+    rdfs:range mm:Trip ;
+    owl:inverseOf mm:forecastOfTrip .
+
+mm:hasState a owl:ObjectProperty ;
+    rdfs:label "має стан"@uk ;
+    rdfs:comment "Рейс перебуває в конкретному стані виконання."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:TransportState ;
+    owl:inverseOf mm:stateOfTrip .
+
+mm:hasStopTime a owl:ObjectProperty ;
+    rdfs:label "має зупиночний час"@uk ;
+    rdfs:comment "Рейс містить записи часу прибуття та відправлення на зупинках."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:StopTime ;
+    owl:inverseOf mm:stopTimeOfTrip .
+
+mm:operatedBy a owl:ObjectProperty ;
+    rdfs:label "виконується перевізником"@uk ;
+    rdfs:comment "Рейс виконується транспортним перевізником."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:TransportAgency ;
+    owl:inverseOf mm:operatesTrip .
+
+mm:recommends a owl:ObjectProperty ;
+    rdfs:label "рекомендує маршрут"@uk ;
+    rdfs:comment "Рекомендація пропонує конкретний маршрут."@uk ;
+    rdfs:domain mm:Recommendation ;
+    rdfs:range mm:TransportRoute ;
+    owl:inverseOf mm:recommendedBy .
+
+mm:servedByRoute a owl:ObjectProperty ;
+    rdfs:label "обслуговується маршрутом"@uk ;
+    rdfs:comment "Зупинка обслуговується транспортним маршрутом."@uk ;
+    rdfs:domain mm:Stop ;
+    rdfs:range mm:TransportRoute ;
+    owl:inverseOf mm:servesStop .
+
+mm:servesStop a owl:ObjectProperty ;
+    rdfs:label "обслуговує зупинку"@uk ;
+    rdfs:comment "Маршрут обслуговує зупинку, на якій зупиняються його рейси."@uk ;
+    rdfs:domain mm:TransportRoute ;
+    rdfs:range mm:Stop ;
+    owl:inverseOf mm:servedByRoute .
+
+mm:usesVehicle a owl:ObjectProperty ;
+    rdfs:label "використовує транспортний засіб"@uk ;
+    rdfs:comment "Рейс виконується конкретним транспортним засобом."@uk ;
+    rdfs:domain mm:Trip ;
+    rdfs:range mm:Vehicle ;
+    owl:inverseOf mm:assignedToTrip .
+
+mm:Agency_LvivAvtobus a mm:TransportAgency ;
+    mm:agencyName "ЛьвівАвтобус" ;
+    mm:operatesTrip mm:Trip_25_0815,
+        mm:Trip_9_0800,
+        mm:Trip_9_0830 .
+
+mm:Bus a owl:Class ;
+    rdfs:label "Автобус"@uk ;
+    dcterms:source "GTFS route_type = 3" ;
+    rdfs:comment "Транспортний засіб, що рухається автомобільною дорогою і використовується на автобусних маршрутах."@uk ;
+    rdfs:subClassOf mm:Vehicle .
+
+mm:BusRoute a owl:Class ;
+    rdfs:label "Автобусний маршрут"@uk ;
+    dcterms:source "GTFS routes.txt" ;
+    rdfs:comment "Транспортний маршрут, що обслуговується автобусами і має GTFS route_type = 3."@uk ;
+    rdfs:subClassOf mm:TransportRoute .
+
+mm:Congestion a owl:Class ;
+    rdfs:label "Затор"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Подія, що спричиняє зниження швидкості руху на ділянці мережі та збільшення затримки."@uk ;
+    rdfs:subClassOf mm:Event .
+
+mm:Congestion_Horodotska a mm:Congestion ;
+    mm:affectsSegment mm:Seg_Vokzal_Rynok ;
+    mm:affectsTrip mm:Trip_9_0800 ;
+    mm:eventTime "not-a-date" ;
+    mm:handledBy mm:Dispatcher_01 .
+
+mm:Delay a owl:Class ;
+    rdfs:label "Затримка"@uk ;
+    dcterms:source "ЛР4, ЛР6; SIRI" ;
+    rdfs:comment "Вимірювання відхилення фактичного часу руху рейсу від планового часу розкладу."@uk ;
+    rdfs:subClassOf mm:Measurement .
+
+mm:DelayedState a owl:Class ;
+    rdfs:label "Стан затримки"@uk ;
+    dcterms:source "ЛР6; SIRI" ;
+    rdfs:comment "Стан рейсу, за якого фактичний час виконання перевищує плановий час розкладу."@uk ;
+    rdfs:subClassOf mm:TransportState .
+
+mm:LoadFactor a owl:Class ;
+    rdfs:label "Завантаженість"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Вимірювання частки використаної місткості транспортного засобу на рейсі."@uk ;
+    rdfs:subClassOf mm:Measurement .
+
+mm:PassengerFlow a owl:Class ;
+    rdfs:label "Пасажиропотік"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Вимірювання кількості пасажирів, що проходять через зупинку або ділянку за одиницю часу."@uk ;
+    rdfs:subClassOf mm:Measurement .
+
+mm:Schedule a owl:Class ;
+    rdfs:label "Розклад"@uk ;
+    dcterms:source "GTFS calendar.txt, frequencies.txt" ;
+    rdfs:comment "План виконання рейсів, що визначає дати, часи та інтервали руху на маршрутах."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:ServiceCalendar a owl:Class ;
+    rdfs:label "Календар обслуговування"@uk ;
+    dcterms:source "GTFS calendar.txt, calendar_dates.txt" ;
+    rdfs:comment "Розклад, що визначає множину дат, у які доступне обслуговування маршруту."@uk ;
+    rdfs:subClassOf mm:Schedule .
+
+mm:TravelTime a owl:Class ;
+    rdfs:label "Час у дорозі"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Вимірювання тривалості проходження ділянки або виконання поїздки між зупинками."@uk ;
+    rdfs:subClassOf mm:Measurement .
+
+mm:hasEvent a owl:ObjectProperty ;
+    rdfs:label "має подію"@uk ;
+    rdfs:comment "Ділянка мережі має пов’язану подію, що змінює умови руху."@uk ;
+    rdfs:domain mm:NetworkSegment ;
+    rdfs:range mm:Event ;
+    owl:inverseOf mm:affectsSegment .
+
+mm:Analytics a owl:Class ;
+    rdfs:label "Аналітика"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Процес обробки даних, що перетворює вимірювання на прогнози, оцінки та рекомендації."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:Dispatcher a owl:Class ;
+    rdfs:label "Диспетчер"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Учасник процесу, що контролює виконання рейсів і реагує на події в реальному часі."@uk ;
+    rdfs:subClassOf mm:Actor .
+
+mm:Network_Lviv a mm:TransportNetwork ;
+    mm:partOf mm:System_Lviv .
+
+mm:OnTimeState a owl:Class ;
+    rdfs:label "Стан за розкладом"@uk ;
+    dcterms:source "ЛР6; SIRI" ;
+    rdfs:comment "Стан рейсу, за якого фактичний час виконання відповідає плановому часу розкладу."@uk ;
+    rdfs:subClassOf mm:TransportState .
+
+mm:Route_25 a mm:BusRoute,
+        mm:TransportRoute ;
+    mm:hasTrip mm:Trip_25_0815 ;
+    mm:routeId "25" ;
+    mm:routeType 3 ;
+    mm:servesStop mm:Stop_Universytet,
+        mm:Stop_Vokzal .
+
+mm:Route_31 a mm:TramRoute,
+        mm:TransportRoute ;
+    mm:hasTrip mm:Trip_31_0700 ;
+    mm:routeId "31" ;
+    mm:routeType 0 ;
+    mm:servesStop mm:Stop_Rynok,
+        mm:Stop_Vokzal .
+
+mm:Trip_25_0815 a mm:Trip ;
+    mm:endsAt mm:Stop_Universytet ;
+    mm:hasState mm:State_OnTime_25 ;
+    mm:operatedBy mm:Agency_LvivAvtobus ;
+    mm:startsAt mm:Stop_Vokzal ;
+    mm:tripId "T250815" ;
+    mm:tripOfRoute mm:Route_25 ;
+    mm:usesVehicle mm:Bus_2502 .
+
+mm:Trip_9_0830 a mm:Trip ;
+    mm:endsAt mm:Stop_Rynok ;
+    mm:hasState mm:State_OnTime_9_0830 ;
+    mm:operatedBy mm:Agency_LvivAvtobus ;
+    mm:startsAt mm:Stop_Vokzal ;
+    mm:tripId "T090830" ;
+    mm:tripOfRoute mm:Route_9 ;
+    mm:usesVehicle mm:Bus_2502 .
+
+mm:Actor a owl:Class ;
+    rdfs:label "Учасник процесу"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Особа або організація, що бере участь у транспортному процесі та прийнятті рішень."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:DecisionSupport a owl:Class ;
+    rdfs:label "Підтримка рішень"@uk ;
+    dcterms:source "ЛР6" ;
+    rdfs:comment "Аналітичний процес, що поєднує прогнози й правила для вибору управлінської дії."@uk ;
+    rdfs:subClassOf mm:Analytics .
+
+mm:Driver a owl:Class ;
+    rdfs:label "Водій"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Учасник процесу, що керує транспортним засобом під час виконання рейсу."@uk ;
+    rdfs:subClassOf mm:Actor .
+
+mm:Frequency a owl:Class ;
+    rdfs:label "Інтервал руху"@uk ;
+    dcterms:source "GTFS frequencies.txt" ;
+    rdfs:comment "Запис розкладу про проміжок часу між послідовними відправленнями рейсів на маршруті."@uk ;
+    rdfs:subClassOf mm:Schedule .
+
+mm:MobilitySystem a owl:Class ;
+    rdfs:label "Інтелектуальна мобільність"@uk ;
+    dcterms:source "ЛР4, ЛР6; Domain Knowledge Hub" ;
+    rdfs:comment "Предметна область, що охоплює транспортну систему, дані, учасників і процеси прийняття рішень для управління міською мобільністю."@uk .
+
+mm:Passenger a owl:Class ;
+    rdfs:label "Пасажир"@uk ;
+    dcterms:source "ЛР4, ЛР6; schema:Person" ;
+    rdfs:comment "Учасник процесу, що користується транспортом і здійснює поїздку між зупинками."@uk ;
+    rdfs:seeAlso schema:Person ;
+    rdfs:subClassOf mm:Actor ;
+    skos:closeMatch schema:Person .
+
+mm:TransportState a owl:Class ;
+    rdfs:label "Стан рейсу"@uk ;
+    dcterms:source "ЛР6; SIRI" ;
+    rdfs:comment "Стан виконання рейсу, що характеризує його відповідність розкладу та завантаженість."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:Forecast a owl:Class ;
+    rdfs:label "Прогноз"@uk ;
+    dcterms:source "ЛР6" ;
+    rdfs:comment "Аналітичний результат, що оцінює майбутній пасажиропотік, затримку або час у дорозі."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty mm:forecastFor ;
+            owl:someValuesFrom mm:Trip ],
+        mm:Analytics .
+
+mm:Route_9 a mm:BusRoute,
+        mm:TransportRoute ;
+    mm:hasTrip mm:Trip_9_0800,
+        mm:Trip_9_0830 ;
+    mm:routeFrequency mm:Frequency_R9 ;
+    mm:routeId "9" ;
+    mm:routeType 3 ;
+    mm:servesStop mm:Stop_Politekhnika,
+        mm:Stop_Rynok,
+        mm:Stop_Vokzal .
+
+mm:Sensor a owl:Class ;
+    rdfs:label "Сенсор"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Пристрій, що автоматично вимірює стан транспортного процесу та передає дані в систему."@uk ;
+    rdfs:subClassOf mm:DataAsset .
+
+mm:Stop_Rynok a mm:InterchangeStop,
+        mm:Stop ;
+    mm:latitude 49.8419 ;
+    mm:longitude 24.0315 ;
+    mm:servedByRoute mm:Route_31,
+        mm:Route_9 ;
+    mm:stopId "S002" ;
+    mm:stopName "Площа Ринок" ;
+    mm:wheelchairAccessible false .
+
+mm:TransportNetwork a owl:Class ;
+    rdfs:label "Транспортна мережа"@uk ;
+    dcterms:source "ЛР4, ЛР6; GTFS Reference 2026" ;
+    rdfs:comment "Транспортна система, що складається з вузлів, ділянок і маршрутів та утворює граф міста."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:Trip_31_0700 a mm:Trip ;
+    mm:endsAt mm:Stop_Rynok ;
+    mm:hasDriver mm:Driver_02 ;
+    mm:hasState mm:State_OnTime_31 ;
+    mm:operatedBy mm:Agency_LvivElektrotrans ;
+    mm:startsAt mm:Stop_Vokzal ;
+    mm:tripId "T310700" ;
+    mm:tripOfRoute mm:Route_31 ;
+    mm:usesVehicle mm:Tram_0903 .
+
+mm:DataAsset a owl:Class ;
+    rdfs:label "Джерело даних"@uk ;
+    dcterms:source "ЛР4, ЛР6" ;
+    rdfs:comment "Ресурс, що містить структуровані дані про мережу, рух або пасажирів і використовується аналітикою."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:NetworkSegment a owl:Class ;
+    rdfs:label "Ділянка мережі"@uk ;
+    dcterms:source "ЛР5, ЛР6; GTFS shapes.txt" ;
+    rdfs:comment "Частина транспортної мережі між двома сусідніми зупинками, що має час і відстань проходження."@uk ;
+    rdfs:seeAlso schema:Place ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom mm:Event ;
+            owl:onProperty mm:hasEvent ],
+        mm:TransportNetwork ;
+    skos:closeMatch schema:Place .
+
+mm:Recommendation a owl:Class ;
+    rdfs:label "Рекомендація"@uk ;
+    dcterms:source "ЛР6" ;
+    rdfs:comment "Аналітичний результат, що пропонує пасажиру або диспетчеру конкретну дію щодо маршруту чи рейсу."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty mm:recommends ;
+            owl:someValuesFrom mm:TransportRoute ],
+        mm:Analytics .
+
+mm:TransportAgency a owl:Class ;
+    rdfs:label "Перевізник"@uk ;
+    dcterms:source "GTFS agency.txt; schema:Organization" ;
+    rdfs:comment "Організація, що надає транспортні послуги, володіє рухомим складом і публікує дані."@uk ;
+    rdfs:seeAlso schema:Organization ;
+    rdfs:subClassOf mm:Actor ;
+    skos:closeMatch schema:Organization .
+
+mm:Measurement a owl:Class ;
+    rdfs:label "Вимірювання"@uk ;
+    dcterms:source "ЛР6" ;
+    rdfs:comment "Кількісна характеристика транспортного процесу, отримана від сенсора або обчислена аналітикою."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:Vehicle a owl:Class ;
+    rdfs:label "Транспортний засіб"@uk ;
+    dcterms:source "ЛР4, ЛР6; GTFS trips.txt" ;
+    rdfs:comment "Рухомий склад, що виконує рейси на маршрутах і має ідентифікатор та пасажиромісткість."@uk ;
+    rdfs:subClassOf mm:TransportSystem .
+
+mm:Stop_Vokzal a mm:AccessibleStop,
+        mm:InterchangeStop,
+        mm:Stop ;
+    mm:latitude 49.8397 ;
+    mm:longitude 24.0045 ;
+    mm:servedByRoute mm:Route_25,
+        mm:Route_31,
+        mm:Route_9 ;
+    mm:stopId "VOKZAL" ;
+    mm:stopName "Вокзал" ;
+    mm:wheelchairAccessible true .
+
+mm:StopTime a owl:Class ;
+    rdfs:label "Зупиночний час"@uk ;
+    dcterms:source "GTFS stop_times.txt" ;
+    rdfs:comment "Запис розкладу про прибуття або відправлення рейсу на конкретній зупинці."@uk ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass mm:Stop ;
+            owl:onProperty mm:atStop ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        mm:Schedule .
+
+mm:Event a owl:Class ;
+    rdfs:label "Подія"@uk ;
+    dcterms:source "ЛР4, ЛР6; schema:Event" ;
+    rdfs:comment "Зміна умов транспортного процесу, що виникає в часі та впливає на мережу або рейс."@uk ;
+    rdfs:seeAlso schema:Event ;
+    rdfs:subClassOf mm:TransportSystem ;
+    skos:closeMatch schema:Event .
+
+mm:TransportSystem a owl:Class ;
+    rdfs:label "Транспортна система"@uk ;
+    dcterms:source "ЛР4, ЛР6; GTFS Reference 2026" ;
+    rdfs:comment "Система, що об’єднує транспортну мережу, рухомий склад, рейси, учасників і управлінські процеси міста."@uk ;
+    rdfs:subClassOf mm:MobilitySystem .
+
+mm:Trip_9_0800 a mm:DelayedTrip,
+        mm:Trip ;
+    mm:affectedByEvent mm:Congestion_Horodotska ;
+    mm:endsAt mm:Stop_Rynok ;
+    mm:hasDriver mm:Driver_01 ;
+    mm:hasMeasurement mm:Delay_9_0800,
+        mm:Load_9_0800,
+        mm:TravelTime_9_0800 ;
+    mm:hasStopTime mm:StopTime_T9_Politekhnika,
+        mm:StopTime_T9_Rynok,
+        mm:StopTime_T9_Vokzal ;
+    mm:operatedBy mm:Agency_LvivAvtobus ;
+    mm:startsAt mm:Stop_Vokzal ;
+    mm:tripId "T090800" ;
+    mm:tripOfRoute mm:Route_9 ;
+    mm:usesVehicle mm:Bus_2501 .
+
+mm:TransportRoute a owl:Class ;
+    rdfs:label "Транспортний маршрут"@uk ;
+    dcterms:source "GTFS routes.txt; schema:Route" ;
+    rdfs:comment "Упорядкована послідовність зупинок, що обслуговується рейсами під спільним ідентифікатором."@uk ;
+    rdfs:seeAlso schema:Route ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty mm:servesStop ;
+            owl:someValuesFrom mm:Stop ],
+        mm:TransportNetwork ;
+    skos:closeMatch schema:Route .
+
+mm:Stop a owl:Class ;
+    rdfs:label "Зупинка"@uk ;
+    dcterms:source "GTFS stops.txt; schema:BusStop" ;
+    rdfs:comment "Транспортний вузол, у якому пасажири здійснюють посадку або висадку, а транспортні засоби зупиняються за розкладом."@uk ;
+    rdfs:seeAlso schema:BusStop ;
+    rdfs:subClassOf mm:TransportNode ;
+    skos:closeMatch schema:BusStop .
+
+mm:Trip a owl:Class ;
+    rdfs:label "Рейс"@uk ;
+    dcterms:source "GTFS trips.txt, stop_times.txt" ;
+    rdfs:comment "Конкретне виконання маршруту в певний час, що складається з послідовності зупинок і зупиночних часів."@uk ;
+    rdfs:seeAlso schema:Trip ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass mm:Vehicle ;
+            owl:onProperty mm:usesVehicle ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty mm:hasStopTime ;
+            owl:someValuesFrom mm:StopTime ],
+        [ a owl:Restriction ;
+            owl:onClass mm:TransportAgency ;
+            owl:onProperty mm:operatedBy ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        mm:TransportSystem ;
+    skos:closeMatch schema:Trip .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mm:Stop mm:NetworkSegment mm:TransportRoute ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mm:GTFSDataset mm:SIRIFeed mm:NeTExDataset ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mm:DelayedState mm:OnTimeState mm:CrowdedState ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mm:PassengerFlow mm:LoadFactor mm:Delay mm:TravelTime ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mm:BusRoute mm:TramRoute mm:TrolleybusRoute ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mm:Congestion mm:Roadwork mm:VehicleFailure mm:PassengerSurge mm:WeatherEvent ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mm:Bus mm:Tram mm:Trolleybus ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mm:Passenger mm:Driver mm:Dispatcher mm:TransportAgency ) .
+

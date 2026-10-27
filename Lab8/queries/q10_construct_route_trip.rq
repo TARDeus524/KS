@@ -1,0 +1,13 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+CONSTRUCT {
+  ?route mm:hasTrip ?trip .
+  ?trip mm:startsAt ?start ;
+        mm:endsAt ?end .
+}
+WHERE {
+  ?route a mm:TransportRoute ;
+         mm:hasTrip ?trip .
+  ?trip mm:startsAt ?start ;
+        mm:endsAt ?end .
+}

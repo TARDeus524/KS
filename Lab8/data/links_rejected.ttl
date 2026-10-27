@@ -1,0 +1,23 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mm: <https://knowledge.uni.lviv.ua/mobility#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mm:Network_Lviv dcterms:source <https://www.wikidata.org/wiki/Q164193> ;
+    rdfs:comment "Lviv Oblast — адміністративна область, а не транспортна мережа міста; кандидат відхилено після V1."@uk ;
+    skos:closeMatch wd:Q164193 ;
+    mm:linkConfidence 0.30 ;
+    mm:linkExternalLabel "Lviv Oblast" ;
+    mm:linkStatus "rejected" ;
+    mm:linkVerifiedAt "2026-10-27"^^xsd:date .
+
+mm:Stop_Vokzal dcterms:source <https://www.wikidata.org/wiki/Q4271066> ;
+    rdfs:comment "Lviv Bus terminal — окремий автобусний термінал, а не залізнична/пересадочна зупинка Вокзал; sameAs був би хибним."@uk ;
+    skos:closeMatch wd:Q4271066 ;
+    mm:linkConfidence 0.25 ;
+    mm:linkExternalLabel "Lviv Bus terminal" ;
+    mm:linkStatus "rejected" ;
+    mm:linkVerifiedAt "2026-10-27"^^xsd:date .
+

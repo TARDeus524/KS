@@ -1,0 +1,11 @@
+{
+  "triples": 1146,
+  "subjects": 245,
+  "entities_typed": 185,
+  "jsonld_nodes": 209,
+  "jsonld_entities": 185,
+  "classes": 62,
+  "individuals": 52,
+  "version": "1.0",
+  "date": "2026-10-27"
+}

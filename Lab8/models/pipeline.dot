@@ -1,0 +1,14 @@
+digraph G {
+rankdir=LR; bgcolor="white"; fontname="DejaVu Sans"; nodesep=0.25; ranksep=0.35;
+node [shape=box, style="rounded,filled", fillcolor="#EAF2F8", color="#2C3E50", fontname="DejaVu Sans", fontsize=11, margin="0.12,0.07"];
+edge [color="#2C3E50", arrowsize=0.7, fontname="DejaVu Sans", fontsize=9];
+prompt [label="Питання +\nсхема"];
+llm [label="LLM\nчернетка SPARQL"];
+parser [label="Парсер\nrdflib"];
+schema [label="Перевірка\nсхеми mm:"];
+exec [label="Fuseki\nLIMIT 100"];
+cmp [label="Порівняння\nз еталоном"];
+prompt -> llm -> parser -> schema -> exec -> cmp;
+schema -> stop [label="відхилено", style=dashed, color="#C0392B", fontcolor="#C0392B"];
+stop [label="звіт про\nпомилку", fillcolor="#FDEDEC", color="#C0392B"];
+}

@@ -1,0 +1,7 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+SELECT DISTINCT ?stop
+WHERE {
+  ?stop mm:wheelchairAccessible true .
+}
+ORDER BY ?stop

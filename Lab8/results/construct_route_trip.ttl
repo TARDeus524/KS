@@ -1,0 +1,27 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mm:      <https://knowledge.uni.lviv.ua/mobility#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <https://schema.org/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd:      <http://www.wikidata.org/entity/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+mm:Route_9  mm:hasTrip  mm:Trip_9_0830 , mm:Trip_9_0800 .
+
+mm:Trip_9_0830  mm:endsAt  mm:Stop_Rynok;
+        mm:startsAt  mm:Stop_Vokzal .
+
+mm:Trip_31_0700  mm:endsAt  mm:Stop_Rynok;
+        mm:startsAt  mm:Stop_Vokzal .
+
+mm:Route_25  mm:hasTrip  mm:Trip_25_0815 .
+
+mm:Route_31  mm:hasTrip  mm:Trip_31_0700 .
+
+mm:Trip_9_0800  mm:endsAt  mm:Stop_Rynok;
+        mm:startsAt  mm:Stop_Vokzal .
+
+mm:Trip_25_0815  mm:endsAt  mm:Stop_Universytet;
+        mm:startsAt  mm:Stop_Vokzal .

@@ -1,0 +1,203 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix mm: <https://knowledge.uni.lviv.ua/mobility#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mm:StopShape a sh:NodeShape ;
+    sh:targetClass mm:Stop ;
+    sh:property [
+        sh:path mm:stopId ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:pattern "^S[0-9]{3}$" ;
+        sh:message "stopId має бути один рядок формату S###"
+    ] ;
+    sh:property [
+        sh:path mm:stopName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Кожна зупинка повинна мати назву"
+    ] ;
+    sh:property [
+        sh:path mm:latitude ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 49.7 ;
+        sh:maxInclusive 49.9 ;
+        sh:message "Широта Львова має бути в діапазоні 49.7–49.9"
+    ] ;
+    sh:property [
+        sh:path mm:longitude ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 23.9 ;
+        sh:maxInclusive 24.1 ;
+        sh:message "Довгота Львова має бути в діапазоні 23.9–24.1"
+    ] ;
+    sh:property [
+        sh:path mm:wheelchairAccessible ;
+        sh:minCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:message "Ознака доступності має бути boolean"
+    ] ;
+    sh:property [
+        sh:path mm:servedByRoute ;
+        sh:minCount 1 ;
+        sh:class mm:TransportRoute ;
+        sh:nodeKind sh:IRI ;
+        sh:message "Зупинка повинна обслуговуватися щонайменше одним маршрутом"
+    ] .
+
+mm:TripShape a sh:NodeShape ;
+    sh:targetClass mm:Trip ;
+    sh:property [
+        sh:path mm:tripId ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:pattern "^T[0-9]{6}$" ;
+        sh:message "tripId має бути один рядок формату T######"
+    ] ;
+    sh:property [
+        sh:path mm:tripOfRoute ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class mm:TransportRoute ;
+        sh:message "Рейс повинен належати рівно одному маршруту"
+    ] ;
+    sh:property [
+        sh:path mm:hasState ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class mm:TransportState ;
+        sh:message "Рейс повинен мати рівно один стан"
+    ] ;
+    sh:property [
+        sh:path mm:usesVehicle ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class mm:Vehicle ;
+        sh:message "Рейс повинен використовувати рівно один транспортний засіб"
+    ] ;
+    sh:property [
+        sh:path mm:startsAt ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class mm:Stop ;
+        sh:message "Рейс повинен мати початкову зупинку"
+    ] ;
+    sh:property [
+        sh:path mm:endsAt ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class mm:Stop ;
+        sh:message "Рейс повинен мати кінцеву зупинку"
+    ] .
+
+mm:RouteShape a sh:NodeShape ;
+    sh:targetClass mm:TransportRoute ;
+    sh:property [
+        sh:path mm:routeId ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:pattern "^[0-9]+$" ;
+        sh:message "routeId має бути числовим рядком"
+    ] ;
+    sh:property [
+        sh:path mm:routeType ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:in ( 0 3 11 ) ;
+        sh:message "routeType має бути 0, 3 або 11"
+    ] ;
+    sh:property [
+        sh:path mm:servesStop ;
+        sh:minCount 1 ;
+        sh:class mm:Stop ;
+        sh:message "Маршрут повинен обслуговувати хоча б одну зупинку"
+    ] ;
+    sh:property [
+        sh:path mm:hasTrip ;
+        sh:minCount 1 ;
+        sh:class mm:Trip ;
+        sh:message "Маршрут повинен мати хоча б один рейс"
+    ] .
+
+mm:DelayShape a sh:NodeShape ;
+    sh:targetClass mm:Delay ;
+    sh:property [
+        sh:path mm:delayMinutes ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:maxInclusive 120 ;
+        sh:message "Затримка має бути цілим числом 0–120 хвилин"
+    ] ;
+    sh:property [
+        sh:path mm:measurementOf ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class mm:Trip ;
+        sh:message "Вимірювання затримки має стосуватися одного рейсу"
+    ] ;
+    sh:property [
+        sh:path mm:measuredBy ;
+        sh:minCount 1 ;
+        sh:class mm:Sensor ;
+        sh:message "Затримка має бути виміряна сенсором"
+    ] .
+
+mm:EventShape a sh:NodeShape ;
+    sh:targetClass mm:Event ;
+    sh:property [
+        sh:path mm:eventTime ;
+        sh:minCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "Подія повинна мати eventTime типу xsd:dateTime"
+    ] ;
+    sh:property [
+        sh:path mm:affectsSegment ;
+        sh:minCount 1 ;
+        sh:class mm:NetworkSegment ;
+        sh:message "Подія повинна впливати на ділянку мережі"
+    ] .
+
+mm:RecommendationShape a sh:NodeShape ;
+    sh:targetClass mm:Recommendation ;
+    sh:property [
+        sh:path mm:recommends ;
+        sh:minCount 1 ;
+        sh:class mm:TransportRoute ;
+        sh:message "Рекомендація повинна пропонувати маршрут"
+    ] ;
+    sh:property [
+        sh:path mm:forPassenger ;
+        sh:minCount 1 ;
+        sh:class mm:Passenger ;
+        sh:message "Рекомендація повинна бути адресована пасажиру"
+    ] ;
+    sh:property [
+        sh:path mm:recommendationOfDecision ;
+        sh:minCount 1 ;
+        sh:class mm:DecisionSupport ;
+        sh:message "Рекомендація повинна походити від рішення"
+    ] .
+
+mm:AgencyShape a sh:NodeShape ;
+    sh:targetClass mm:TransportAgency ;
+    sh:property [
+        sh:path mm:agencyName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Перевізник повинен мати назву"
+    ] ;
+    sh:property [
+        sh:path mm:operatesTrip ;
+        sh:minCount 1 ;
+        sh:class mm:Trip ;
+        sh:message "Перевізник повинен виконувати хоча б один рейс"
+    ] .

@@ -1,0 +1,5 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+ASK {
+  mm:Stop_Vokzal mm:wheelchairAccessible true .
+}

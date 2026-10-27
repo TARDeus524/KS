@@ -1,0 +1,10 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+SELECT DISTINCT ?trip ?minutes
+WHERE {
+  ?delay a mm:Delay ;
+         mm:measurementOf ?trip ;
+         mm:delayMinutes ?minutes .
+  FILTER(?minutes > 10)
+}
+ORDER BY DESC(?minutes) ?trip
