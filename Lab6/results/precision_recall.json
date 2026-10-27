@@ -1,0 +1,89 @@
+{
+  "gold": 45,
+  "llm_unique": 50,
+  "tp": 40,
+  "fp": 10,
+  "fn": 5,
+  "precision": 0.8,
+  "recall": 0.8889,
+  "f1": 0.8421,
+  "false_positives": [
+    [
+      "event",
+      "has_part",
+      "delay"
+    ],
+    [
+      "gtfs",
+      "has_part",
+      "dispatcher"
+    ],
+    [
+      "gtfs",
+      "related_to",
+      "transmodel"
+    ],
+    [
+      "its",
+      "has_part",
+      "validator"
+    ],
+    [
+      "netex",
+      "has_part",
+      "travel_time"
+    ],
+    [
+      "network",
+      "has_part",
+      "transport_system"
+    ],
+    [
+      "route",
+      "causes",
+      "delay"
+    ],
+    [
+      "route",
+      "has_part",
+      "delay"
+    ],
+    [
+      "schedule",
+      "has_part",
+      "passenger_flow"
+    ],
+    [
+      "stop",
+      "scheduled_by",
+      "trip"
+    ]
+  ],
+  "false_negatives": [
+    [
+      "journey",
+      "has_part",
+      "trip"
+    ],
+    [
+      "mobility",
+      "has_part",
+      "transport_system"
+    ],
+    [
+      "network",
+      "has_part",
+      "interchange"
+    ],
+    [
+      "route",
+      "has_part",
+      "segment"
+    ],
+    [
+      "transport_system",
+      "has_part",
+      "network"
+    ]
+  ]
+}

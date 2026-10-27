@@ -1,0 +1,213 @@
+From Wikipedia, the free encyclopedia
+European Reference Data Model for Public Transport Information
+This article
+needs
+more citations
+.
+Please help
+improve this article
+by
+adding citations to reliable sources
+. Unsourced material may be challenged and
+removed
+.
+Find sources:
+"Transmodel"
+–
+news
+·
+newspapers
+·
+books
+·
+scholar
+·
+JSTOR
+(
+January 2024
+)
+(
+Learn how and when to remove this message
+)
+Transmodel
+, also known as
+Reference Data Model For Public Transport (EN 12896)
+, is a
+European Standard
+for modelling and exchanging
+public transport
+information. It provides a
+standard data model
+and specialised
+data structures
+to uniformly represent common public transport concepts, facilitating the use of data in a wide variety of public transport information systems, including for timetabling, fares, operational management, real-time data, and journey planning.
+As of 2021, the current version of Transmodel is 6.0.
+Scope
+[
+edit
+]
+Transmodel provides a comprehensive conceptual model for public transport information systems, covering multiple subdomains including
+transport network
+infrastructure and
+topology
+, schedules,
+journey planning
+, fares, fare validation, real-time
+passenger information
+, and operational systems.
+Transmodel is an
+entity-relationship model
+in
+Unified Modeling Language
+(UML), accompanied by detailed descriptions of the concepts, elements and attributes needed to represent transport information. It uses modern
+information architecture
+principles to separate different concerns into independent information layers, using node and link concepts to describe individual transport layers. It supports the reuse of transport information entities
+[
+clarification needed
+]
+for different applications.
+It can represent multi-modal, multi-operator transport systems and complex fare models, bringing together data from many different organisations with different standard and practices.
+The Transmodel standard also establishes consistent terminology for public transport concepts, providing definitive equivalents for use in the national languages of each participant nation. In cases where vernacular words related to public transport could have more than one possible meaning or overlap in meaning, it establishes a precise and unambiguous technical term for use in information systems. For example, the terms 'trip', 'journey', and 'service', are overlapping concepts that in Transmodel have specific usages.
+History
+[
+edit
+]
+Transmodel was originally developed within a range of European projects under several European Programmes (Drive I, Drive II, TAP) with the support of the
+European Commission
+(DGXIII), and national public institutions, in particular the French Ministry of Transport (Direction des Transports Terrestres), as well as several private companies.
+Initial development & first generation uses
+[
+edit
+]
+Transmodel originated in the
+Cassiope
+project (Computer Aided System for Scheduling Information and Operation of Public Transport in Europe, 1989-1991), carried out under the initial
+EEC
+DRIVE programme.
+[
+1
+]
+The results of Cassiope were then developed further by the EuroBus and Harpist (Drive II) projects. This produced Transmodel V4.1 ENV 12896 with a E/R “Oracle” formalism.
+[
+clarification needed
+]
+The Telematics Applications Programme project
+TITAN
+(1996-1998) continued to validate and enhance Transmodel, implementing it in three European pilot sites.
+TITAN
+accompanied the standardisation process of Transmodel, which was chosen in 1997 as the
+European Experimental Norm
+ENV 12896. This led to Transmodel V5.0: with multi-modality, real-time control, layers, and data versioning
+The
+Système d'Information pour le Transport Public
+(SITP) (Information System for Public Transport), which began in 1999 under the sponsorship of the French Ministry of Transport, developed Transmodel 5.1, adding a UML
+formalism
+.
+In 2006, version 5.1 of Transmodel was formally adopted by the
+European Committee for Standardization
+(CEN) as the European Standard
+EN 12896
+.
+Second generation (Transmodel v5.1)
+[
+edit
+]
+Transmodel has been fundamental to the development of a number of concrete national data models and European Standards, including both European standards
+Service Interface for Real Time Information
+(SIRI: 2001-2005, now a CEN technical specification) for
+Real-time data
+exchange for buses, and
+Identification of Fixed Objects In Public Transport
+(2006-2007), now assimilated into Transmodel v6.0 Part 2, and national standards such as
+TransXChange
+(2001-2005, now the UK standard for bus PT timetables), and the French Trident standard (1999-2003). Its provision of a uniform conceptual framework, consistent terminology and well grounded abstractions make it especially valuable for comparing, harmonising and modernising legacy standards and systems and for international cooperation.
+Third generation (Transmodel v6.0)
+[
+edit
+]
+Transmodel based applications are now in widespread use through many parts of Europe for exchanging timetable and real-time data. A revised V6.0 version of Transmodel incorporating additional capabilities and breaking the specification into eight separate modules is under development. Parts 1, 2 & 3, covering respectively common concepts, network descriptions, and timetables were published in 2015. Parts 4 to 8, covering operational actions, fares, passenger information services, driver management, and management information and statistics were published in 2019.
+NeTEx
+(NETwork EXchange) is a concrete XML scheme implementing the central components of the Transmodel model as a modular
+W3C
+schema. It was developed as Standard by CEN/TC 278/WG 3 (public transport working group) between 2009 and 2014 as a format for exchanging inter-modal stop, timetable, and fare data for public transport Europe-wide. In 2017, under the
+Intelligent Transport Systems Priority Action A Directive (2010/40/E)
+, the European Commission recognised NeTEx as a strategic standard for the cross-border exchange of data to enable the provision of EU-wide multi-modal travel information services. It aims to make data available in NeTEx format at National Access Points (government-designated open databases) in all European countries.
+See also
+[
+edit
+]
+TransXChange
+Transport Direct
+Transport standards organisations
+NeTEx
+Identification of Fixed Objects In Public Transport
+(IFOPT)
+Service Interface for Real Time Information
+(SIRI)
+NaPTAN
+(UK)
+References
+[
+edit
+]
+↑
+Tizani, W. M. K. (September 1992).
+"A Review of Trip Planning Systems"
+.
+www.its.leeds.ac.uk
+. Retrieved
+2021-10-26
+.
+Bibliography
+[
+edit
+]
+Comité Européen de Normalisation (CEN), Reference Data Model For Public Transport, EN12896
+EN 12896:2006, Public Transport Reference Data Model (“Transmodel v5.1”)
+EN 12896-1:2016,
+Public Transport Reference Data Model - Part 1: Common Concepts
+(“Transmodel v6”)
+EN 12896-2:2016,
+Public Transport Reference Data Model - Part 2: Public Transport Network
+(“Transmodel v6”)
+EN 12896-3:2016,
+Public Transport Reference Data Model - Part 3: Timing Information and Vehicle Scheduling
+(“Transmodel v6”)
+EN 12896-4:2019,
+Public Transport Reference Data Model – Part 4: Operations Monitoring and Control
+(“Transmodel v6”)
+EN 12896-5:2019,
+Public Transport Reference Data Model – Part 5: Fare Management
+(“Transmodel v6”)
+EN 12896-6:2019,
+Public Transport Reference Data Model – Part 6: Passenger Information
+(“Transmodel v6”)
+EN 12896-7:2019,
+Public Transport Reference Data Model – Part 7: Driver Management
+(“Transmodel v6”)
+EN 12896-8:2019,
+Public Transport Reference Data Model – Part 8: Management Information & Statistics
+(“Transmodel v6”)
+PD CEN/TR 12896-9:2019,
+Public Transport Reference Data Model – Informative documentation
+External links
+[
+edit
+]
+Transmodel
+NeTEx
+OpRa
+Retrieved from "
+https://en.wikipedia.org/w/index.php?title=Transmodel&oldid=1277981919
+"
+Categories
+:
+Public transport information systems
+Travel technology
+Transport in Europe
+Hidden categories:
+Articles with short description
+Short description matches Wikidata
+Articles needing additional references from January 2024
+All articles needing additional references
+Wikipedia articles needing clarification from January 2024

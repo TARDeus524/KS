@@ -1,0 +1,390 @@
+{
+  "total": 50,
+  "schema_valid": 50,
+  "quote_confirmed": 44,
+  "quote_share": 0.88,
+  "relation_valid": 49,
+  "type_valid": 48,
+  "fully_valid": 40,
+  "rejected": 10,
+  "errors_by_type": {
+    "quote_not_found": 5,
+    "missing_evidence": 1,
+    "type_violation": 2,
+    "unknown_relation": 1,
+    "direction_error": 1
+  },
+  "details": [
+    {
+      "id": "L01",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L02",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L03",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L04",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L05",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L06",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L07",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L08",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L09",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L10",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L11",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L12",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L13",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L14",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L15",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L16",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L17",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L18",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L19",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L20",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L21",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L22",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L23",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L24",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L25",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L26",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L27",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L28",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L29",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L30",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L31",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L32",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L33",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L34",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L35",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L36",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L37",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L38",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L39",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L40",
+      "errors": [],
+      "quote": "confirmed",
+      "final_error": null,
+      "valid": true
+    },
+    {
+      "id": "L41",
+      "errors": [
+        "quote_not_found"
+      ],
+      "quote": "not_found",
+      "final_error": "quote_not_found",
+      "valid": false
+    },
+    {
+      "id": "L42",
+      "errors": [
+        "quote_not_found"
+      ],
+      "quote": "not_found",
+      "final_error": "quote_not_found",
+      "valid": false
+    },
+    {
+      "id": "L43",
+      "errors": [
+        "quote_not_found"
+      ],
+      "quote": "not_found",
+      "final_error": "quote_not_found",
+      "valid": false
+    },
+    {
+      "id": "L44",
+      "errors": [
+        "quote_not_found"
+      ],
+      "quote": "not_found",
+      "final_error": "quote_not_found",
+      "valid": false
+    },
+    {
+      "id": "L45",
+      "errors": [
+        "quote_not_found"
+      ],
+      "quote": "not_found",
+      "final_error": "quote_not_found",
+      "valid": false
+    },
+    {
+      "id": "L46",
+      "errors": [
+        "missing_evidence"
+      ],
+      "quote": "missing_evidence",
+      "final_error": "missing_evidence",
+      "valid": false
+    },
+    {
+      "id": "L47",
+      "errors": [
+        "domain_violation"
+      ],
+      "quote": "confirmed",
+      "final_error": "type_violation",
+      "valid": false
+    },
+    {
+      "id": "L48",
+      "errors": [
+        "domain_violation",
+        "range_violation"
+      ],
+      "quote": "confirmed",
+      "final_error": "type_violation",
+      "valid": false
+    },
+    {
+      "id": "L49",
+      "errors": [
+        "unknown_relation"
+      ],
+      "quote": "confirmed",
+      "final_error": "unknown_relation",
+      "valid": false
+    },
+    {
+      "id": "L50",
+      "errors": [
+        "direction_error"
+      ],
+      "quote": "confirmed",
+      "final_error": "direction_error",
+      "valid": false
+    }
+  ]
+}

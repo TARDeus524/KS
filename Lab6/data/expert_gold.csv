@@ -1,0 +1,46 @@
+id,subject_id,predicate_id,object_id,subject,predicate,object,source
+L01,gtfs,is_a,data_source,GTFS-дані,є різновидом,Джерело транспортних даних,GTFS Reference 2026
+L02,gtfs,has_part,route,GTFS-дані,містить,Маршрут,GTFS Reference 2026
+L03,gtfs,has_part,stop,GTFS-дані,містить,Зупинка,GTFS Reference 2026
+L04,gtfs,has_part,trip,GTFS-дані,містить,Рейс,GTFS Reference 2026
+L05,gtfs,has_part,schedule,GTFS-дані,містить,Розклад,GTFS Reference 2026
+L06,route,has_part,trip,Маршрут,містить,Рейс,GTFS Reference 2026
+L07,trip,scheduled_by,service,Рейс,регламентується,Календар обслуговування,GTFS Reference 2026
+L08,trip,has_part,stop,Рейс,містить,Зупинка,GTFS Reference 2026
+L09,route,serves,stop,Маршрут,обслуговує,Зупинка,GTFS Reference 2026
+L10,trip,has_part,stop_time,Рейс,містить,Запис stop_times,GTFS Reference 2026
+L11,stop_time,located_at,stop,Запис stop_times,розташована на,Зупинка,GTFS Reference 2026
+L12,frequency,has_part,headway,Запис frequencies,містить,Інтервал руху,GTFS Reference 2026
+L13,frequency,depends_on,trip,Запис frequencies,залежить від,Рейс,GTFS Reference 2026
+L14,transfer,depends_on,route,Пересадка (GTFS),залежить від,Маршрут,GTFS Reference 2026
+L15,shape,depends_on,trip,Форма маршруту,залежить від,Рейс,GTFS Reference 2026
+L16,agency,has_part,route,Агентство-перевізник,містить,Маршрут,GTFS Reference 2026
+L17,fare,has_part,route,Тариф,містить,Маршрут,GTFS Reference 2026
+L18,block,has_part,trip,Блок рейсів,містить,Рейс,GTFS Reference 2026
+L19,bus,is_a,vehicle,Автобус,є різновидом,Транспортний засіб,GTFS Reference 2026
+L20,tram,is_a,vehicle,Трамвай,є різновидом,Транспортний засіб,GTFS Reference 2026
+L21,metro,is_a,vehicle,Метро,є різновидом,Транспортний засіб,GTFS Reference 2026
+L22,trolleybus,is_a,vehicle,Тролейбус,є різновидом,Транспортний засіб,GTFS Reference 2026
+L23,gtfs,has_part,frequency,GTFS-дані,містить,Запис frequencies,GTFS Reference 2026
+L24,gtfs,has_part,transfer,GTFS-дані,містить,Пересадка (GTFS),GTFS Reference 2026
+L25,gtfs,has_part,shape,GTFS-дані,містить,Форма маршруту,GTFS Reference 2026
+L26,gtfs,has_part,pathway,GTFS-дані,містить,Шлях у станції,GTFS Reference 2026
+L27,trip,has_part,travel_time,Рейс,містить,Час у дорозі,GTFS Reference 2026
+L28,stop,has_part,pathway,Зупинка,містить,Шлях у станції,GTFS Reference 2026
+L29,transmodel,is_a,data_standard,Transmodel (EN 12896),є різновидом,Стандарт даних,"Transmodel (Wikipedia, rev. 1277981919)"
+L30,transmodel,has_part,network,Transmodel (EN 12896),містить,Транспортна мережа,"Transmodel (Wikipedia, rev. 1277981919)"
+L31,transmodel,has_part,schedule,Transmodel (EN 12896),містить,Розклад,"Transmodel (Wikipedia, rev. 1277981919)"
+L32,transmodel,has_part,journey,Transmodel (EN 12896),містить,Поїздка,"Transmodel (Wikipedia, rev. 1277981919)"
+L33,transmodel,has_part,public_transport_info,Transmodel (EN 12896),містить,Інформація для пасажирів,"Transmodel (Wikipedia, rev. 1277981919)"
+L34,netex,is_a,data_standard,NeTEx,є різновидом,Стандарт даних,"Transmodel (Wikipedia, rev. 1277981919)"
+L35,netex,depends_on,transmodel,NeTEx,залежить від,Transmodel (EN 12896),"Transmodel (Wikipedia, rev. 1277981919)"
+L36,siri,is_a,data_standard,SIRI,є різновидом,Стандарт даних,"Transmodel (Wikipedia, rev. 1277981919)"
+L37,siri,depends_on,transmodel,SIRI,залежить від,Transmodel (EN 12896),"Transmodel (Wikipedia, rev. 1277981919)"
+L38,its,is_a,transport_system,Інтелектуальна транспортна система,є різновидом,Транспортна система,Intelligent transportation system (Wikipedia)
+L39,its,has_part,traffic,Інтелектуальна транспортна система,містить,Рух транспорту,Intelligent transportation system (Wikipedia)
+L40,its,depends_on,gps,Інтелектуальна транспортна система,залежить від,GPS-трекер,Intelligent transportation system (Wikipedia)
+E01,mobility,has_part,transport_system,Інтелектуальне управління міською мобільністю,містить,Транспортна система,Експертна карта v2
+E02,transport_system,has_part,network,Транспортна система,містить,Транспортна мережа,Експертна карта v2
+E10,network,has_part,interchange,Транспортна мережа,містить,Пересадочний вузол,Експертна карта v2
+E13,route,has_part,segment,Маршрут,містить,Ділянка мережі,Експертна карта v2
+E28,journey,has_part,trip,Поїздка,містить,Рейс,Експертна карта v2

@@ -1,0 +1,107 @@
+s,p,o,source,status,s_id,p_id,o_id,evidence,confidence
+Інтелектуальне управління міською мобільністю,містить,Транспортна система,Експертна карта v2,verified,mobility,has_part,transport_system,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна система,містить,Транспортна мережа,Експертна карта v2,verified,transport_system,has_part,network,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна система,містить,Транспортний засіб,Експертна карта v2,verified,transport_system,has_part,vehicle,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна система,містить,Пасажир,Експертна карта v2,verified,transport_system,has_part,passenger,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна система,містить,Рух транспорту,Експертна карта v2,verified,transport_system,has_part,traffic,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна система,містить,Управління транспортом,Експертна карта v2,verified,transport_system,has_part,management,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна система,містить,Аналітика та знання,Експертна карта v2,verified,transport_system,has_part,analytics,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна мережа,містить,Зупинка,Експертна карта v2,verified,network,has_part,stop,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна мережа,містить,Ділянка мережі,Експертна карта v2,verified,network,has_part,segment,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна мережа,містить,Пересадочний вузол,Експертна карта v2,verified,network,has_part,interchange,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Транспортна мережа,містить,Маршрут,Експертна карта v2,verified,network,has_part,route,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Маршрут,містить,Рейс,GTFS Reference 2026,verified,route,has_part,trip,A route is a group of trips that are displayed to riders as a single service.,0.95
+Маршрут,містить,Ділянка мережі,Експертна карта v2,verified,route,has_part,segment,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Маршрут,обслуговує,Зупинка,GTFS Reference 2026,verified,route,serves,stop,Multiple routes may use the same stop_id,0.95
+Зупинка,розташована на,Ділянка мережі,Експертна карта v2,verified,stop,located_at,segment,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Пересадочний вузол,містить,Зупинка,Експертна карта v2,verified,interchange,has_part,stop,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Автобус,є різновидом,Транспортний засіб,GTFS Reference 2026,verified,bus,is_a,vehicle,3 - Bus. Used for short- and long-distance bus routes.,0.95
+Трамвай,є різновидом,Транспортний засіб,GTFS Reference 2026,verified,tram,is_a,vehicle,"0 - Tram, Streetcar, Light rail. Any light rail or street level system within a metropolitan area.",0.95
+Тролейбус,є різновидом,Транспортний засіб,GTFS Reference 2026,verified,trolleybus,is_a,vehicle,11 - Trolleybus. Electric buses that draw power from overhead wires using poles.,0.95
+Метро,є різновидом,Транспортний засіб,GTFS Reference 2026,verified,metro,is_a,vehicle,"1 - Subway, Metro. Any underground rail system within a metropolitan area.",0.95
+Рейс,регламентується,Розклад,Експертна карта v2,verified,trip,scheduled_by,schedule,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Розклад,містить,Інтервал руху,Експертна карта v2,verified,schedule,has_part,headway,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Пасажир,формує,Поїздка,Експертна карта v2,verified,passenger,generates,journey,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Поїздка,містить,Рейс,Експертна карта v2,verified,journey,has_part,trip,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Пасажир,формує,Пасажиропотік,Експертна карта v2,verified,passenger,generates,passenger_flow,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Пасажиропотік,спричиняє,Завантаженість,Експертна карта v2,verified,passenger_flow,causes,load,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Завантаженість,спричиняє,Затримка,Експертна карта v2,verified,load,causes,delay,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Подія на мережі,спричиняє,Затримка,Експертна карта v2,verified,event,causes,delay,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Затримка,збільшує,Час у дорозі,Експертна карта v2,verified,delay,increases,travel_time,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Рух транспорту,містить,Завантаженість,Експертна карта v2,verified,traffic,has_part,load,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Рух транспорту,містить,Затримка,Експертна карта v2,verified,traffic,has_part,delay,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Рух транспорту,містить,Час у дорозі,Експертна карта v2,verified,traffic,has_part,travel_time,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Управління транспортом,містить,Диспетчер,Експертна карта v2,verified,management,has_part,dispatcher,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Диспетчер,реагує на,Подія на мережі,Експертна карта v2,verified,dispatcher,responds_to,event,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Диспетчер,залежить від,GPS-трекер,Експертна карта v2,verified,dispatcher,depends_on,gps,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Аналітика та знання,містить,Прогнозування,Експертна карта v2,verified,analytics,has_part,forecasting,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Аналітика та знання,містить,Оптимізація маршруту,Експертна карта v2,verified,analytics,has_part,optimization,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Аналітика та знання,містить,Підтримка прийняття рішень,Експертна карта v2,verified,analytics,has_part,decision,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Прогнозування,залежить від,Пасажиропотік,Експертна карта v2,verified,forecasting,depends_on,passenger_flow,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Прогнозування,залежить від,Валідатор пасажирів,Експертна карта v2,verified,forecasting,depends_on,validator,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Прогнозування,залежить від,GPS-трекер,Експертна карта v2,verified,forecasting,depends_on,gps,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Прогнозування,залежить від,Час у дорозі,Експертна карта v2,verified,forecasting,depends_on,travel_time,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Оптимізація маршруту,залежить від,Транспортна мережа,Експертна карта v2,verified,optimization,depends_on,network,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Оптимізація маршруту,залежить від,GTFS-дані,Експертна карта v2,verified,optimization,depends_on,gtfs,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Підтримка прийняття рішень,залежить від,Прогнозування,Експертна карта v2,verified,decision,depends_on,forecasting,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Підтримка прийняття рішень,залежить від,Оптимізація маршруту,Експертна карта v2,verified,decision,depends_on,optimization,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Підтримка прийняття рішень,рекомендує,Рекомендація,Експертна карта v2,verified,decision,recommends,recommendation,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Рекомендація,рекомендує,Пасажир,Експертна карта v2,verified,recommendation,recommends,passenger,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Рекомендація,рекомендує,Диспетчер,Експертна карта v2,verified,recommendation,recommends,dispatcher,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Розклад,залежить від,Пасажиропотік,Експертна карта v2,verified,schedule,depends_on,passenger_flow,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+GTFS-дані,містить,Зупинка,GTFS Reference 2026,verified,gtfs,has_part,stop,Stops where vehicles pick up or drop off riders.,0.95
+GTFS-дані,містить,Маршрут,GTFS Reference 2026,verified,gtfs,has_part,route,Transit routes. A route is a group of trips that are displayed to riders as a single service.,0.95
+GTFS-дані,містить,Рейс,GTFS Reference 2026,verified,gtfs,has_part,trip,Trips for each route.,0.95
+GTFS-дані,містить,Розклад,GTFS Reference 2026,verified,gtfs,has_part,schedule,Service dates specified using a weekly schedule with start and end dates.,0.95
+Валідатор пасажирів,формує,Пасажиропотік,Експертна карта v2,verified,validator,generates,passenger_flow,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+GPS-трекер,є різновидом,Джерело транспортних даних,Експертна карта v2,verified,gps,is_a,data_source,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Валідатор пасажирів,є різновидом,Джерело транспортних даних,Експертна карта v2,verified,validator,is_a,data_source,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+GTFS-дані,є різновидом,Джерело транспортних даних,GTFS Reference 2026,verified,gtfs,is_a,data_source,A complete set of files defined by this specification reference.,0.95
+Transmodel (EN 12896),є різновидом,Стандарт даних,"Transmodel (Wikipedia, rev. 1277981919)",verified,transmodel,is_a,data_standard,is a European Standard for modelling and exchanging public transport information.,0.95
+NeTEx,є різновидом,Стандарт даних,"Transmodel (Wikipedia, rev. 1277981919)",verified,netex,is_a,data_standard,is a concrete XML scheme implementing the central components of the Transmodel model as a modular W3C schema.,0.95
+NeTEx,залежить від,Transmodel (EN 12896),"Transmodel (Wikipedia, rev. 1277981919)",verified,netex,depends_on,transmodel,is a concrete XML scheme implementing the central components of the Transmodel model as a modular W3C schema.,0.95
+SIRI,є різновидом,Стандарт даних,"Transmodel (Wikipedia, rev. 1277981919)",verified,siri,is_a,data_standard,now a CEN technical specification,0.95
+SIRI,залежить від,Transmodel (EN 12896),"Transmodel (Wikipedia, rev. 1277981919)",verified,siri,depends_on,transmodel,Transmodel has been fundamental to the development of a number of concrete national data models and European Standards,0.95
+Інтелектуальна транспортна система,є різновидом,Транспортна система,Intelligent transportation system (Wikipedia),verified,its,is_a,transport_system,is an advanced application that aims to provide services relating to different modes of transport and traffic management,0.95
+Інтелектуальна транспортна система,містить,Рух транспорту,Intelligent transportation system (Wikipedia),verified,its,has_part,traffic,traffic management,0.95
+Інтелектуальна транспортна система,містить,Інформація для пасажирів,Експертна карта v2,verified,its,has_part,public_transport_info,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Інтелектуальна транспортна система,залежить від,GPS-трекер,Intelligent transportation system (Wikipedia),verified,its,depends_on,gps,processing data collected from transit vehicles with telematics and GPS tracking units,0.95
+Інтелектуальна транспортна система,містить,Транспортний засіб,Експертна карта v2,verified,its,has_part,vehicle,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Інтелектуальна транспортна система,містить,Пасажир,Експертна карта v2,verified,its,has_part,passenger,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Інтелектуальна транспортна система,містить,Аналітика та знання,Експертна карта v2,verified,its,has_part,analytics,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Оптимізація маршруту,залежить від,GPS-трекер,Експертна карта v2,verified,optimization,depends_on,gps,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Інформація для пасажирів,містить,Час у дорозі,Експертна карта v2,verified,public_transport_info,has_part,travel_time,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Transmodel (EN 12896),містить,Транспортна мережа,"Transmodel (Wikipedia, rev. 1277981919)",verified,transmodel,has_part,network,covering multiple subdomains including transport network infrastructure and topology,0.95
+Transmodel (EN 12896),містить,Розклад,"Transmodel (Wikipedia, rev. 1277981919)",verified,transmodel,has_part,schedule,"schedules, journey planning",0.95
+Transmodel (EN 12896),містить,Поїздка,"Transmodel (Wikipedia, rev. 1277981919)",verified,transmodel,has_part,journey,journey planning,0.95
+Transmodel (EN 12896),містить,Інформація для пасажирів,"Transmodel (Wikipedia, rev. 1277981919)",verified,transmodel,has_part,public_transport_info,real-time passenger information,0.95
+Рейс,містить,Час у дорозі,GTFS Reference 2026,verified,trip,has_part,travel_time,allow an estimation of the longest amount of time a rider can expect the on-demand trip to take,0.95
+Рейс,містить,Запис stop_times,GTFS Reference 2026,verified,trip,has_part,stop_time,Times that a vehicle arrives at and departs from stops for each trip.,0.95
+Запис stop_times,розташована на,Зупинка,GTFS Reference 2026,verified,stop_time,located_at,stop,Times that a vehicle arrives at and departs from stops for each trip.,0.95
+Запис frequencies,містить,Інтервал руху,GTFS Reference 2026,verified,frequency,has_part,headway,Headway (time between trips) for headway-based service or a compressed representation of fixed-schedule service.,0.95
+Запис frequencies,залежить від,Рейс,GTFS Reference 2026,verified,frequency,depends_on,trip,Identifies a trip to which the specified headway of service applies.,0.95
+Пересадка (GTFS),залежить від,Маршрут,GTFS Reference 2026,verified,transfer,depends_on,route,Rules for making connections at transfer points between routes.,0.95
+Форма маршруту,залежить від,Рейс,GTFS Reference 2026,verified,shape,depends_on,trip,Identifies a geospatial shape describing the vehicle travel path for a trip.,0.95
+Агентство-перевізник,містить,Маршрут,GTFS Reference 2026,verified,agency,has_part,route,Agency for the specified route.,0.95
+Тариф,містить,Маршрут,GTFS Reference 2026,verified,fare,has_part,route,Fare information for a transit agency's routes.,0.95
+Блок рейсів,містить,Рейс,GTFS Reference 2026,verified,block,has_part,trip,A block consists of a single trip or many sequential trips made using the same vehicle,0.95
+Рейс,регламентується,Календар обслуговування,GTFS Reference 2026,verified,trip,scheduled_by,service,Identifies a set of dates when service is available for one or more routes.,0.95
+GTFS-дані,містить,Запис frequencies,GTFS Reference 2026,verified,gtfs,has_part,frequency,Headway (time between trips) for headway-based service or a compressed representation of fixed-schedule service.,0.95
+GTFS-дані,містить,Пересадка (GTFS),GTFS Reference 2026,verified,gtfs,has_part,transfer,Rules for making connections at transfer points between routes.,0.95
+GTFS-дані,містить,Форма маршруту,GTFS Reference 2026,verified,gtfs,has_part,shape,"Rules for mapping vehicle travel paths, sometimes referred to as route alignments.",0.95
+GTFS-дані,містить,Шлях у станції,GTFS Reference 2026,verified,gtfs,has_part,pathway,Pathways linking together locations within stations.,0.95
+Зупинка,містить,Шлях у станції,GTFS Reference 2026,verified,stop,has_part,pathway,Pathways linking together locations within stations.,0.95
+Рейс,містить,Зупинка,GTFS Reference 2026,verified,trip,has_part,stop,A trip is a sequence of two or more stops that occur during a specific time period.,0.95
+Зупинка,має приклад,Зупинка «Вокзал»,Експертна карта v2,verified,stop,has_example,stop_vokzal,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Маршрут,має приклад,Маршрут №9,Експертна карта v2,verified,route,has_example,route_9,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Автобус,має приклад,Автобус №25,Експертна карта v2,verified,bus,has_example,bus_25,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Подія на мережі,має приклад,Затор на вул. Городоцькій,Експертна карта v2,verified,event,has_example,jam_gorodotska,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Розклад,має приклад,Розклад маршруту №9,Експертна карта v2,verified,schedule,has_example,schedule_9,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Рекомендація,має приклад,Рекомендація пересісти на трамвай,Експертна карта v2,verified,recommendation,has_example,rec_transfer,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Маршрут №9,обслуговує,Зупинка «Вокзал»,Експертна карта v2,verified,route_9,serves,stop_vokzal,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Затор на вул. Городоцькій,спричиняє,Затримка,Експертна карта v2,verified,jam_gorodotska,causes,delay,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+GTFS-дані,містить,Агентство-перевізник,Експертна карта v2,verified,gtfs,has_part,agency,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+GTFS-дані,містить,Тариф,Експертна карта v2,verified,gtfs,has_part,fare,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+GTFS-дані,містить,Блок рейсів,Експертна карта v2,verified,gtfs,has_part,block,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Transmodel (EN 12896),містить,Управління транспортом,Експертна карта v2,verified,transmodel,has_part,management,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95
+Інтелектуальна транспортна система,містить,Транспортна мережа,Експертна карта v2,verified,its,has_part,network,"Узгоджено з таксономією ЛР4, семантичною мережею ЛР5 та експертною картою v2",0.95

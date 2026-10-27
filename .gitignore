@@ -1,0 +1,13 @@
+AGENTS.md
+Preparation/
+Lab1/
+Lab2/
+Lab3/
+Lab4/
+Lab5/
+SR/
+Lab*/СЗтУЗ_*
+Lab*/.~lock.*
+__pycache__/
+*.py[cod]
+fuseki.pid

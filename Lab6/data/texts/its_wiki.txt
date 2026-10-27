@@ -1,0 +1,1115 @@
+From Wikipedia, the free encyclopedia
+Advanced application
+ITS
+graphical user interface
+displaying the
+Hungarian highway network
+and its data points
+An
+intelligent transportation system
+(
+ITS
+) is an advanced application that aims to provide services relating to different
+modes of transport
+and
+traffic management
+and enable users to be better informed and make safer, more coordinated, and "smarter" use of transport networks.
+[
+1
+]
+Some of these technologies include calling for emergency services when an accident occurs, using cameras to enforce traffic laws or signs that mark speed limit changes depending on conditions.
+Although ITS may refer to all modes of transport, the
+directive
+of the
+European Union
+2010/40/EU, made on July 7, 2010, defined ITS as systems in which
+information and communication technologies
+are applied in the field of
+road transport
+, including infrastructure, vehicles and users, and in traffic management and mobility management, as well as for interfaces with other modes of transport.
+[
+2
+]
+ITS may be used to improve the efficiency and safety of transport in many situations, e.g., road transport, traffic management, or mobility.
+[
+3
+]
+ITS technology is being adopted across the world to increase the capacity of busy roads, reduce journey times and enable the collection of information on unsuspecting road users.
+[
+4
+]
+Background
+[
+edit
+]
+Governmental
+[
+which?
+]
+activity in the area of ITS is further motivated by an increasing focus on
+homeland security
+.
+[
+when?
+]
+Many of the proposed ITS systems also involve
+surveillance
+of the roadways, which is a priority of homeland security.
+[
+5
+]
+Funding of many systems comes either directly through homeland security organisations or with their approval. Further, ITS can play a role in the rapid
+mass evacuation
+of people in urban centres after large casualty events such as a result of a natural disaster or threat. Much of the infrastructure and planning involved with ITS parallels the need for homeland security systems.
+In the
+developing world
+, the migration from rural to
+urbanized habitats
+has progressed differently. Many areas of the developing world have
+urbanised
+without significant
+motorisation
+and the formation of
+suburbs
+. A small portion of the population can afford
+automobiles
+, but the automobiles greatly increase congestion in these
+multimodal transportation
+systems. They also produce considerable
+air pollution
+, pose a significant safety risk, and exacerbate feelings of inequities in the society. High population density could be supported by a
+multimodal
+system of walking,
+bicycle
+transportation,
+motorcycles
+,
+buses
+, and
+trains
+.
+Other parts of the developing world, such as
+China
+,
+India
+and
+Brazil
+remain largely rural but are rapidly urbanising and industrialising. In these areas a motorised infrastructure is being developed alongside motorisation of the population. Great disparity of wealth means that only a fraction of the population can motorise, and therefore the highly dense multimodal
+transportation system
+for the poor is cross-cut by the highly motorised transportation system for the rich.
+Intelligent transportation technologies
+[
+edit
+]
+Intelligent transport systems incorporate a wide range of technologies, from basic management systems such as
+car navigation
+,
+traffic signal control
+, and
+variable-message signs
+, to more advanced, interconnected applications. These technologies can be broadly categorized into several key areas:
+Control room with operators monitoring GPS-based
+fleet tracking
+and traffic data on large screens
+A foundational component of modern operations is the use of
+telematics
+systems, with
+GPS devices
+Monitoring and Enforcement Systems
+: This category includes technologies like
+automatic number plate recognition
+,
+speed cameras
+, and security
+CCTV
+systems used for traffic monitoring and law enforcement.
+Data Collection and Analysis Systems
+: These systems gather and process information from various sources. Examples include
+parking guidance and information
+systems and
+Road Weather Information Systems
+. A major application is providing real-time information to passengers, such as predicting the arrival time of
+public transport
+. This is achieved by processing data collected from transit vehicles with
+telematics
+and
+GPS tracking units
+.
+[
+6
+]
+[
+7
+]
+This data supports
+vehicle tracking
+, emergency services like
+eCall
+, and
+usage-based insurance
+policies. These systems are distinct from in-vehicle
+infotainment
+systems, which focus on entertainment and smartphone integration.
+Management Applications
+: These applications use ITS data for operational control. Examples include
+container management
+and intelligent
+fleet management
+systems, which leverage telematics to optimize routes, improve fuel efficiency, and enhance the safety of logistics and public transport fleets.
+Cooperative Systems
+: A significant trend in ITS is the development of Cooperative ITS (C-ITS), where vehicles and infrastructure are interconnected. Data is shared through
+vehicle-to-vehicle
+(V2V) and
+vehicle-to-infrastructure
+(V2I) communication. This cooperative data exchange allows for real-time hazard warnings and coordinated traffic flow, enhancing safety and efficiency beyond the capabilities of stand-alone systems.
+[
+8
+]
+Additionally, predictive techniques are being developed to allow for advanced modelling and comparison with historical baseline data. Specific technologies are described in more detail in the following sections of this article.
+[
+9
+]
+Wireless communications
+[
+edit
+]
+Traffic monitoring gantry with wireless communication
+dish antenna
+Various forms of wireless communications technologies have been proposed for intelligent transportation systems.
+Radio modem
+communication on
+UHF
+and
+VHF
+frequencies are widely used for short and long-range communication within ITS.
+Short-range communications of 350 m can be accomplished using
+IEEE 802.11
+protocols, specifically
+802.11p
+(WAVE) or the
+dedicated short-range communications
+(DSRC) 802.11bd standard being promoted by the
+Intelligent Transportation Society of America
+and the
+United States Department of Transportation
+. Theoretically, the range of these protocols can be extended using
+mobile ad hoc networks
+or
+mesh networking
+.
+Longer-range communications use infrastructure networks. Long-range communications using these methods are well established, but, unlike the short-range protocols, these methods require extensive and very expensive infrastructure deployment.
+Computational technologies
+[
+edit
+]
+Recent advances in
+vehicle electronics
+have led to a move towards fewer, more capable
+computer processors
+on a vehicle. A typical vehicle in the early 2000s would have between 20 and 100 individual networked
+microcontroller
+/
+programmable logic controller
+modules with non-real-time
+operating systems
+. The current trend is toward fewer, more costly
+microprocessor
+modules with hardware
+memory management
+and
+real-time operating systems
+. The new
+embedded system
+platforms
+allow for more sophisticated
+software applications
+to be implemented, including model-based
+process control
+,
+artificial intelligence
+, and
+ubiquitous computing
+. Perhaps the most important of these for intelligent transportation systems is
+artificial intelligence
+.
+[
+citation needed
+]
+Floating car data/floating cellular data
+[
+edit
+]
+Main article:
+Floating car data
+RFID
+E-ZPass
+reader attached to the pole and its antenna (right) used in traffic monitoring in New York City by using vehicle re-identification method
+"Floating car" or "probe" data collected other transport routes. Broadly speaking, four methods have been used to obtain the raw data:
+Triangulation method.
+In developed countries a high proportion of cars contain one or more
+mobile phones
+. The phones periodically transmit their presence information to the mobile phone network, even when no voice connection is established. In the mid-2000s, attempts were made to use
+mobile phones
+as anonymous traffic probes. As a car moves, so does the signal of any mobile phones that are inside the vehicle. By measuring and analysing network data using
+triangulation
+, pattern matching or cell-sector statistics (in an anonymous format), the data was converted into
+traffic flow
+information. With more congestion, there are more cars, more phones, and thus, more probes.
+[
+10
+]
+In metropolitan areas, the distance between antennas is shorter and in theory accuracy increases. An advantage of this method is that no infrastructure needs to be built along the road; only the mobile phone network is leveraged. But in practice the triangulation method can be complicated, especially in areas where the same mobile phone towers serve two or more parallel routes (such as a motorway (freeway) with a frontage road, a motorway (freeway) and a commuter rail line, two or more parallel streets, or a street that is also a bus line). By the early 2010s, the popularity of the triangulation method was declining.
+[
+citation needed
+]
+Vehicle re-identification.
+Vehicle re-identification methods require sets of detectors mounted along the road. In this technique, a unique serial number for a device in the vehicle is detected at one location and then detected again (re-identified) further down the road. Travel times and speed are calculated by comparing the time at which a specific device is detected by pairs of sensors. This can be done using the
+MAC addresses
+from Bluetooth or other devices,
+[
+11
+]
+or using the
+RFID
+serial numbers from
+electronic toll collection
+(ETC) transponders (also called "toll tags").
+GPS based methods.
+An increasing number of vehicles are equipped with in-vehicle satnav/
+GPS
+(
+satellite navigation
+) systems that have two-way communication with a traffic data provider. Position readings from these vehicles are used to compute vehicle speeds. Modern methods may not use dedicated hardware but instead
+Smartphone
+based solutions using so called
+Telematics 2.0
+approaches.
+[
+12
+]
+Smartphone-based rich monitoring.
+Smartphones having various sensors can be used to track traffic speed and density. The accelerometer data from smartphones used by car drivers is monitored to find out traffic speed and road quality. Audio data and GPS tagging of smartphones enables identification of traffic density and possible traffic jams. This was implemented in Bangalore, India as a part of a research experimental system
+Nericell
+.
+[
+13
+]
+Floating car data technology provides advantages over other methods of traffic measurement:
+Less expensive than sensors or cameras
+More coverage (potentially including all locations and streets)
+Faster to set up and less maintenance
+Works in all weather conditions, including heavy rain
+Sensing
+[
+edit
+]
+An active
+RFID
+tag used for electronic toll collection
+Technological advances in telecommunications and information technology, coupled with ultramodern/state-of-the-art microchip,
+RFID
+(Radio Frequency Identification), and
+inexpensive
+intelligent
+beacon
+sensing technologies, have enhanced the technical capabilities that will facilitate motorist safety benefits for intelligent transportation systems
+globally
+. Sensing systems for ITS are vehicle- and infrastructure-based networked systems, i.e., intelligent vehicle technologies. Infrastructure sensors are indestructible (such as in-road reflectors) devices that are installed or embedded in the road or surrounding the road (e.g., on buildings, posts, and signs), as required, and may be manually disseminated during preventive
+road construction
+maintenance or by sensor injection machinery for rapid deployment. Vehicle-sensing systems include deployment of infrastructure-to-vehicle and vehicle-to-infrastructure electronic beacons for identification communications and may also employ video
+automatic number plate recognition
+or vehicle magnetic signature detection technologies at desired intervals to increase sustained monitoring of vehicles operating in critical zones of world.
+Inductive loop detection
+[
+edit
+]
+Saw cut loop detectors for vehicle detection buried in the pavement at this intersection as seen by the rectangular shapes of loop detector sealant at the bottom part of this picture
+Inductive loops
+can be placed in a roadbed to detect vehicles as they pass through the loop's magnetic field. The simplest detectors simply count the number of vehicles during a unit of time (typically 60 seconds in the
+United States
+) that pass over the loop, while more sophisticated sensors estimate the speed, length, and class of vehicles and the distance between them. Loops can be placed in a single lane or across multiple lanes, and they work with very slow or stopped vehicles as well as vehicles moving at high speed.
+Video vehicle detection
+[
+edit
+]
+Traffic-flow measurement and automatic incident detection using video
+cameras
+is another form of vehicle detection. Since video detection systems such as those used in
+automatic number plate recognition
+do not involve installing any components directly into the road surface or roadbed, this type of system is known as a "non-intrusive" method of traffic detection. Video from cameras is fed into processors that analyse the changing characteristics of the video image as vehicles pass. The cameras are typically mounted on
+poles
+or structures above or adjacent to the roadway. Most video detection systems require some initial configuration to "teach" the processor the baseline background image. This usually involves inputting known measurements such as the distance between
+lane
+lines or the height of the camera above the roadway. A single video detection processor can detect traffic simultaneously from one to eight cameras, depending on the brand and model. The typical output from a video detection system is lane-by-lane vehicle speeds, counts, and lane occupancy readings. Some systems provide additional outputs including gap, headway, stopped-vehicle detection, and wrong-way vehicle alarms.
+Bluetooth detection
+[
+edit
+]
+Bluetooth
+is an accurate and inexpensive way to transmit position from a vehicle in motion. Bluetooth devices in passing vehicles are detected by sensing devices along the road. If these sensors are interconnected they are able to calculate travel time and provide data for origin and destination matrices.
+Compared to other traffic measurement technologies, Bluetooth measurement has some differences:
+Accurate measurement points with absolute confirmation to provide to the second travel times.
+Is non-intrusive, which can lead to lower-cost installations for both permanent and temporary sites.
+Is limited to how many Bluetooth devices are broadcasting in a vehicle so counting and other applications are limited.
+Systems are generally quick to set up with little to no calibration needed.
+Since Bluetooth devices become more prevalent on board vehicles and with more portable electronics broadcasting, the amount of data collected over time becomes more accurate and valuable for travel time and estimation purposes, more information can be found in.
+[
+14
+]
+It is also possible to measure
+traffic density
+on a road using the
+audio signal
+that consists of the cumulative sound from
+tyre noise
+, engine noise, engine-idling noise, honks and
+air turbulence
+noise. A roadside-installed microphone picks up the audio that comprises the various vehicle noise and
+audio signal processing
+techniques can be used to estimate the traffic state. The accuracy of such a system compares well with the other methods described above.
+[
+15
+]
+Radar detection
+[
+edit
+]
+Radars are mounted on the side of the road to measure traffic flow and for stopped and stranded vehicle detection purposes. Like video systems, radar learns its environment during set up so can distinguish between vehicles and other objects. It can also operate in conditions of low visibility.
+Traffic flow radar uses a "side-fire" technique to look across all traffic lanes in a narrow band to count the number of passing vehicles and estimate traffic density.
+For stopped vehicle detection (SVD) and automatic incident detection, 360-degree radar systems are used as they scan all lanes along large stretches of road. Radar is reported to have better performance over longer ranges than other technologies.
+[
+16
+]
+SVD radar will be installed on all
+Smart motorways
+in the UK.
+[
+17
+]
+Information fusion from multiple traffic sensing modalities
+[
+edit
+]
+The data from the different sensing technologies can be combined in intelligent ways to determine the traffic state accurately. A
+data fusion
+based approach that utilizes the roadside collected acoustic, image and sensor data has been shown to combine the advantages of the different individual methods.
+[
+18
+]
+Intelligent transportation applications
+[
+edit
+]
+Emergency vehicle notification systems
+[
+edit
+]
+In 2015, the EU passed a law required automobile manufacturers to equip all new cars with
+eCall
+, a European initiative that assists motorists in the case of a collision.
+[
+19
+]
+The in-vehicle eCall is generated either manually by the vehicle occupants or automatically via activation of in-vehicle sensors after an accident.
+[
+20
+]
+When activated, the in-vehicle eCall device will establish an emergency call carrying both voice and data directly to the nearest emergency point
+[
+20
+]
+(normally the nearest E
+1-1-2
+public safety answering point
+, PSAP). The voice call enables the vehicle occupant to communicate with the trained eCall operator. At the same time, a minimum set of data will be sent to the eCall operator receiving the voice call.
+The minimum set of data contains information about the incident, including time, precise location, the direction the vehicle was travelling, and vehicle identification. The pan-European eCall aims to be operative for all new type-approved vehicles as a standard option. Depending on the manufacturer of the eCall system, it could be mobile phone-based (Bluetooth connection to an in-vehicle interface), an integrated eCall device, or a functionality of a broader system like navigation, Telematics device, or tolling device. eCall is expected to be offered, at earliest, by the end of 2010, pending standardization by the
+European Telecommunications Standards Institute
+and commitment from large EU member states such as France and the United Kingdom.
+Congestion pricing
+gantry at North Bridge Road,
+Singapore
+The EC-funded project SafeTRIP
+[
+citation needed
+]
+is developing an open ITS system that will improve road safety and provide a resilient communication through the use of S-band satellite communication. Such a platform will allow for greater coverage of the Emergency Call Service within the EU.
+Public transportation
+[
+edit
+]
+ITS plays a crucial role in the
+digitalization
+of public transport, leading to increased operational efficiency and improved passenger experience.
+[
+21
+]
+Key applications are focused on providing better information to users and streamlining operations.
+One of the most common applications is the provision of
+real-time passenger information (RTPI)
+. These systems utilize
+GPS tracking devices
+on public transport vehicles to continuously monitor their location and speed. This data is then used to calculate and deliver accurate predictions of arrival and departure times to passengers via
+mobile applications
+or displays at bus stops.
+[
+22
+]
+Another significant area of transformation is
+electronic ticketing
+. Digital payment and validation systems, often using smart cards or mobile apps, create a more convenient experience for travelers. These can be developed into integrated ticketing platforms that allow seamless travel across different modes of transport (e.g., buses, trains, and ferries) and even across different cities or regions, as seen in national systems like Estonia's.
+[
+23
+]
+The data collected from these ITS applications also enables transport authorities to better analyze travel patterns, optimize routes, and improve overall service planning.
+Automatic road enforcement
+[
+edit
+]
+Main article:
+Traffic enforcement camera
+Automatic speed enforcement
+gantry or
+lombada eletrônica
+with ground sensors at
+Brasília
+A traffic enforcement camera system, consisting of a
+camera
+and a
+vehicle
+-monitoring device, is used to detect and identify vehicles disobeying a
+speed limit
+or some other road legal requirement and automatically ticket offenders based on the license plate number. Traffic tickets are sent by mail. Applications include:
+Speed cameras that identify vehicles travelling over the legal
+speed limit
+. Many such devices use
+radar
+to detect a vehicle's speed or electromagnetic loops buried in each lane of the road.
+Red light cameras
+that detect vehicles that cross a stop line or designated stopping place while a red
+traffic light
+is showing.
+Bus lane
+cameras that identify vehicles traveling in lanes reserved for
+buses
+. In some jurisdictions, bus lanes can also be used by taxis or vehicles engaged in
+carpooling
+.
+Level crossing
+cameras that identify vehicles crossing
+railways
+at grade
+illegally.
+Double white line cameras that identify vehicles crossing these lines.
+High-occupancy vehicle lane
+cameras that identify vehicles violating HOV requirements.
+Variable speed limits
+[
+edit
+]
+Further information:
+Speed limit §
+Variable speed limits
+Example variable speed limit sign in the United States
+Recently some jurisdictions have begun experimenting with variable speed limits that change with road congestion and other factors. Typically such speed limits only change to decline during poor conditions, rather than being improved in good ones. One example is on Britain's
+M25 motorway
+, which circumnavigates London. On the most heavily travelled
+14-mile (23
+km)
+section (junction 10 to 16) of the M25 variable speed limits combined with automated enforcement have been in force since 1995. Initial results indicated savings in journey times, smoother-flowing traffic, and a fall in the number of accidents, so the implementation was made permanent in 1997. Further trials on the M25 have been thus far proven inconclusive.
+[
+24
+]
+Collision avoidance systems
+[
+edit
+]
+Japan has installed sensors on its highways to notify motorists that a car is stalled ahead.
+[
+25
+]
+Cooperative systems on the road
+[
+edit
+]
+Communication cooperation on the road includes car-to-car, car-to-infrastructure, and vice versa. Data available from vehicles are acquired and transmitted to a server for central fusion and processing. These data can be used to detect events such as rain (wiper activity) and congestion (frequent braking activities). The server processes a driving recommendation dedicated to a single or a specific group of drivers and transmits it wirelessly to vehicles. The goal of cooperative systems is to use and plan communication and sensor infrastructure to increase road safety.
+The definition of cooperative systems in road traffic is according to the
+European Commission
+:
+[
+26
+]
+[
+27
+]
+"Road operators, infrastructure, vehicles, their drivers and other road users will cooperate to deliver the most efficient, safe, secure and comfortable journey. The vehicle-vehicle and vehicle-infrastructure co-operative systems will contribute to these objectives beyond the improvements achievable with stand-alone systems."
+World Congress on Intelligent Transport Systems
+(ITS World Congress) is an annual trade show to promote ITS technologies. ERTICO– ITS Europe,
+ITS America
+and ITS AsiaPacific sponsor the annual ITS World Congress and exhibition. Each year the event takes place in a different region (Europe, Americas or Asia-Pacific).
+[
+28
+]
+The first ITS World Congress was held in Paris in 1994.
+[
+29
+]
+Europe
+[
+edit
+]
+The Network of National ITS Associations is a grouping of national ITS interests. It was officially announced 7 October 2004 in London. The secretariat is at ERTICO – ITS Europe.
+[
+30
+]
+ERTICO – ITS Europe is a public/private partnership promoting the development and deployment of ITS. They connect public authorities, industry players, infrastructure operators, users, national ITS associations and other organisations together. The ERTICO work programme focuses on initiatives to improve transport safety, security and network efficiency whilst taking into account measures to reduce environmental impact.
+United States
+[
+edit
+]
+In the United States, each state has an ITS chapter that holds a yearly conference to promote and showcase ITS technologies and ideas. Representatives from each Department of Transportation (state, cities, towns, and counties) within the state attend this conference.
+Latin America
+[
+edit
+]
+Colombia
+[
+edit
+]
+In the intermediate cities of Colombia, where the Strategic Public Transportation Systems are implemented, the urban transportation networks must operate under parameters that improve the quality of service provision. Several of the challenges faced by the transportation systems in these cities are aimed at increasing the number of passengers transported in the system and the technological adoption that must be integrated for the management and control of public transportation fleets.
+[
+31
+]
+Achieving this requires strategic systems to integrate solutions based on intelligent transportation systems and
+information and communication technologies
+to optimize fleet control and management, electronic fare collection, road safety, and the delivery of information to users.
+[
+32
+]
+The functionalities to be covered by the technology in these transportation systems include: fleet scheduling; vehicle location and traceability; cloud storage of operational data; interoperability with other information systems; centralization of operations; passenger counting; data control and visualization.
+[
+33
+]
+See also
+[
+edit
+]
+Automated planning and scheduling
+Driverless car
+Freeway Traffic Management System
+or COMPASS
+Intelligent speed adaptation
+Intelligent Transportation Systems Institute
+Internet of things
+Map database management
+Mass surveillance
+National Transportation Communications for Intelligent Transportation System Protocol
+On-street parking sensing
+RESCU
+– similar system to COMPASS used by the City of
+Toronto
+Road Weather Information System
+SCATS
+Scalable Urban Traffic Control
+Smart traffic light
+STREAMS Integrated Intelligent Transport System
+Telematics
+Traffic estimation and prediction system
+Traffic Message Channel
+Traffic optimization
+Vehicular communication systems
+Vehicular Ad Hoc Network
+Wardrop equilibrium
+Urban traffic modeling and analysis
+References
+[
+edit
+]
+↑
+Mahmood, Adnan; Siddiqui, Sarah Ali; Sheng, Quan Z.; Zhang, Wei Emma; Suzuki, Hajime; Ni, Wei (June 2022).
+"Trust on wheels: Towards secure and resource efficient IoV networks"
+.
+Computing
+.
+104
+(6):
+1337–
+1358.
+doi
+:
+10.1007/s00607-021-01040-7
+.
+ISSN
+0010-485X
+.
+S2CID
+246434811
+.
+↑
+DIRECTIVE 2010/40/EU OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 7 July 2010
+. eur-lex.europa.eu
+↑
+"Reducing delay due to traffic congestion.
+[
+Social Impact
+]
+. ITS. The Intelligent Transportation Systems Centre and Testbed"
+.
+SIOR, Social Impact Open Repository
+. Archived from
+the original
+on 2017-09-05
+. Retrieved
+2017-09-05
+.
+↑
+"Smart tech to end fwy congestion"
+.
+PerthNow
+. 2020-07-07
+. Retrieved
+2020-10-07
+.
+↑
+Monahan, Torin (2007).
+"
+"War Rooms" of the Street: Surveillance Practices in Transportation Control Centres"
+(PDF)
+.
+The Communication Review
+.
+10
+(4):
+367–
+389.
+doi
+:
+10.1080/10714420701715456
+.
+S2CID
+44101831
+.
+Archived
+(PDF)
+from the original on 2022-10-10.
+↑
+Skarga-Bandurova, I.; Derkach, M.; Kotsiuba, I. (September 2018).
+"The Information Service for Delivering Arrival Public Transport Prediction"
+.
+2018 IEEE 4th International Symposium on Wireless Systems within the International Conferences on Intelligent Data Acquisition and Advanced Computing Systems (IDAACS-SWS)
+:
+84–
+88.
+↑
+Omid, Ghaffarpasand; Mark, Burke; K., Osei; Helen, Ursell; Sam, Chapman; D., Pope (January 2022).
+"An Intelligent Fleet Management System for Sustainable Urban Logistics"
+.
+Sustainability
+.
+14
+(24)
+. Retrieved
+19 September
+2025
+.
+↑
+"Automotive Intelligent Transport Systems (ITS)"
+.
+ETSI
+. Retrieved
+19 September
+2025
+.
+↑
+"Frequently Asked Questions"
+.
+Intelligent Transportation Systems Joint Program Office
+. United States Department of Transportation. Archived from
+the original
+on January 16, 2000
+. Retrieved
+10 November
+2016
+.
+↑
+Ben-Gal, I., Weinstock, S., Singer, G., & Bambos, N. (2019).
+"Clustering Users by Their Mobility Behavioral Patterns"
+(PDF)
+. ACM Transactions on Knowledge Discovery from Data (TKDD), 13(4), 45. Archived from
+the original
+(PDF)
+on 2019-10-14
+. Retrieved
+2022-05-29
+.
+{{
+cite web
+}}
+: CS1 maint: multiple names: authors list (
+link
+) CS1 maint: numeric names: authors list (
+link
+)
+↑
+Tarnoff, Philip John, Bullock, Darcy M, Young, Stanley E, et al. "Continuing Evolution of Travel Time Data Information Collection and Processing", Transportation Research Board Annual Meeting 2009 Paper #09-2030. TRB 88th Annual Meeting Compendium of Papers DVD
+↑
+"GPS satellite navigation"
+. 2017-01-12.
+↑
+Mohan, Prashanth, Venkata N. Padmanabhan, and Ramachandran Ramjee.
+Nericell: rich monitoring of road and traffic conditions using mobile smartphones.
+Proceedings of the 6th ACM conference on Embedded network sensor systems. ACM, 2008.
+↑
+Ahmed, Hazem; EL-Darieby, Mohamed; Abdulhai, Baher; Morgan, Yasser (2008-01-13).
+"Bluetooth- and Wi-Fi-Based Mesh Network Platform for Traffic Monitoring"
+.
+Transportation Research Board 87th Annual Meeting
+.
+↑
+Tyagi, V., Kalyanaraman, S., Krishnapuram, R. (2012). "Vehicular Traffic Density State Estimation Based on Cumulative Road Acoustics".
+IEEE Transactions on Intelligent Transportation Systems
+.
+13
+(3):
+1156–
+1166.
+Bibcode
+:
+2012ITITr..13.1156T
+.
+doi
+:
+10.1109/TITS.2012.2190509
+.
+S2CID
+14434273
+.
+{{
+cite journal
+}}
+: CS1 maint: multiple names: authors list (
+link
+)
+↑
+"Comparison of Stopped Vehicle Detection (SVD) Technologies for Smart Motorway Applications"
+.
+Ogier Electronics
+. Retrieved
+4 May
+2020
+.
+↑
+"Smart motorway evidence stocktake and action plan"
+.
+GOV.UK
+. Retrieved
+2020-04-12
+.
+↑
+Joshi, V.; Rajamani, N.; Takayuki, K.; Prathapaneni, N.; Subramaniam, L. V. (2013).
+Information Fusion Based Learning for Frugal Traffic State Sensing
+. Proceedings of the Twenty-Third International Joint Conference on Artificial Intelligence.
+↑
+Keating, Dave.
+"All Cars In Europe Can Now Call The Police Themselves"
+.
+Forbes
+. Retrieved
+2019-09-25
+.
+1
+2
+Gleeson, Colin.
+"New cars to automatically inform authorities of crashes"
+.
+The Irish Times
+. Retrieved
+2019-09-25
+.
+↑
+"Smart and Secure: How Digitalization is Transforming Public Transport"
+.
+Berg Insight
+. Retrieved
+19 September
+2025
+.
+↑
+Skarga-Bandurova, I.; Derkach, M.; Kotsiuba, I. (September 2018). "The Information Service for Delivering Arrival Public Transport Prediction".
+2018 IEEE 4th International Symposium on Wireless Systems within the International Conferences on Intelligent Data Acquisition and Advanced Computing Systems (IDAACS-SWS)
+. pp.
+84–
+88.
+doi
+:
+10.1109/IDAACS-SWS.2018.8525787
+.
+ISBN
+978-1-5386-9339-1
+.
+↑
+"Estonia's public transportation digital transformation"
+.
+Shared City
+. Retrieved
+19 September
+2025
+.
+↑
+Report (HC 15, 2004–05): Tackling congestion by making better use of England's motorways and trunk roads (Full Report)
+(PDF)
+,
+National Audit Office
+, 26 November 2004,
+archived
+(PDF)
+from the original on 2005-03-11
+, retrieved
+2009-09-17
+↑
+Trend in Road Accidents, Japan
+Archived
+2009-05-21 at the
+Wayback Machine
+. nilim.go.jp
+↑
+3rd eSafety Forum, 25 March 2004
+↑
+European Commission, Directorate-General "Information Society", Directorate C "Miniaturisation, Embedded Systems and Societal Applications", Unit C.5 "ICT for Transport and the Environment", "Towards Cooperative Systems for Road Transport", Transport Clustering Meeting, 8 November 2004
+.
+↑
+"ITS World Congress"
+.
+Promotional web site
+. Retrieved
+10 November
+2016
+.
+↑
+"ITS World Congress 2025"
+.
+www.ntradeshows.com
+. Retrieved
+2023-09-02
+.
+↑
+"Introducing the Network of National ITS Associations!"
+.
+Promotional web site
+. Retrieved
+10 November
+2016
+.
+↑
+Ramirez-Guerrero, Tomas; Toro, Mauricio; Villegas López, Gustavo; Castañeda, Leonel (2022).
+"Functional Requirements for Management and Control of Public Transportation Vehicles, Applied to Sustainable Mobility in Medium-Sized Cities"
+.
+Communication, Smart Technologies and Innovation for Society
+. Smart Innovation, Systems and Technologies. Vol.
+252. pp.
+673–
+683.
+doi
+:
+10.1007/978-981-16-4126-8_60
+.
+ISBN
+978-981-16-4125-1
+.
+S2CID
+244182421
+. Retrieved
+23 May
+2022
+.
+↑
+Ramirez-Guerrero, T; Toro, M; Villegas López, G A; Castañeda, L F (2020).
+"Low-cost computational systems applied to physical architectures in public transportation systems of intermediate cities"
+.
+Journal of Physics: Conference Series
+.
+1702
+(1) 012018.
+Bibcode
+:
+2020JPhCS1702a2018R
+.
+doi
+:
+10.1088/1742-6596/1702/1/012018
+.
+↑
+Ramirez-Guerrero, Tomas; Toro, Mauricio; Tabares, Marta S.; Salazar-Cabrera, Ricardo; Pachón de la Cruz, Álvaro (2022).
+"Key Aspects for IT-Services Integration in Urban Transit Service of Medium-Sized Cities: A Qualitative Exploratory Study in Colombia"
+.
+Sustainability
+.
+14
+(5): 2478.
+Bibcode
+:
+2022Sust...14.2478R
+.
+doi
+:
+10.3390/su14052478
+.
+External links
+[
+edit
+]
+ITS Handbook available for free download
+U.S. Department of Transportation – Intelligent Transportation Systems Joint Program Office website
+Guide to Federal ITS Research – U.S. Department of Transportation
+ITS Safety Applications Factsheet – U.S. Department of Transportation
+ISO standardization of intelligent transport systems
+CEN standardization of intelligent transport systems
+v
+t
+e
+Self-driving cars
+, self-driving vehicles and enabling technologies
+Overview and
+context
+History of self-driving cars
+Impact of self-driving cars
+Intelligent transportation system
+Context-aware pervasive systems
+Mobile computing
+Smart, connected products
+Ubiquitous computing
+Ambient intelligence
+Internet of things
+List of self-driving system suppliers
+SAE Levels
+Human driver monitors
+the driving environment
+(Levels 0,1,2)
+Lane departure warning system
+Automatic parking
+Automated emergency braking system
+Collision avoidance system
+Cruise control
+Adaptive cruise control
+Advanced driver-assistance system
+Driver drowsiness detection
+Intelligent speed adaptation
+Blind spot monitor
+System monitors
+the driving environment
+(Levels 3,4,5)
+Automated Lane Keeping Systems
+Vehicular ad hoc network
+(V2V)
+Connected car
+Automotive navigation system
+Vehicles
+Cars
+VaMP
+(1994)
+Spirit of Berlin
+(2007)
+General Motors EN-V
+(2010)
+MadeInGermany
+(2011)
+Waymo
+, formerly Google Car (2012)
+Tesla Model S
+with
+Autopilot
+(2015)
+LUTZ Pathfinder
+(2015)
+Avride
+(2017)
+Honda Legend
+(2021)
+Waymo Ojai
+(2026)
+Tesla Cybercab
+(2026)
+Buses and commercial
+vehicles
+Automated guideway transit
+CAVForth
+ParkShuttle
+Navia shuttle
+NuTonomy
+taxi
+Freightliner Inspiration
+Driverless tractor
+Self-driving truck
+Mobility as a service
+Regulation
+Legislation
+IEEE 802.11p
+Safe speed automotive common law
+Automated lane keeping system
+(unece regulation 157)
+Regulation (EU) 2019/2144
+Liability
+Self-driving car liability
+Enabling
+technologies
+Radar
+Laser
+LIDAR
+Artificial neural network
+Computer stereo vision
+Image recognition
+Dedicated short-range communications
+Real-time Control System
+rFpro
+Eye tracking
+Radio-frequency identification
+Automotive navigation system
+Organizations,
+Projects &
+People
+Organizations,
+projects
+and events
+American Center for Mobility
+DAVI
+European Land-Robot Trial
+Navlab
+DARPA Grand Challenge
+VisLab Intercontinental Autonomous Challenge
+Eureka Prometheus Project
+IEEE Intelligent Transportation Systems Society
+People
+Harold Goddijn
+Alberto Broggi
+Anthony Levandowski
+Authority control databases
+International
+GND
+National
+France
+BnF data
+Japan
+Czech Republic
+Israel
+Retrieved from "
+https://en.wikipedia.org/w/index.php?title=Intelligent_transportation_system&oldid=1380196102
+"
+Categories
+:
+Transportation engineering
+Intelligent transportation systems
+Hidden categories:
+Articles with short description
+Short description matches Wikidata
+Use British English from July 2024
+All Wikipedia articles written in British English
+All articles with specifically marked weasel-worded phrases
+Articles with specifically marked weasel-worded phrases from November 2016
+All articles with vague or ambiguous time
+Vague or ambiguous time from February 2021
+All articles with unsourced statements
+Articles with unsourced statements from February 2009
+CS1 maint: multiple names: authors list
+CS1 maint: numeric names: authors list
+Articles with unsourced statements from October 2012
+Articles with unsourced statements from April 2012
+Webarchive template wayback links
