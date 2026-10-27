@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:mm="https://knowledge.uni.lviv.ua/mobility#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#usesVehicle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Congestion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:stopName>Вокзал</mm:stopName>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#recommends">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#BusRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TransportNetwork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#relatedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#delayMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Recommendation_R1">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <mm:recommends rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_31"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#routeType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#GTFSDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#DataAsset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Route">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNetwork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Tram">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Route_31">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TramRoute"/>
+    <mm:routeId>31</mm:routeId>
+    <mm:routeType>0</mm:routeType>
+    <mm:hasStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#loadFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus_2501"/>
+    <mm:hasMeasurement rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay_9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#routeId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TramRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Validator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Vehicle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Schedule"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Bus_2502">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Route_9">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#BusRoute"/>
+    <mm:routeId>9</mm:routeId>
+    <mm:routeType>3</mm:routeType>
+    <mm:hasStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:hasTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#LLMDraft">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="uk">Чернетка онтології від LLM, lab07-prompt-v1</rdfs:label>
+    <owl:versionInfo>0.1</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Measurement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#DataAsset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:stopName>Площа Ринок</mm:stopName>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#GPSTracker">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#InterchangeStop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus_2502"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TransportSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#MobilitySystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasStop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Delay">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Passenger_P01">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#stopName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Delay_9">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay"/>
+    <mm:delayMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</mm:delayMinutes>
+    <mm:measurementOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Schedule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNetwork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Analytics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Recommendation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Congestion_H">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Agency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Dispatcher">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasMeasurement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Driver">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus_2501"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Bus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Bus25">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Bus_2501">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Passenger">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Sensor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#MobilitySystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>

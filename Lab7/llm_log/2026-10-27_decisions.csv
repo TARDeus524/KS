@@ -1,0 +1,13 @@
+﻿id,fragment,decision,reason
+D01,Passenger ⊑ Vehicle,відхилено,Порушення категорії: пасажир не є транспортним засобом.
+D02,Trip ⊑ Route,відхилено,Рейс і маршрут належать до різних рівнів; це клас проти екземпляра.
+D03,Delay ⊑ Event,відхилено,"Затримка — вимірювання, а не подія."
+D04,Bus25 як owl:Class,відхилено,Конкретний автобус має бути індивідом.
+D05,hasStop без inverse,відхилено,Додано servesStop/servedByRoute.
+D06,routeType xsd:string,відхилено,Тип маршруту є цілим числом GTFS.
+D07,hasStop exactly 1,відхилено,Маршрут обслуговує багато зупинок.
+D08,relatedTo,відхилено,Замінено на конкретні відношення.
+D09,Немає диз’юнктностей,відхилено,Додано 8 груп AllDisjointClasses.
+D10,Немає кардинальностей,відхилено,"Додано usesVehicle=1, operatedBy=1, atStop=1."
+D11,"Індивіди Route_9, Stop_Vokzal, Trip_9_0800",прийнято з правками,Використано як основу ABox.
+D12,usesVehicle,прийнято,Збережено з domain/range та inverse.

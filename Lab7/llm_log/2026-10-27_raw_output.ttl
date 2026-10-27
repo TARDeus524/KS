@@ -1,0 +1,67 @@
+@prefix mm: <https://knowledge.uni.lviv.ua/mobility#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mm:LLMDraft a owl:Ontology ;
+  rdfs:label "Чернетка онтології від LLM, lab07-prompt-v1"@uk ;
+  owl:versionInfo "0.1" .
+
+mm:MobilitySystem a owl:Class .
+mm:TransportSystem a owl:Class ; rdfs:subClassOf mm:MobilitySystem .
+mm:TransportNetwork a owl:Class ; rdfs:subClassOf mm:TransportSystem .
+mm:Stop a owl:Class ; rdfs:subClassOf mm:TransportNetwork .
+mm:InterchangeStop a owl:Class ; rdfs:subClassOf mm:Stop .
+mm:Route a owl:Class ; rdfs:subClassOf mm:TransportNetwork .
+mm:BusRoute a owl:Class ; rdfs:subClassOf mm:Route .
+mm:TramRoute a owl:Class ; rdfs:subClassOf mm:Route .
+mm:Vehicle a owl:Class ; rdfs:subClassOf mm:TransportSystem .
+mm:Bus a owl:Class ; rdfs:subClassOf mm:Vehicle .
+mm:Tram a owl:Class ; rdfs:subClassOf mm:Vehicle .
+mm:Trip a owl:Class ; rdfs:subClassOf mm:Route .
+mm:Schedule a owl:Class ; rdfs:subClassOf mm:TransportSystem .
+mm:StopTime a owl:Class ; rdfs:subClassOf mm:Schedule .
+mm:Passenger a owl:Class ; rdfs:subClassOf mm:Vehicle .
+mm:Driver a owl:Class .
+mm:Dispatcher a owl:Class .
+mm:Agency a owl:Class .
+mm:DataAsset a owl:Class .
+mm:GTFSDataset a owl:Class ; rdfs:subClassOf mm:DataAsset .
+mm:Sensor a owl:Class .
+mm:GPSTracker a owl:Class ; rdfs:subClassOf mm:Sensor .
+mm:Validator a owl:Class ; rdfs:subClassOf mm:Sensor .
+mm:Event a owl:Class .
+mm:Congestion a owl:Class ; rdfs:subClassOf mm:Event .
+mm:Delay a owl:Class ; rdfs:subClassOf mm:Event .
+mm:Measurement a owl:Class .
+mm:Recommendation a owl:Class .
+mm:Analytics a owl:Class .
+mm:Bus25 a owl:Class .
+
+mm:hasStop a owl:ObjectProperty ; rdfs:domain mm:Route ; rdfs:range mm:Stop .
+mm:hasTrip a owl:ObjectProperty ; rdfs:domain mm:Route ; rdfs:range mm:Trip .
+mm:usesVehicle a owl:ObjectProperty ; rdfs:domain mm:Trip ; rdfs:range mm:Vehicle .
+mm:hasEvent a owl:ObjectProperty ; rdfs:domain mm:Route ; rdfs:range mm:Event .
+mm:relatedTo a owl:ObjectProperty .
+mm:hasMeasurement a owl:ObjectProperty ; rdfs:domain mm:Trip ; rdfs:range mm:Measurement .
+mm:recommends a owl:ObjectProperty ; rdfs:domain mm:Recommendation ; rdfs:range mm:Route .
+mm:routeId a owl:DatatypeProperty ; rdfs:domain mm:Route ; rdfs:range xsd:string .
+mm:routeType a owl:DatatypeProperty ; rdfs:domain mm:Route ; rdfs:range xsd:string .
+mm:stopName a owl:DatatypeProperty ; rdfs:domain mm:Stop ; rdfs:range xsd:string .
+mm:delayMinutes a owl:DatatypeProperty ; rdfs:domain mm:Delay ; rdfs:range xsd:integer .
+mm:loadFactor a owl:DatatypeProperty ; rdfs:domain mm:Measurement ; rdfs:range xsd:decimal .
+
+mm:Route_9 a mm:BusRoute ; mm:routeId "9" ; mm:routeType "3" ; mm:hasStop mm:Stop_Vokzal ; mm:hasTrip mm:Trip_9_0800 .
+mm:Route_31 a mm:TramRoute ; mm:routeId "31" ; mm:routeType "0" ; mm:hasStop mm:Stop_Vokzal .
+mm:Stop_Vokzal a mm:Stop ; mm:stopName "Вокзал" .
+mm:Stop_Rynok a mm:Stop ; mm:stopName "Площа Ринок" .
+mm:Trip_9_0800 a mm:Trip ; mm:usesVehicle mm:Bus_2501 ; mm:hasMeasurement mm:Delay_9 .
+mm:Trip_9_0830 a mm:Trip ; mm:usesVehicle mm:Bus_2502 .
+mm:Trip_25_0815 a mm:Trip ; mm:usesVehicle mm:Bus_2501 .
+mm:Bus_2501 a mm:Bus .
+mm:Bus_2502 a mm:Bus .
+mm:Passenger_P01 a mm:Passenger .
+mm:Congestion_H a mm:Congestion .
+mm:Delay_9 a mm:Delay ; mm:delayMinutes 15 ; mm:measurementOf mm:Trip_9_0800 .
+mm:Recommendation_R1 a mm:Recommendation ; mm:recommends mm:Route_31 .

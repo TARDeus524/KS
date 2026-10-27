@@ -1,0 +1,1631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:mm="https://knowledge.uni.lviv.ua/mobility#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#confidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">впевненість прогнозу</rdfs:label>
+    <rdfs:comment xml:lang="uk">Оцінка достовірності прогнозу від 0 до 1.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Forecast"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Schedule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Розклад</rdfs:label>
+    <dcterms:source>GTFS calendar.txt, frequencies.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">План виконання рейсів, що визначає дати, часи та інтервали руху на маршрутах.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasMeasurement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має вимірювання</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс має кількісні вимірювання затримки, завантаженості або часу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#measurementOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne524eced3f654b6a9d77e0e1a7f7a7c6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#atStop"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#CrowdedState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Стан перевантаження</rdfs:label>
+    <dcterms:source>ЛР6; SIRI</dcterms:source>
+    <rdfs:comment xml:lang="uk">Стан рейсу, за якого завантаженість перевищує допустимий рівень комфорту.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#describedByDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">описана джерелом</rdfs:label>
+    <rdfs:comment xml:lang="uk">Транспортна мережа описана конкретним джерелом даних.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNetwork"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#DataAsset"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#datasetDescribes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#GPSTracker">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">GPS-трекер</rdfs:label>
+    <dcterms:source>ЛР6; GTFS realtime</dcterms:source>
+    <rdfs:comment xml:lang="uk">Сенсор, що визначає координати, швидкість і час руху транспортного засобу.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#forecastFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">прогнозує рейс</rdfs:label>
+    <rdfs:comment xml:lang="uk">Прогноз стосується конкретного рейсу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Forecast"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#forecastOfTrip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#sensorId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">ідентифікатор сенсора</rdfs:label>
+    <rdfs:comment xml:lang="uk">Унікальний ідентифікатор пристрою вимірювання.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Sensor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TransportSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Транспортна система</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6; GTFS Reference 2026</dcterms:source>
+    <rdfs:comment xml:lang="uk">Система, що об’єднує транспортну мережу, рухомий склад, рейси, учасників і управлінські процеси міста.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#MobilitySystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#State_OnTime_9_0830">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#OnTimeState"/>
+    <mm:stateOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#InterchangeStop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Пересадочна зупинка</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6; GTFS transfers.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Зупинка, яку обслуговують щонайменше два різні транспортні маршрути і на якій можлива пересадка.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://schema.org/BusStop"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <owl:equivalentClass rdf:nodeID="N567e2e694cd544ef982544e1a87e0da1"/>
+    <skos:closeMatch rdf:resource="https://schema.org/BusStop"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TransportAgency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Перевізник</rdfs:label>
+    <dcterms:source>GTFS agency.txt; schema:Organization</dcterms:source>
+    <rdfs:comment xml:lang="uk">Організація, що надає транспортні послуги, володіє рухомим складом і публікує дані.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://schema.org/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Actor"/>
+    <skos:closeMatch rdf:resource="https://schema.org/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Politekhnika">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.8355</mm:latitude>
+    <mm:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.012</mm:longitude>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:stopId>S003</mm:stopId>
+    <mm:stopName>Політехніка</mm:stopName>
+    <mm:wheelchairAccessible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</mm:wheelchairAccessible>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#servesStop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">обслуговує зупинку</rdfs:label>
+    <rdfs:comment xml:lang="uk">Маршрут обслуговує зупинку, на якій зупиняються його рейси.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#servedByRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#PassengerSurge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Сплеск пасажиропотоку</rdfs:label>
+    <dcterms:source>ЛР6; SIRI</dcterms:source>
+    <rdfs:comment xml:lang="uk">Подія, за якої попит на перевезення різко перевищує плановий пасажиропотік.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#respondsTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">реагує на подію</rdfs:label>
+    <rdfs:comment xml:lang="uk">Диспетчер реагує на подію в реальному часі.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Dispatcher"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#handledBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#stopId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">ідентифікатор зупинки</rdfs:label>
+    <rdfs:comment xml:lang="uk">Унікальний ідентифікатор зупинки з GTFS stops.txt.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TramRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Трамвайний маршрут</rdfs:label>
+    <dcterms:source>GTFS routes.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Транспортний маршрут, що обслуговується трамваями і має GTFS route_type = 0.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має рейс</rdfs:label>
+    <rdfs:comment xml:lang="uk">Маршрут містить конкретні рейси, що його виконують.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#tripOfRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6095eacb99bb410fb173ada174c84094">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#servedByRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#longitude">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">довгота</rdfs:label>
+    <rdfs:comment xml:lang="uk">Географічна довгота зупинки в градусах.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#usesVehicle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">використовує транспортний засіб</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс виконується конкретним транспортним засобом.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#assignedToTrip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:affectedByEvent rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska"/>
+    <mm:endsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:hasDriver rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver_01"/>
+    <mm:hasMeasurement rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay_9_0800"/>
+    <mm:hasMeasurement rdf:resource="https://knowledge.uni.lviv.ua/mobility#Load_9_0800"/>
+    <mm:hasMeasurement rdf:resource="https://knowledge.uni.lviv.ua/mobility#TravelTime_9_0800"/>
+    <mm:hasState rdf:resource="https://knowledge.uni.lviv.ua/mobility#State_Delayed_9"/>
+    <mm:hasStopTime rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Politekhnika"/>
+    <mm:hasStopTime rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Rynok"/>
+    <mm:hasStopTime rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Vokzal"/>
+    <mm:operatedBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus"/>
+    <mm:startsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:tripId>T090800</mm:tripId>
+    <mm:tripOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus_2501"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#capacity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">місткість</rdfs:label>
+    <rdfs:comment xml:lang="uk">Максимальна кількість пасажирів транспортного засобу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Route_31">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TramRoute"/>
+    <mm:hasTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+    <mm:routeId>31</mm:routeId>
+    <mm:routeType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</mm:routeType>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#datasetDescribes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">описує мережу</rdfs:label>
+    <rdfs:comment xml:lang="uk">Джерело даних описує транспортну мережу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#DataAsset"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNetwork"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#describedByDataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7352fd556d0d4de3bff35a060e36e645">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N9480787f8aff4e4cad200eaf6c8587c6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#RouteShape">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Форма маршруту</rdfs:label>
+    <dcterms:source>GTFS shapes.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Геометрія шляху руху транспортного засобу, подана послідовністю координат.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Rynok">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <mm:atStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:departureTime>08:20:00</mm:departureTime>
+    <mm:stopSequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</mm:stopSequence>
+    <mm:stopTimeOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#PassengerFlow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Пасажиропотік</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Вимірювання кількості пасажирів, що проходять через зупинку або ділянку за одиницю часу.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#AccessibleStop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Доступна зупинка</rdfs:label>
+    <dcterms:source>GTFS stops.txt; schema:BusStop</dcterms:source>
+    <rdfs:comment xml:lang="uk">Зупинка, обладнана для посадки та висадки маломобільних пасажирів, зокрема з ознакою доступності.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <owl:equivalentClass rdf:nodeID="Nb65c7d50ad7b48d2b5a0fed86f9d6520"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#operatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">виконується перевізником</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс виконується транспортним перевізником.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportAgency"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#operatesTrip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#drivesTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">керує рейсом</rdfs:label>
+    <rdfs:comment xml:lang="uk">Водій виконує конкретний рейс.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasDriver"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#stopAtTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має запис часу</rdfs:label>
+    <rdfs:comment xml:lang="uk">Зупинка має записи часу прибуття та відправлення.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#atStop"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Delay">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Затримка</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6; SIRI</dcterms:source>
+    <rdfs:comment xml:lang="uk">Вимірювання відхилення фактичного часу руху рейсу від планового часу розкладу.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Recommendation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Рекомендація</rdfs:label>
+    <dcterms:source>ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Аналітичний результат, що пропонує пасажиру або диспетчеру конкретну дію щодо маршруту чи рейсу.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="N65d23d4b333c434980ec8e68442eb191"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Analytics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#stopName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">назва зупинки</rdfs:label>
+    <rdfs:comment xml:lang="uk">Людиночитана назва зупинки.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na4031c8fdda24f70b59a9ebfb9ac9ad8">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#CrowdedState"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#delayMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">затримка, хв</rdfs:label>
+    <rdfs:comment xml:lang="uk">Відхилення фактичного часу відправлення від планового в хвилинах.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:endsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:hasDriver rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver_02"/>
+    <mm:hasState rdf:resource="https://knowledge.uni.lviv.ua/mobility#State_OnTime_31"/>
+    <mm:operatedBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Agency_LvivElektrotrans"/>
+    <mm:startsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:tripId>T310700</mm:tripId>
+    <mm:tripOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_31"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Tram_0903"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Bus_2501">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus"/>
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Tram"/>
+    <mm:assignedToTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</mm:capacity>
+    <mm:vehicleId>B2501</mm:vehicleId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#System_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+    <rdfs:label xml:lang="uk">Транспортна система Львова</rdfs:label>
+    <mm:hasPart rdf:resource="https://knowledge.uni.lviv.ua/mobility#Network_Lviv"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Frequency_R25">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Frequency"/>
+    <mm:frequencyOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_25"/>
+    <mm:headwayMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</mm:headwayMinutes>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9d88eb1690634eeeb9d0fac86d238b6b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N61f8ed47b4a5461c8f35fe1a730e9f47"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#measuredBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">виміряне сенсором</rdfs:label>
+    <rdfs:comment xml:lang="uk">Вимірювання отримане конкретним сенсором.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Sensor"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#measures"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#DelayedTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Затриманий рейс</rdfs:label>
+    <dcterms:source>ЛР6; SIRI</dcterms:source>
+    <rdfs:comment xml:lang="uk">Рейс, фактичний стан якого відхилено від розкладу щонайменше на порогову величину затримки.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:equivalentClass rdf:nodeID="N80164f441fab40da9c927e4f3265e72b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#forecastOfTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має прогноз</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс має прогнозне значення.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Forecast"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#forecastFor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2bf5883db0fb4228aeb1d00cec0e5157">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#NetworkSegment"/>
+    <rdf:rest rdf:nodeID="N6d5092dfbb014d969bfc3c795a55a6fd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#OnTimeState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Стан за розкладом</rdfs:label>
+    <dcterms:source>ЛР6; SIRI</dcterms:source>
+    <rdfs:comment xml:lang="uk">Стан рейсу, за якого фактичний час виконання відповідає плановому часу розкладу.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N517feb782fb748978d5d0d5361276a29">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasStopTime"/>
+    <owl:someValuesFrom rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TransportNetwork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Транспортна мережа</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6; GTFS Reference 2026</dcterms:source>
+    <rdfs:comment xml:lang="uk">Транспортна система, що складається з вузлів, ділянок і маршрутів та утворює граф міста.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#personName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">ім’я учасника</rdfs:label>
+    <rdfs:comment xml:lang="uk">Людиночитане ім’я пасажира, водія або диспетчера.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Actor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Рейс</rdfs:label>
+    <dcterms:source>GTFS trips.txt, stop_times.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Конкретне виконання маршруту в певний час, що складається з послідовності зупинок і зупиночних часів.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://schema.org/Trip"/>
+    <rdfs:subClassOf rdf:nodeID="N2c8befa6401c4d8db84b3ec1bc8ce063"/>
+    <rdfs:subClassOf rdf:nodeID="N517feb782fb748978d5d0d5361276a29"/>
+    <rdfs:subClassOf rdf:nodeID="N57edea19a43a45c7a0f94a64ba1e8c49"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+    <skos:closeMatch rdf:resource="https://schema.org/Trip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#State_Delayed_9">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#DelayedState"/>
+    <mm:stateOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Network_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNetwork"/>
+    <mm:partOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#System_Lviv"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd8edc0be32164209908d8ba34bf5b44f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nc1e1182d10fd4739892951cce6e19c4e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trolleybus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Тролейбус</rdfs:label>
+    <dcterms:source>GTFS route_type = 11</dcterms:source>
+    <rdfs:comment xml:lang="uk">Транспортний засіб з електроживленням від контактної мережі, що використовується на тролейбусних маршрутах.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#affectedByEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">зазнає впливу події</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс зазнає впливу події на мережі.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#affectsTrip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Зупиночний час</rdfs:label>
+    <dcterms:source>GTFS stop_times.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Запис розкладу про прибуття або відправлення рейсу на конкретній зупинці.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="Ne524eced3f654b6a9d77e0e1a7f7a7c6"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Schedule"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.8419</mm:latitude>
+    <mm:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.0315</mm:longitude>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_31"/>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:stopId>S002</mm:stopId>
+    <mm:stopName>Площа Ринок</mm:stopName>
+    <mm:wheelchairAccessible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</mm:wheelchairAccessible>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Tram_0903">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Tram"/>
+    <mm:assignedToTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+    <mm:capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</mm:capacity>
+    <mm:vehicleId>T0903</mm:vehicleId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Flow_Vokzal_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#PassengerFlow"/>
+    <mm:measuredBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Validator_Vokzal"/>
+    <mm:passengerCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</mm:passengerCount>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#NeTExDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Набір NeTEx</rdfs:label>
+    <dcterms:source>NeTEx; Transmodel</dcterms:source>
+    <rdfs:comment xml:lang="uk">Джерело даних, що містить XML-описи мережі, розкладів і тарифів за стандартом NeTEx.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#DataAsset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TransportRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Транспортний маршрут</rdfs:label>
+    <dcterms:source>GTFS routes.txt; schema:Route</dcterms:source>
+    <rdfs:comment xml:lang="uk">Упорядкована послідовність зупинок, що обслуговується рейсами під спільним ідентифікатором.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://schema.org/Route"/>
+    <rdfs:subClassOf rdf:nodeID="N4fcaa1388e35467ca372fb19b783b2b0"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNetwork"/>
+    <skos:closeMatch rdf:resource="https://schema.org/Route"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Seg_Rynok_Politekhnika">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#NetworkSegment"/>
+    <rdfs:label xml:lang="uk">Площа Ринок — Політехніка</rdfs:label>
+    <mm:hasEvent rdf:resource="https://knowledge.uni.lviv.ua/mobility#Roadwork_Stryiska"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#handledBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">опрацьована диспетчером</rdfs:label>
+    <rdfs:comment xml:lang="uk">Подія опрацьована конкретним диспетчером.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Dispatcher"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#respondsTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#forPassenger">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">призначена пасажиру</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рекомендація адресована конкретному пасажиру.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#passengerRecommendation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Measurement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Вимірювання</rdfs:label>
+    <dcterms:source>ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Кількісна характеристика транспортного процесу, отримана від сенсора або обчислена аналітикою.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#vehicleId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">ідентифікатор транспортного засобу</rdfs:label>
+    <rdfs:comment xml:lang="uk">Унікальний ідентифікатор рухомого складу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#departureTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">час відправлення</rdfs:label>
+    <rdfs:comment xml:lang="uk">Плановий час відправлення рейсу з зупинки.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Passenger">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Пасажир</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6; schema:Person</dcterms:source>
+    <rdfs:comment xml:lang="uk">Учасник процесу, що користується транспортом і здійснює поїздку між зупинками.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://schema.org/Person"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Actor"/>
+    <skos:closeMatch rdf:resource="https://schema.org/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#NetworkSegment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Ділянка мережі</rdfs:label>
+    <dcterms:source>ЛР5, ЛР6; GTFS shapes.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Частина транспортної мережі між двома сусідніми зупинками, що має час і відстань проходження.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://schema.org/Place"/>
+    <rdfs:subClassOf rdf:nodeID="N524ee29a62e4483e8ed278cdae04a109"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNetwork"/>
+    <skos:closeMatch rdf:resource="https://schema.org/Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#isEndOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">є завершенням</rdfs:label>
+    <rdfs:comment xml:lang="uk">Зупинка є кінцевою для рейсу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#endsAt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#GTFSDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Набір GTFS</rdfs:label>
+    <dcterms:source>GTFS Reference 2026</dcterms:source>
+    <rdfs:comment xml:lang="uk">Джерело даних, що складається з CSV-файлів GTFS для опису маршрутів, рейсів, зупинок і розкладів.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://schema.org/Dataset"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#DataAsset"/>
+    <skos:closeMatch rdf:resource="https://schema.org/Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#tripOfRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">є рейсом маршруту</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс належить транспортному маршруту.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasTrip"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4fcaa1388e35467ca372fb19b783b2b0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#servesStop"/>
+    <owl:someValuesFrom rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#recommendedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">рекомендований</rdfs:label>
+    <rdfs:comment xml:lang="uk">Маршрут пропонується рекомендацією.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#recommends"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportAgency"/>
+    <mm:agencyName>ЛьвівАвтобус</mm:agencyName>
+    <mm:operatesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"/>
+    <mm:operatesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:operatesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N110ee6181e764ee0ae833e67b213b348">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#BusRoute"/>
+    <rdf:rest rdf:nodeID="N6b4a823466884557aa401a058bf4c1c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2614b1a71e5e4036996341215db48b7c">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#GTFSDataset"/>
+    <rdf:rest rdf:nodeID="N216f4eee448f4bc2b1c899fd5cfaa3a6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#interchangesWith">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:label xml:lang="uk">має пересадку з</rdfs:label>
+    <rdfs:comment xml:lang="uk">Симетричне відношення між зупинками, між якими можлива пересадка.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#DecisionSupport">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Підтримка рішень</rdfs:label>
+    <dcterms:source>ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Аналітичний процес, що поєднує прогнози й правила для вибору управлінської дії.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Analytics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Dispatcher_01">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Dispatcher"/>
+    <mm:personName>Марія Шевчук</mm:personName>
+    <mm:respondsTo rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TicketValidator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Валідатор квитків</rdfs:label>
+    <dcterms:source>ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Сенсор, що фіксує факти валідації квитків і посадки пасажирів на зупинці.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#measurementOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">є вимірюванням</rdfs:label>
+    <rdfs:comment xml:lang="uk">Вимірювання стосується конкретного рейсу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasMeasurement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Vehicle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Транспортний засіб</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6; GTFS trips.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Рухомий склад, що виконує рейси на маршрутах і має ідентифікатор та пасажиромісткість.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:endsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:hasState rdf:resource="https://knowledge.uni.lviv.ua/mobility#State_OnTime_9_0830"/>
+    <mm:operatedBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus"/>
+    <mm:startsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:tripId>T090830</mm:tripId>
+    <mm:tripOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus_2502"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N46f81a89ebec494c83a288c0e5814b94">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Roadwork"/>
+    <rdf:rest rdf:nodeID="Nbedc18c151644adc83c163352a5432d1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion"/>
+    <mm:affectsSegment rdf:resource="https://knowledge.uni.lviv.ua/mobility#Seg_Vokzal_Rynok"/>
+    <mm:affectsTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:eventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-10-27T08:10:00</mm:eventTime>
+    <mm:handledBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Dispatcher_01"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#VehicleFailure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Поломка транспортного засобу</rdfs:label>
+    <dcterms:source>SIRI; ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Подія, за якої транспортний засіб не може продовжити виконання рейсу без заміни.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#MobilitySystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Інтелектуальна мобільність</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6; Domain Knowledge Hub</dcterms:source>
+    <rdfs:comment xml:lang="uk">Предметна область, що охоплює транспортну систему, дані, учасників і процеси прийняття рішень для управління міською мобільністю.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#routeId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">ідентифікатор маршруту</rdfs:label>
+    <rdfs:comment xml:lang="uk">Унікальний ідентифікатор маршруту з GTFS routes.txt.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Passenger_P02">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger"/>
+    <mm:personName>Софія Бондар</mm:personName>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#loadFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">коефіцієнт завантаженості</rdfs:label>
+    <rdfs:comment xml:lang="uk">Відношення кількості пасажирів до місткості транспортного засобу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#LoadFactor"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasRecommendation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має рекомендацію</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рішення породжує конкретну рекомендацію.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#DecisionSupport"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#recommendationOfDecision"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#DispatchDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Диспетчерське рішення</rdfs:label>
+    <dcterms:source>ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Аналітичний результат, що визначає управлінську дію диспетчера на подію або відхилення від розкладу.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Analytics"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N567e2e694cd544ef982544e1a87e0da1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nf0d85202bc87412a911a4250dbc8fb56"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#SIRIFeed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Потік SIRI</rdfs:label>
+    <dcterms:source>SIRI; Transmodel</dcterms:source>
+    <rdfs:comment xml:lang="uk">Джерело даних, що містить повідомлення SIRI про рух транспорту в реальному часі.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#DataAsset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#supportsDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">підтримує рішення</rdfs:label>
+    <rdfs:comment xml:lang="uk">Прогноз є підставою для управлінського рішення.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Forecast"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#DecisionSupport"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#basedOnForecast"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dcterms:creator>Невмержицький Максим Миколайович</dcterms:creator>
+    <dcterms:title xml:lang="uk">Онтологія інтелектуального управління міською мобільністю</dcterms:title>
+    <rdfs:seeAlso rdf:resource="https://schema.org/"/>
+    <owl:versionInfo>1.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Driver">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Водій</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Учасник процесу, що керує транспортним засобом під час виконання рейсу.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Bus_2502">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus"/>
+    <mm:assignedToTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"/>
+    <mm:assignedToTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"/>
+    <mm:capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</mm:capacity>
+    <mm:vehicleId>B2502</mm:vehicleId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Frequency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Інтервал руху</rdfs:label>
+    <dcterms:source>GTFS frequencies.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Запис розкладу про проміжок часу між послідовними відправленнями рейсів на маршруті.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Schedule"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#endsAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">завершується на</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс завершується на заданій зупинці.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#isEndOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Decision_D1">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#DecisionSupport"/>
+    <mm:basedOnForecast rdf:resource="https://knowledge.uni.lviv.ua/mobility#Forecast_9_Peak"/>
+    <mm:hasRecommendation rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation_R1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#wheelchairAccessible">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">доступність</rdfs:label>
+    <rdfs:comment xml:lang="uk">Ознака доступності зупинки для маломобільних пасажирів.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Driver_01">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver"/>
+    <mm:drivesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:personName>Іван Петренко</mm:personName>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#agencyName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">назва перевізника</rdfs:label>
+    <rdfs:comment xml:lang="uk">Офіційна назва транспортного перевізника.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportAgency"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#measures">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">вимірює</rdfs:label>
+    <rdfs:comment xml:lang="uk">Сенсор формує конкретне вимірювання.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Sensor"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#measuredBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#validFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">дійсний від</rdfs:label>
+    <rdfs:comment xml:lang="uk">Перша дата дії календаря обслуговування.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#ServiceCalendar"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasStopTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має зупиночний час</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс містить записи часу прибуття та відправлення на зупинках.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#stopTimeOfTrip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Route_25">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#BusRoute"/>
+    <mm:hasTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"/>
+    <mm:routeId>25</mm:routeId>
+    <mm:routeType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</mm:routeType>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Universytet"/>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TravelTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Час у дорозі</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Вимірювання тривалості проходження ділянки або виконання поїздки між зупинками.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Vokzal">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <mm:atStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:departureTime>08:00:00</mm:departureTime>
+    <mm:stopSequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</mm:stopSequence>
+    <mm:stopTimeOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#routeType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">тип маршруту</rdfs:label>
+    <rdfs:comment xml:lang="uk">Код виду транспорту GTFS: 3 — автобус, 0 — трамвай, 11 — тролейбус.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne0166b8815934623acb37ed080f33bb6">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#TrolleybusRoute"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5c6fdd7756234fa789e07a172ae8e2a6">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#NetworkSegment"/>
+    <rdf:rest rdf:nodeID="N96d8956392134207b5b573402a52ab70"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Forecast">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Прогноз</rdfs:label>
+    <dcterms:source>ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Аналітичний результат, що оцінює майбутній пасажиропотік, затримку або час у дорозі.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="N13b1f2ef4d0c490f9d0dc46254deabe7"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Analytics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#validTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">дійсний до</rdfs:label>
+    <rdfs:comment xml:lang="uk">Остання дата дії календаря обслуговування.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#ServiceCalendar"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має подію</rdfs:label>
+    <rdfs:comment xml:lang="uk">Ділянка мережі має пов’язану подію, що змінює умови руху.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#NetworkSegment"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#affectsSegment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#eventTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">час події</rdfs:label>
+    <rdfs:comment xml:lang="uk">Дата й час виникнення події на мережі.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TrolleybusRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Тролейбусний маршрут</rdfs:label>
+    <dcterms:source>GTFS routes.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Транспортний маршрут, що обслуговується тролейбусами і має GTFS route_type = 11.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Dispatcher">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Диспетчер</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Учасник процесу, що контролює виконання рейсів і реагує на події в реальному часі.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Universytet">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.838</mm:latitude>
+    <mm:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.022</mm:longitude>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_25"/>
+    <mm:stopId>S004</mm:stopId>
+    <mm:stopName>Університет</mm:stopName>
+    <mm:wheelchairAccessible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</mm:wheelchairAccessible>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Roadwork_Stryiska">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Roadwork"/>
+    <mm:affectsSegment rdf:resource="https://knowledge.uni.lviv.ua/mobility#Seg_Rynok_Politekhnika"/>
+    <mm:eventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-10-27T07:00:00</mm:eventTime>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#recommends">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">рекомендує маршрут</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рекомендація пропонує конкретний маршрут.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#recommendedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trolleybus_1101">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trolleybus"/>
+    <mm:capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</mm:capacity>
+    <mm:vehicleId>TB1101</mm:vehicleId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a1ae8dab6474b978a5dae79eb89c99f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N193690231e234025a323c679bae32d08"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#GPS_2501">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#GPSTracker"/>
+    <mm:measures rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay_9_0800"/>
+    <mm:measures rdf:resource="https://knowledge.uni.lviv.ua/mobility#TravelTime_9_0800"/>
+    <mm:sensorId>GPS-2501</mm:sensorId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:endsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Universytet"/>
+    <mm:hasState rdf:resource="https://knowledge.uni.lviv.ua/mobility#State_OnTime_25"/>
+    <mm:operatedBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus"/>
+    <mm:startsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:tripId>T250815</mm:tripId>
+    <mm:tripOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_25"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus_2502"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#passengerRecommendation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має рекомендацію</rdfs:label>
+    <rdfs:comment xml:lang="uk">Пасажир отримує конкретну рекомендацію.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#forPassenger"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#tripId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">ідентифікатор рейсу</rdfs:label>
+    <rdfs:comment xml:lang="uk">Унікальний ідентифікатор рейсу з GTFS trips.txt.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#travelTimeMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">час у дорозі, хв</rdfs:label>
+    <rdfs:comment xml:lang="uk">Тривалість проходження ділянки або рейсу в хвилинах.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TravelTime"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#servedByRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">обслуговується маршрутом</rdfs:label>
+    <rdfs:comment xml:lang="uk">Зупинка обслуговується транспортним маршрутом.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#servesStop"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Подія</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6; schema:Event</dcterms:source>
+    <rdfs:comment xml:lang="uk">Зміна умов транспортного процесу, що виникає в часі та впливає на мережу або рейс.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://schema.org/Event"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+    <skos:closeMatch rdf:resource="https://schema.org/Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#assignedToTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">призначений на рейс</rdfs:label>
+    <rdfs:comment xml:lang="uk">Транспортний засіб призначено на виконання рейсу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#usesVehicle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.8397</mm:latitude>
+    <mm:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.0045</mm:longitude>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_25"/>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_31"/>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:stopId>S001</mm:stopId>
+    <mm:stopName>Вокзал</mm:stopName>
+    <mm:wheelchairAccessible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</mm:wheelchairAccessible>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#headwayMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">інтервал, хв</rdfs:label>
+    <rdfs:comment xml:lang="uk">Проміжок між послідовними відправленнями рейсів у хвилинах.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Frequency"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#isStartOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">є початком</rdfs:label>
+    <rdfs:comment xml:lang="uk">Зупинка є початковою для рейсу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#startsAt"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#CongestedSegment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Завантажена ділянка</rdfs:label>
+    <dcterms:source>ЛР6; GTFS Reference 2026</dcterms:source>
+    <rdfs:comment xml:lang="uk">Ділянка мережі, на якій зафіксовано подію затору, що впливає на час руху.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#NetworkSegment"/>
+    <owl:equivalentClass rdf:nodeID="Na3914995d5074ddb8844ecf2e95c2e15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#routeFrequency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має інтервал</rdfs:label>
+    <rdfs:comment xml:lang="uk">Маршрут має заданий інтервал руху.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Frequency"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#frequencyOfRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#affectsTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">впливає на рейс</rdfs:label>
+    <rdfs:comment xml:lang="uk">Подія спричиняє зміну виконання конкретного рейсу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#affectedByEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Roadwork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Ремонт дороги</rdfs:label>
+    <dcterms:source>ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Подія, що тимчасово обмежує пропускну здатність ділянки мережі через ремонтні роботи.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf9ba2b219a04405f9f1e1d9f1d557cd5">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver"/>
+    <rdf:rest rdf:nodeID="Neebaa828064246f18ced84cf40380a44"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Load_9_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#LoadFactor"/>
+    <mm:loadFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.92</mm:loadFactor>
+    <mm:measuredBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Counter_2501"/>
+    <mm:measurementOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime_T31_Vokzal">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <mm:atStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:departureTime>07:00:00</mm:departureTime>
+    <mm:stopSequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</mm:stopSequence>
+    <mm:stopTimeOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Validator_Vokzal">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TicketValidator"/>
+    <mm:measures rdf:resource="https://knowledge.uni.lviv.ua/mobility#Flow_Vokzal_0800"/>
+    <mm:sensorId>VAL-S001</mm:sensorId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Route_9">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#BusRoute"/>
+    <mm:hasTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:hasTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"/>
+    <mm:routeFrequency rdf:resource="https://knowledge.uni.lviv.ua/mobility#Frequency_R9"/>
+    <mm:routeId>9</mm:routeId>
+    <mm:routeType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</mm:routeType>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Politekhnika"/>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N57edea19a43a45c7a0f94a64ba1e8c49">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportAgency"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#operatedBy"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Driver_02">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver"/>
+    <mm:drivesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+    <mm:personName>Олена Коваль</mm:personName>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Frequency_R9">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Frequency"/>
+    <mm:frequencyOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:headwayMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</mm:headwayMinutes>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#GTFS_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#GTFSDataset"/>
+    <mm:datasetDescribes rdf:resource="https://knowledge.uni.lviv.ua/mobility#Network_Lviv"/>
+    <mm:datasetName>GTFS Lviv 2026</mm:datasetName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na62304789cc84f17a4a6c74d34313883">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportAgency"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Agency_LvivElektrotrans">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportAgency"/>
+    <mm:agencyName>ЛьвівЕлектротранс</mm:agencyName>
+    <mm:operatesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#datasetName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">назва набору даних</rdfs:label>
+    <rdfs:comment xml:lang="uk">Людиночитана назва джерела даних.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#DataAsset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#ServiceCalendar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Календар обслуговування</rdfs:label>
+    <dcterms:source>GTFS calendar.txt, calendar_dates.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Розклад, що визначає множину дат, у які доступне обслуговування маршруту.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Schedule"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#operatesTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">виконує рейс</rdfs:label>
+    <rdfs:comment xml:lang="uk">Перевізник виконує конкретний рейс.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportAgency"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#operatedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2c8befa6401c4d8db84b3ec1bc8ce063">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#usesVehicle"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#BusRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Автобусний маршрут</rdfs:label>
+    <dcterms:source>GTFS routes.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Транспортний маршрут, що обслуговується автобусами і має GTFS route_type = 3.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#startsAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">починається на</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс починається на заданій зупинці.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#isStartOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Bus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Автобус</rdfs:label>
+    <dcterms:source>GTFS route_type = 3</dcterms:source>
+    <rdfs:comment xml:lang="uk">Транспортний засіб, що рухається автомобільною дорогою і використовується на автобусних маршрутах.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#recommendationOfDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">є рекомендацією рішення</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рекомендація походить від управлінського рішення.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#DecisionSupport"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasRecommendation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N193690231e234025a323c679bae32d08">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger"/>
+    <rdf:rest rdf:nodeID="Nf9ba2b219a04405f9f1e1d9f1d557cd5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N223d51d50e27443a83be74c14a166e23">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trolleybus"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N80164f441fab40da9c927e4f3265e72b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N48ec9680fc1143a9a8d2cc000e553eea"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Politekhnika">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <mm:atStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Politekhnika"/>
+    <mm:departureTime>08:30:00</mm:departureTime>
+    <mm:stopSequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</mm:stopSequence>
+    <mm:stopTimeOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N73361c3f837c40c1a8f125450b66eb0e">
+    <rdf:first rdf:nodeID="N29fcab68a1454d149c43d62619a226f9"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#stopTimeOfTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">є часом рейсу</rdfs:label>
+    <rdfs:comment xml:lang="uk">Запис часу зупинки належить конкретному рейсу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasStopTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Actor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Учасник процесу</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Особа або організація, що бере участь у транспортному процесі та прийнятті рішень.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9480787f8aff4e4cad200eaf6c8587c6">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#DelayedState"/>
+    <rdf:rest rdf:nodeID="Ncec62b81e9654464826357e59b4dae8b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#stateOfTrip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">є станом рейсу</rdfs:label>
+    <rdfs:comment xml:lang="uk">Стан описує конкретний рейс.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportState"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має стан</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс перебуває в конкретному стані виконання.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportState"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#stateOfTrip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Fare">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Тариф</rdfs:label>
+    <dcterms:source>GTFS fare_attributes.txt</dcterms:source>
+    <rdfs:comment xml:lang="uk">Правила та вартість оплати проїзду, що застосовуються до маршрутів або поїздок.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasDriver">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">має водія</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рейс обслуговує конкретний водій.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#drivesTrip"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne497a183c4194f89887b8329f9ea6cd3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasState"/>
+    <owl:someValuesFrom rdf:resource="https://knowledge.uni.lviv.ua/mobility#DelayedState"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Delay_9_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay"/>
+    <mm:delayMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</mm:delayMinutes>
+    <mm:measuredBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#GPS_2501"/>
+    <mm:measurementOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Analytics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Аналітика</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Процес обробки даних, що перетворює вимірювання на прогнози, оцінки та рекомендації.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N65d23d4b333c434980ec8e68442eb191">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#recommends"/>
+    <owl:someValuesFrom rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N13b1f2ef4d0c490f9d0dc46254deabe7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#forecastFor"/>
+    <owl:someValuesFrom rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Зупинка</rdfs:label>
+    <dcterms:source>GTFS stops.txt; schema:BusStop</dcterms:source>
+    <rdfs:comment xml:lang="uk">Транспортний вузол, у якому пасажири здійснюють посадку або висадку, а транспортні засоби зупиняються за розкладом.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://schema.org/BusStop"/>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNode"/>
+    <skos:closeMatch rdf:resource="https://schema.org/BusStop"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Sensor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Сенсор</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Пристрій, що автоматично вимірює стан транспортного процесу та передає дані в систему.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#DataAsset"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na3914995d5074ddb8844ecf2e95c2e15">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N5c6fdd7756234fa789e07a172ae8e2a6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf0d85202bc87412a911a4250dbc8fb56">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdf:rest rdf:nodeID="Nf739584c305f428b892b33504b42480c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#hasPart">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">містить</rdfs:label>
+    <rdfs:comment xml:lang="uk">Відношення ціле-частина між елементами предметної області.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#MobilitySystem"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#MobilitySystem"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#partOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#State_OnTime_31">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#OnTimeState"/>
+    <mm:stateOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#partOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="uk">є частиною</rdfs:label>
+    <rdfs:comment xml:lang="uk">Обернене до hasPart транзитивне відношення належності цілому.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#MobilitySystem"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#MobilitySystem"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasPart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Calendar_2026">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#ServiceCalendar"/>
+    <rdfs:label xml:lang="uk">Будні 2026</rdfs:label>
+    <mm:validFrom>2026-01-01</mm:validFrom>
+    <mm:validTo>2026-12-31</mm:validTo>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c59f3e117b6419b8d5dc4d49d3a939f">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#WeatherEvent"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#PassengerCounter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Лічильник пасажирів</rdfs:label>
+    <dcterms:source>ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Сенсор, що вимірює кількість пасажирів у транспортному засобі або на зупинці.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#passengerCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">кількість пасажирів</rdfs:label>
+    <rdfs:comment xml:lang="uk">Кількість валідованих пасажирів за інтервал спостереження.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#PassengerFlow"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#basedOnForecast">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">ґрунтується на прогнозі</rdfs:label>
+    <rdfs:comment xml:lang="uk">Рішення використовує конкретний прогноз.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#DecisionSupport"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Forecast"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#supportsDecision"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Seg_Vokzal_Rynok">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#NetworkSegment"/>
+    <rdfs:label xml:lang="uk">Вокзал — Площа Ринок</rdfs:label>
+    <mm:hasEvent rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#locatedAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">розташована в</rdfs:label>
+    <rdfs:comment xml:lang="uk">Зупинка розташована в місці, поданому зовнішнім словником Schema.org.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="https://schema.org/Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#WeatherEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Погіршення погоди</rdfs:label>
+    <dcterms:source>SIRI; ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Подія, за якої погодні умови знижують швидкість або надійність руху транспорту.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfd95437ca4484ba8aad45613759f6dc7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N2614b1a71e5e4036996341215db48b7c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc11264ac07fc4179a6cca28a6e32cca0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N110ee6181e764ee0ae833e67b213b348"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TransportState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Стан рейсу</rdfs:label>
+    <dcterms:source>ЛР6; SIRI</dcterms:source>
+    <rdfs:comment xml:lang="uk">Стан виконання рейсу, що характеризує його відповідність розкладу та завантаженість.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#latitude">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">широта</rdfs:label>
+    <rdfs:comment xml:lang="uk">Географічна широта зупинки в градусах.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N040670bb8f2b4bd194afc63a8d78c9be">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Tram"/>
+    <rdf:rest rdf:nodeID="N223d51d50e27443a83be74c14a166e23"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6b4a823466884557aa401a058bf4c1c1">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#TramRoute"/>
+    <rdf:rest rdf:nodeID="Ne0166b8815934623acb37ed080f33bb6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne1ca1a3a56c64495b5bb250ab0887ddb">
+    <rdf:first rdf:nodeID="Ne497a183c4194f89887b8329f9ea6cd3"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#LoadFactor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Завантаженість</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Вимірювання частки використаної місткості транспортного засобу на рейсі.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Measurement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TransportNode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Транспортний вузол</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Елемент транспортної мережі, що є зупинкою або пересадочним вузлом і з’єднує ділянки мережі.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNetwork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#DataAsset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Джерело даних</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Ресурс, що містить структуровані дані про мережу, рух або пасажирів і використовується аналітикою.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N29fcab68a1454d149c43d62619a226f9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#wheelchairAccessible"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Congestion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Затор</rdfs:label>
+    <dcterms:source>ЛР4, ЛР6</dcterms:source>
+    <rdfs:comment xml:lang="uk">Подія, що спричиняє зниження швидкості руху на ділянці мережі та збільшення затримки.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne7958f7dbf974b0aad0768d0adc137be">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#LoadFactor"/>
+    <rdf:rest rdf:nodeID="Nf2f6dbb468804e30aaeb8a2eb2fe0bcf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8bd3dac30383450f98e78aea2371cab7">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#TravelTime"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Recommendation_R1">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <mm:forPassenger rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger_P01"/>
+    <mm:recommendationOfDecision rdf:resource="https://knowledge.uni.lviv.ua/mobility#Decision_D1"/>
+    <mm:recommends rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_31"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N216f4eee448f4bc2b1c899fd5cfaa3a6">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#SIRIFeed"/>
+    <rdf:rest rdf:nodeID="N0f28db2b0b7742b1b421669d825502de"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncec62b81e9654464826357e59b4dae8b">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#OnTimeState"/>
+    <rdf:rest rdf:nodeID="Na4031c8fdda24f70b59a9ebfb9ac9ad8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#stopSequence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="uk">порядковий номер зупинки</rdfs:label>
+    <rdfs:comment xml:lang="uk">Номер зупинки в послідовності рейсу.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#affectsSegment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">впливає на ділянку</rdfs:label>
+    <rdfs:comment xml:lang="uk">Подія впливає на конкретну ділянку транспортної мережі.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#NetworkSegment"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N96d8956392134207b5b573402a52ab70">
+    <rdf:first rdf:nodeID="N5c5a5bc8596b4dbc83b24efad8f44c59"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Counter_2501">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#PassengerCounter"/>
+    <mm:measures rdf:resource="https://knowledge.uni.lviv.ua/mobility#Load_9_0800"/>
+    <mm:sensorId>CNT-2501</mm:sensorId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb65c7d50ad7b48d2b5a0fed86f9d6520">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nd2c5c169c77a4a5cbf8a7eaa76e3ff70"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#DelayedState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Стан затримки</rdfs:label>
+    <dcterms:source>ЛР6; SIRI</dcterms:source>
+    <rdfs:comment xml:lang="uk">Стан рейсу, за якого фактичний час виконання перевищує плановий час розкладу.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportState"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2855b0706b754df69d4f63ba2c0d1f66">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#PassengerSurge"/>
+    <rdf:rest rdf:nodeID="N6c59f3e117b6419b8d5dc4d49d3a939f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#frequencyOfRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">є інтервалом маршруту</rdfs:label>
+    <rdfs:comment xml:lang="uk">Запис інтервалу руху належить конкретному маршруту.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#Frequency"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#routeFrequency"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5c5a5bc8596b4dbc83b24efad8f44c59">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasEvent"/>
+    <owl:someValuesFrom rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbedc18c151644adc83c163352a5432d1">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#VehicleFailure"/>
+    <rdf:rest rdf:nodeID="N2855b0706b754df69d4f63ba2c0d1f66"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc1e1182d10fd4739892951cce6e19c4e">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdf:rest rdf:nodeID="N2bf5883db0fb4228aeb1d00cec0e5157"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Passenger_P01">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger"/>
+    <mm:passengerRecommendation rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation_R1"/>
+    <mm:personName>Андрій Мельник</mm:personName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N61f8ed47b4a5461c8f35fe1a730e9f47">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion"/>
+    <rdf:rest rdf:nodeID="N46f81a89ebec494c83a288c0e5814b94"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Tram">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="uk">Трамвай</rdfs:label>
+    <dcterms:source>GTFS route_type = 0</dcterms:source>
+    <rdfs:comment xml:lang="uk">Рейковий транспортний засіб, що рухається трамвайною колією у міській мережі.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Vehicle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#SIRI_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#SIRIFeed"/>
+    <mm:datasetDescribes rdf:resource="https://knowledge.uni.lviv.ua/mobility#Network_Lviv"/>
+    <mm:datasetName>SIRI Lviv realtime</mm:datasetName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8461dde0f9ab473d9a5bd9d504c5c3d8">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus"/>
+    <rdf:rest rdf:nodeID="N040670bb8f2b4bd194afc63a8d78c9be"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#State_OnTime_25">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#OnTimeState"/>
+    <mm:stateOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd2c5c169c77a4a5cbf8a7eaa76e3ff70">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <rdf:rest rdf:nodeID="N73361c3f837c40c1a8f125450b66eb0e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N524ee29a62e4483e8ed278cdae04a109">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="https://knowledge.uni.lviv.ua/mobility#Event"/>
+    <owl:onProperty rdf:resource="https://knowledge.uni.lviv.ua/mobility#hasEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2980f9462d23450588d4564a41d7c003">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N8461dde0f9ab473d9a5bd9d504c5c3d8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1f20a102ade24d6aac49cd0f88a61a89">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N66bf0775ed254430bf1dc9c5e733edc2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#NeTEx_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#NeTExDataset"/>
+    <mm:datasetDescribes rdf:resource="https://knowledge.uni.lviv.ua/mobility#Network_Lviv"/>
+    <mm:datasetName>NeTEx Lviv 2026</mm:datasetName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf2f6dbb468804e30aaeb8a2eb2fe0bcf">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay"/>
+    <rdf:rest rdf:nodeID="N8bd3dac30383450f98e78aea2371cab7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#atStop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="uk">на зупинці</rdfs:label>
+    <rdfs:comment xml:lang="uk">Запис часу зупинки стосується конкретної зупинки.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <rdfs:range rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <owl:inverseOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#stopAtTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0f28db2b0b7742b1b421669d825502de">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#NeTExDataset"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neebaa828064246f18ced84cf40380a44">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Dispatcher"/>
+    <rdf:rest rdf:nodeID="Na62304789cc84f17a4a6c74d34313883"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Forecast_9_Peak">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Forecast"/>
+    <mm:confidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.87</mm:confidence>
+    <mm:forecastFor rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N48ec9680fc1143a9a8d2cc000e553eea">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <rdf:rest rdf:nodeID="Ne1ca1a3a56c64495b5bb250ab0887ddb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility/data">
+    <owl:versionInfo>1.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf739584c305f428b892b33504b42480c">
+    <rdf:first rdf:nodeID="N6095eacb99bb410fb173ada174c84094"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TravelTime_9_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TravelTime"/>
+    <mm:measurementOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:travelTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</mm:travelTimeMinutes>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N66bf0775ed254430bf1dc9c5e733edc2">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#PassengerFlow"/>
+    <rdf:rest rdf:nodeID="Ne7958f7dbf974b0aad0768d0adc137be"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6d5092dfbb014d969bfc3c795a55a6fd">
+    <rdf:first rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportRoute"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+</rdf:RDF>

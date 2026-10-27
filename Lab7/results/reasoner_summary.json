@@ -1,0 +1,216 @@
+{
+  "consistent": true,
+  "hermit_cli_consistent": {
+    "cmd": "java -cp /tmp/opencode/lab6venv/lib/python3.14/site-packages/owlready2/hermit/HermiT.jar org.semanticweb.HermiT.cli.CommandLine -k file:///home/tardeus/Documents/Uni/KnowledgeStorage/Lab7/build/expert_merged.rdf",
+    "returncode": 0,
+    "stdout": "http://www.w3.org/2002/07/owl#Thing is satisfiable.",
+    "stderr": ""
+  },
+  "classes": 58,
+  "object_properties": 48,
+  "data_properties": 25,
+  "individuals": 52,
+  "individuals_with_3plus_props": 24,
+  "average_properties_per_individual": 3.37,
+  "inferred_type_assertions": 165,
+  "inferred_property_assertions": 21,
+  "inferred_focus": [
+    [
+      "Stop_Rynok",
+      "rdf:type",
+      "InterchangeStop"
+    ],
+    [
+      "Stop_Vokzal",
+      "rdf:type",
+      "InterchangeStop"
+    ],
+    [
+      "Stop_Politekhnika",
+      "rdf:type",
+      "AccessibleStop"
+    ],
+    [
+      "Stop_Vokzal",
+      "rdf:type",
+      "AccessibleStop"
+    ],
+    [
+      "Seg_Vokzal_Rynok",
+      "rdf:type",
+      "CongestedSegment"
+    ],
+    [
+      "Trip_9_0800",
+      "rdf:type",
+      "DelayedTrip"
+    ]
+  ],
+  "inferred_examples": [
+    [
+      "Stop_Rynok",
+      "rdf:type",
+      "InterchangeStop"
+    ],
+    [
+      "Stop_Vokzal",
+      "rdf:type",
+      "InterchangeStop"
+    ],
+    [
+      "Stop_Politekhnika",
+      "rdf:type",
+      "AccessibleStop"
+    ],
+    [
+      "Stop_Vokzal",
+      "rdf:type",
+      "AccessibleStop"
+    ],
+    [
+      "Seg_Vokzal_Rynok",
+      "rdf:type",
+      "CongestedSegment"
+    ],
+    [
+      "Trip_9_0800",
+      "rdf:type",
+      "DelayedTrip"
+    ],
+    [
+      "Forecast_9_Peak",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "System_Lviv",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "Trip_9_0830",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "Trip_9_0800",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "Trip_31_0700",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "Trip_25_0815",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "Network_Lviv",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "GPS_2501",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "State_OnTime_9_0830",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "State_OnTime_31",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "State_OnTime_25",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "Stop_Rynok",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "Stop_Vokzal",
+      "rdf:type",
+      "MobilitySystem"
+    ],
+    [
+      "Stop_Politekhnika",
+      "rdf:type",
+      "MobilitySystem"
+    ]
+  ],
+  "instances_by_class": {
+    "MobilitySystem": 52,
+    "TransportSystem": 52,
+    "TransportNetwork": 10,
+    "TransportNode": 4,
+    "Stop": 4,
+    "InterchangeStop": 2,
+    "AccessibleStop": 2,
+    "NetworkSegment": 2,
+    "CongestedSegment": 1,
+    "TransportRoute": 3,
+    "BusRoute": 2,
+    "TramRoute": 1,
+    "Vehicle": 4,
+    "Bus": 2,
+    "Tram": 1,
+    "Trolleybus": 1,
+    "Trip": 4,
+    "DelayedTrip": 1,
+    "Schedule": 7,
+    "ServiceCalendar": 1,
+    "StopTime": 4,
+    "Frequency": 2,
+    "Actor": 7,
+    "Passenger": 2,
+    "Driver": 2,
+    "Dispatcher": 1,
+    "TransportAgency": 2,
+    "DataAsset": 6,
+    "GTFSDataset": 1,
+    "SIRIFeed": 1,
+    "NeTExDataset": 1,
+    "Sensor": 3,
+    "GPSTracker": 1,
+    "TicketValidator": 1,
+    "PassengerCounter": 1,
+    "Analytics": 3,
+    "Forecast": 1,
+    "DecisionSupport": 1,
+    "Recommendation": 1,
+    "Event": 2,
+    "Congestion": 1,
+    "Roadwork": 1,
+    "TransportState": 4,
+    "DelayedState": 1,
+    "OnTimeState": 3,
+    "Measurement": 4,
+    "PassengerFlow": 1,
+    "LoadFactor": 1,
+    "Delay": 1,
+    "TravelTime": 1
+  },
+  "llm_draft_hermit": {
+    "cmd": "java -cp /tmp/opencode/lab6venv/lib/python3.14/site-packages/owlready2/hermit/HermiT.jar org.semanticweb.HermiT.cli.CommandLine -k file:///home/tardeus/Documents/Uni/KnowledgeStorage/Lab7/build/llm_draft.rdf",
+    "returncode": 0,
+    "stdout": "http://www.w3.org/2002/07/owl#Thing is satisfiable.",
+    "stderr": ""
+  },
+  "inconsistent_cli": {
+    "cmd": "java -cp /tmp/opencode/lab6venv/lib/python3.14/site-packages/owlready2/hermit/HermiT.jar org.semanticweb.HermiT.cli.CommandLine -k file:///home/tardeus/Documents/Uni/KnowledgeStorage/Lab7/build/inconsistent.rdf",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Exception in thread \"main\" org.semanticweb.owlapi.reasoner.InconsistentOntologyException: Inconsistent ontology\n\tat org.semanticweb.HermiT.Reasoner.throwInconsistentOntologyExceptionIfNecessary(Unknown Source)\n\tat org.semanticweb.HermiT.Reasoner.checkPreConditions(Unknown Source)\n\tat org.semanticweb.HermiT.Reasoner.isSatisfiable(Unknown Source)\n\tat org.semanticweb.HermiT.cli.CommandLine$SatisfiabilityAction.run(Unknown Source)\n\tat org.semanticweb.HermiT.cli.CommandLine.main(Unknown Source)"
+  },
+  "inconsistent_owlready": "OwlReadyInconsistentOntologyError: "
+}

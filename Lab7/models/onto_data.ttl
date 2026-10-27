@@ -1,0 +1,292 @@
+@prefix mm: <https://knowledge.uni.lviv.ua/mobility#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mm:Calendar_2026 a mm:ServiceCalendar ;
+    rdfs:label "Будні 2026"@uk ;
+    mm:validFrom "2026-01-01" ;
+    mm:validTo "2026-12-31" .
+
+mm:Frequency_R25 a mm:Frequency ;
+    mm:frequencyOfRoute mm:Route_25 ;
+    mm:headwayMinutes 15 .
+
+mm:GTFS_Lviv a mm:GTFSDataset ;
+    mm:datasetDescribes mm:Network_Lviv ;
+    mm:datasetName "GTFS Lviv 2026" .
+
+mm:NeTEx_Lviv a mm:NeTExDataset ;
+    mm:datasetDescribes mm:Network_Lviv ;
+    mm:datasetName "NeTEx Lviv 2026" .
+
+mm:Passenger_P02 a mm:Passenger ;
+    mm:personName "Софія Бондар" .
+
+mm:SIRI_Lviv a mm:SIRIFeed ;
+    mm:datasetDescribes mm:Network_Lviv ;
+    mm:datasetName "SIRI Lviv realtime" .
+
+mm:StopTime_T31_Vokzal a mm:StopTime ;
+    mm:atStop mm:Stop_Vokzal ;
+    mm:departureTime "07:00:00" ;
+    mm:stopSequence 1 ;
+    mm:stopTimeOfTrip mm:Trip_31_0700 .
+
+mm:Trolleybus_1101 a mm:Trolleybus ;
+    mm:capacity 110 ;
+    mm:vehicleId "TB1101" .
+
+<https://knowledge.uni.lviv.ua/mobility/data> a owl:Ontology ;
+    owl:imports <https://knowledge.uni.lviv.ua/mobility> ;
+    owl:versionInfo "1.0" .
+
+mm:Agency_LvivElektrotrans a mm:TransportAgency ;
+    mm:agencyName "ЛьвівЕлектротранс" ;
+    mm:operatesTrip mm:Trip_31_0700 .
+
+mm:Bus_2501 a mm:Bus ;
+    mm:assignedToTrip mm:Trip_9_0800 ;
+    mm:capacity 90 ;
+    mm:vehicleId "B2501" .
+
+mm:Counter_2501 a mm:PassengerCounter ;
+    mm:measures mm:Load_9_0800 ;
+    mm:sensorId "CNT-2501" .
+
+mm:Decision_D1 a mm:DecisionSupport ;
+    mm:basedOnForecast mm:Forecast_9_Peak ;
+    mm:hasRecommendation mm:Recommendation_R1 .
+
+mm:Dispatcher_01 a mm:Dispatcher ;
+    mm:personName "Марія Шевчук" ;
+    mm:respondsTo mm:Congestion_Horodotska .
+
+mm:Driver_01 a mm:Driver ;
+    mm:drivesTrip mm:Trip_9_0800 ;
+    mm:personName "Іван Петренко" .
+
+mm:Driver_02 a mm:Driver ;
+    mm:drivesTrip mm:Trip_31_0700 ;
+    mm:personName "Олена Коваль" .
+
+mm:Flow_Vokzal_0800 a mm:PassengerFlow ;
+    mm:measuredBy mm:Validator_Vokzal ;
+    mm:passengerCount 120 .
+
+mm:Forecast_9_Peak a mm:Forecast ;
+    mm:confidence 0.87 ;
+    mm:forecastFor mm:Trip_9_0800 .
+
+mm:Frequency_R9 a mm:Frequency ;
+    mm:frequencyOfRoute mm:Route_9 ;
+    mm:headwayMinutes 10 .
+
+mm:GPS_2501 a mm:GPSTracker ;
+    mm:measures mm:Delay_9_0800,
+        mm:TravelTime_9_0800 ;
+    mm:sensorId "GPS-2501" .
+
+mm:Passenger_P01 a mm:Passenger ;
+    mm:passengerRecommendation mm:Recommendation_R1 ;
+    mm:personName "Андрій Мельник" .
+
+mm:Roadwork_Stryiska a mm:Roadwork ;
+    mm:affectsSegment mm:Seg_Rynok_Politekhnika ;
+    mm:eventTime "2026-10-27T07:00:00"^^xsd:dateTime .
+
+mm:Seg_Rynok_Politekhnika a mm:NetworkSegment ;
+    rdfs:label "Площа Ринок — Політехніка"@uk ;
+    mm:hasEvent mm:Roadwork_Stryiska .
+
+mm:Seg_Vokzal_Rynok a mm:NetworkSegment ;
+    rdfs:label "Вокзал — Площа Ринок"@uk ;
+    mm:hasEvent mm:Congestion_Horodotska .
+
+mm:State_Delayed_9 a mm:DelayedState ;
+    mm:stateOfTrip mm:Trip_9_0800 .
+
+mm:State_OnTime_25 a mm:OnTimeState ;
+    mm:stateOfTrip mm:Trip_25_0815 .
+
+mm:State_OnTime_31 a mm:OnTimeState ;
+    mm:stateOfTrip mm:Trip_31_0700 .
+
+mm:State_OnTime_9_0830 a mm:OnTimeState ;
+    mm:stateOfTrip mm:Trip_9_0830 .
+
+mm:StopTime_T9_Politekhnika a mm:StopTime ;
+    mm:atStop mm:Stop_Politekhnika ;
+    mm:departureTime "08:30:00" ;
+    mm:stopSequence 3 ;
+    mm:stopTimeOfTrip mm:Trip_9_0800 .
+
+mm:StopTime_T9_Rynok a mm:StopTime ;
+    mm:atStop mm:Stop_Rynok ;
+    mm:departureTime "08:20:00" ;
+    mm:stopSequence 2 ;
+    mm:stopTimeOfTrip mm:Trip_9_0800 .
+
+mm:StopTime_T9_Vokzal a mm:StopTime ;
+    mm:atStop mm:Stop_Vokzal ;
+    mm:departureTime "08:00:00" ;
+    mm:stopSequence 1 ;
+    mm:stopTimeOfTrip mm:Trip_9_0800 .
+
+mm:System_Lviv a mm:TransportSystem ;
+    rdfs:label "Транспортна система Львова"@uk ;
+    mm:hasPart mm:Network_Lviv .
+
+mm:Tram_0903 a mm:Tram ;
+    mm:assignedToTrip mm:Trip_31_0700 ;
+    mm:capacity 180 ;
+    mm:vehicleId "T0903" .
+
+mm:Validator_Vokzal a mm:TicketValidator ;
+    mm:measures mm:Flow_Vokzal_0800 ;
+    mm:sensorId "VAL-S001" .
+
+mm:Bus_2502 a mm:Bus ;
+    mm:assignedToTrip mm:Trip_25_0815,
+        mm:Trip_9_0830 ;
+    mm:capacity 85 ;
+    mm:vehicleId "B2502" .
+
+mm:Delay_9_0800 a mm:Delay ;
+    mm:delayMinutes 12 ;
+    mm:measuredBy mm:GPS_2501 ;
+    mm:measurementOf mm:Trip_9_0800 .
+
+mm:Load_9_0800 a mm:LoadFactor ;
+    mm:loadFactor 0.92 ;
+    mm:measuredBy mm:Counter_2501 ;
+    mm:measurementOf mm:Trip_9_0800 .
+
+mm:Recommendation_R1 a mm:Recommendation ;
+    mm:forPassenger mm:Passenger_P01 ;
+    mm:recommendationOfDecision mm:Decision_D1 ;
+    mm:recommends mm:Route_31 .
+
+mm:Stop_Politekhnika a mm:Stop ;
+    mm:latitude 49.8355 ;
+    mm:longitude 24.012 ;
+    mm:servedByRoute mm:Route_9 ;
+    mm:stopId "S003" ;
+    mm:stopName "Політехніка" ;
+    mm:wheelchairAccessible true .
+
+mm:Stop_Universytet a mm:Stop ;
+    mm:latitude 49.838 ;
+    mm:longitude 24.022 ;
+    mm:servedByRoute mm:Route_25 ;
+    mm:stopId "S004" ;
+    mm:stopName "Університет" ;
+    mm:wheelchairAccessible false .
+
+mm:TravelTime_9_0800 a mm:TravelTime ;
+    mm:measurementOf mm:Trip_9_0800 ;
+    mm:travelTimeMinutes 38 .
+
+mm:Agency_LvivAvtobus a mm:TransportAgency ;
+    mm:agencyName "ЛьвівАвтобус" ;
+    mm:operatesTrip mm:Trip_25_0815,
+        mm:Trip_9_0800,
+        mm:Trip_9_0830 .
+
+mm:Congestion_Horodotska a mm:Congestion ;
+    mm:affectsSegment mm:Seg_Vokzal_Rynok ;
+    mm:affectsTrip mm:Trip_9_0800 ;
+    mm:eventTime "2026-10-27T08:10:00"^^xsd:dateTime ;
+    mm:handledBy mm:Dispatcher_01 .
+
+mm:Network_Lviv a mm:TransportNetwork ;
+    mm:partOf mm:System_Lviv .
+
+mm:Route_25 a mm:BusRoute ;
+    mm:hasTrip mm:Trip_25_0815 ;
+    mm:routeId "25" ;
+    mm:routeType 3 ;
+    mm:servesStop mm:Stop_Universytet,
+        mm:Stop_Vokzal .
+
+mm:Route_31 a mm:TramRoute ;
+    mm:hasTrip mm:Trip_31_0700 ;
+    mm:routeId "31" ;
+    mm:routeType 0 ;
+    mm:servesStop mm:Stop_Rynok,
+        mm:Stop_Vokzal .
+
+mm:Trip_25_0815 a mm:Trip ;
+    mm:endsAt mm:Stop_Universytet ;
+    mm:hasState mm:State_OnTime_25 ;
+    mm:operatedBy mm:Agency_LvivAvtobus ;
+    mm:startsAt mm:Stop_Vokzal ;
+    mm:tripId "T250815" ;
+    mm:tripOfRoute mm:Route_25 ;
+    mm:usesVehicle mm:Bus_2502 .
+
+mm:Trip_9_0830 a mm:Trip ;
+    mm:endsAt mm:Stop_Rynok ;
+    mm:hasState mm:State_OnTime_9_0830 ;
+    mm:operatedBy mm:Agency_LvivAvtobus ;
+    mm:startsAt mm:Stop_Vokzal ;
+    mm:tripId "T090830" ;
+    mm:tripOfRoute mm:Route_9 ;
+    mm:usesVehicle mm:Bus_2502 .
+
+mm:Route_9 a mm:BusRoute ;
+    mm:hasTrip mm:Trip_9_0800,
+        mm:Trip_9_0830 ;
+    mm:routeFrequency mm:Frequency_R9 ;
+    mm:routeId "9" ;
+    mm:routeType 3 ;
+    mm:servesStop mm:Stop_Politekhnika,
+        mm:Stop_Rynok,
+        mm:Stop_Vokzal .
+
+mm:Stop_Rynok a mm:Stop ;
+    mm:latitude 49.8419 ;
+    mm:longitude 24.0315 ;
+    mm:servedByRoute mm:Route_31,
+        mm:Route_9 ;
+    mm:stopId "S002" ;
+    mm:stopName "Площа Ринок" ;
+    mm:wheelchairAccessible false .
+
+mm:Trip_31_0700 a mm:Trip ;
+    mm:endsAt mm:Stop_Rynok ;
+    mm:hasDriver mm:Driver_02 ;
+    mm:hasState mm:State_OnTime_31 ;
+    mm:operatedBy mm:Agency_LvivElektrotrans ;
+    mm:startsAt mm:Stop_Vokzal ;
+    mm:tripId "T310700" ;
+    mm:tripOfRoute mm:Route_31 ;
+    mm:usesVehicle mm:Tram_0903 .
+
+mm:Stop_Vokzal a mm:Stop ;
+    mm:latitude 49.8397 ;
+    mm:longitude 24.0045 ;
+    mm:servedByRoute mm:Route_25,
+        mm:Route_31,
+        mm:Route_9 ;
+    mm:stopId "S001" ;
+    mm:stopName "Вокзал" ;
+    mm:wheelchairAccessible true .
+
+mm:Trip_9_0800 a mm:Trip ;
+    mm:affectedByEvent mm:Congestion_Horodotska ;
+    mm:endsAt mm:Stop_Rynok ;
+    mm:hasDriver mm:Driver_01 ;
+    mm:hasMeasurement mm:Delay_9_0800,
+        mm:Load_9_0800,
+        mm:TravelTime_9_0800 ;
+    mm:hasState mm:State_Delayed_9 ;
+    mm:hasStopTime mm:StopTime_T9_Politekhnika,
+        mm:StopTime_T9_Rynok,
+        mm:StopTime_T9_Vokzal ;
+    mm:operatedBy mm:Agency_LvivAvtobus ;
+    mm:startsAt mm:Stop_Vokzal ;
+    mm:tripId "T090800" ;
+    mm:tripOfRoute mm:Route_9 ;
+    mm:usesVehicle mm:Bus_2501 .
+

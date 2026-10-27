@@ -1,0 +1,3 @@
+﻿situation,check,rows,values,status
+S1,"Затриманий рейс, спричинений затором, і диспетчер",1,"[['Trip_9_0800', 'Congestion_Horodotska', 'Dispatcher_01']]",PASS
+S3,Перевантаження та рекомендація пасажиру,1,"[['Flow_Vokzal_0800', 'Load_9_0800', 'Recommendation_R1', 'Passenger_P01']]",PASS

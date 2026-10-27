@@ -1,0 +1,11 @@
+﻿id,question,query_file,expected_count,expected_values
+CQ1,Які зупинки є пересадочними?,cq01_interchange_stops.rq,2,Stop_Vokzal; Stop_Rynok
+CQ2,Які маршрути обслуговують зупинку «Вокзал»?,cq02_routes_at_vokzal.rq,3,Route_9; Route_25; Route_31
+CQ3,Які рейси мають стан затримки?,cq03_delayed_trips.rq,1,Trip_9_0800
+CQ4,Яка ділянка і який рейс зазнали впливу затору?,cq04_congestion_impact.rq,1,Seg_Vokzal_Rynok; Trip_9_0800
+CQ5,Які зупинки доступні для маломобільних пасажирів?,cq05_accessible_stops.rq,2,Stop_Vokzal; Stop_Politekhnika
+CQ6,Які маршрути мають інтервал руху не більше 10 хвилин?,cq06_frequent_routes.rq,1,Route_9
+CQ7,Які рейси виконуються автобусами?,cq07_bus_trips.rq,3,Trip_9_0800; Trip_9_0830; Trip_25_0815
+CQ8,Яке рішення і рекомендацію підтримує прогноз?,cq08_forecast_decision.rq,1,Decision_D1; Recommendation_R1; Route_31
+CQ9,Які рейси мають затримку понад 10 хвилин?,cq09_delay_over_10.rq,1,Trip_9_0800
+CQ10,Які джерела даних описують транспортну мережу?,cq10_datasets_for_network.rq,3,GTFS_Lviv; SIRI_Lviv; NeTEx_Lviv

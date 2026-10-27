@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:mm="https://knowledge.uni.lviv.ua/mobility#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Bus_2502">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus"/>
+    <mm:vehicleId>B2502</mm:vehicleId>
+    <mm:capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</mm:capacity>
+    <mm:assignedToTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"/>
+    <mm:assignedToTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Vokzal">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <mm:departureTime>08:00:00</mm:departureTime>
+    <mm:stopSequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</mm:stopSequence>
+    <mm:atStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:stopTimeOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:stopId>S002</mm:stopId>
+    <mm:stopName>Площа Ринок</mm:stopName>
+    <mm:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.8419</mm:latitude>
+    <mm:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.0315</mm:longitude>
+    <mm:wheelchairAccessible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</mm:wheelchairAccessible>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_31"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:tripId>T090800</mm:tripId>
+    <mm:tripOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:startsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:endsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus_2501"/>
+    <mm:operatedBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus"/>
+    <mm:hasDriver rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver_01"/>
+    <mm:hasState rdf:resource="https://knowledge.uni.lviv.ua/mobility#State_Delayed_9"/>
+    <mm:hasStopTime rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Vokzal"/>
+    <mm:hasStopTime rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Rynok"/>
+    <mm:hasStopTime rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Politekhnika"/>
+    <mm:hasMeasurement rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay_9_0800"/>
+    <mm:hasMeasurement rdf:resource="https://knowledge.uni.lviv.ua/mobility#Load_9_0800"/>
+    <mm:hasMeasurement rdf:resource="https://knowledge.uni.lviv.ua/mobility#TravelTime_9_0800"/>
+    <mm:affectedByEvent rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:tripId>T250815</mm:tripId>
+    <mm:tripOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_25"/>
+    <mm:startsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:endsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Universytet"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus_2502"/>
+    <mm:operatedBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus"/>
+    <mm:hasState rdf:resource="https://knowledge.uni.lviv.ua/mobility#State_OnTime_25"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Decision_D1">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#DecisionSupport"/>
+    <mm:basedOnForecast rdf:resource="https://knowledge.uni.lviv.ua/mobility#Forecast_9_Peak"/>
+    <mm:hasRecommendation rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation_R1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#GPS_2501">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#GPSTracker"/>
+    <mm:sensorId>GPS-2501</mm:sensorId>
+    <mm:measures rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay_9_0800"/>
+    <mm:measures rdf:resource="https://knowledge.uni.lviv.ua/mobility#TravelTime_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Passenger_P01">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger"/>
+    <mm:personName>Андрій Мельник</mm:personName>
+    <mm:passengerRecommendation rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation_R1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:tripId>T090830</mm:tripId>
+    <mm:tripOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:startsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:endsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus_2502"/>
+    <mm:operatedBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus"/>
+    <mm:hasState rdf:resource="https://knowledge.uni.lviv.ua/mobility#State_OnTime_9_0830"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Route_31">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TramRoute"/>
+    <mm:routeId>31</mm:routeId>
+    <mm:routeType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</mm:routeType>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:hasTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Route_25">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#BusRoute"/>
+    <mm:routeId>25</mm:routeId>
+    <mm:routeType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</mm:routeType>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Universytet"/>
+    <mm:hasTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip"/>
+    <mm:tripId>T310700</mm:tripId>
+    <mm:tripOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_31"/>
+    <mm:startsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:endsAt rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:usesVehicle rdf:resource="https://knowledge.uni.lviv.ua/mobility#Tram_0903"/>
+    <mm:operatedBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Agency_LvivElektrotrans"/>
+    <mm:hasDriver rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver_02"/>
+    <mm:hasState rdf:resource="https://knowledge.uni.lviv.ua/mobility#State_OnTime_31"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Recommendation_R1">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Recommendation"/>
+    <mm:recommends rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_31"/>
+    <mm:forPassenger rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger_P01"/>
+    <mm:recommendationOfDecision rdf:resource="https://knowledge.uni.lviv.ua/mobility#Decision_D1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Trolleybus_1101">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trolleybus"/>
+    <mm:vehicleId>TB1101</mm:vehicleId>
+    <mm:capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</mm:capacity>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Politekhnika">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <mm:departureTime>08:30:00</mm:departureTime>
+    <mm:stopSequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</mm:stopSequence>
+    <mm:atStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Politekhnika"/>
+    <mm:stopTimeOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Network_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportNetwork"/>
+    <mm:partOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#System_Lviv"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Politekhnika">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:stopId>S003</mm:stopId>
+    <mm:stopName>Політехніка</mm:stopName>
+    <mm:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.8355</mm:latitude>
+    <mm:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.012</mm:longitude>
+    <mm:wheelchairAccessible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</mm:wheelchairAccessible>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#State_OnTime_25">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#OnTimeState"/>
+    <mm:stateOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Validator_Vokzal">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TicketValidator"/>
+    <mm:sensorId>VAL-S001</mm:sensorId>
+    <mm:measures rdf:resource="https://knowledge.uni.lviv.ua/mobility#Flow_Vokzal_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#State_Delayed_9">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#DelayedState"/>
+    <mm:stateOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#GTFS_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#GTFSDataset"/>
+    <mm:datasetName>GTFS Lviv 2026</mm:datasetName>
+    <mm:datasetDescribes rdf:resource="https://knowledge.uni.lviv.ua/mobility#Network_Lviv"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Forecast_9_Peak">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Forecast"/>
+    <mm:confidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.87</mm:confidence>
+    <mm:forecastFor rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#System_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportSystem"/>
+    <mm:hasPart rdf:resource="https://knowledge.uni.lviv.ua/mobility#Network_Lviv"/>
+    <rdfs:label xml:lang="uk">Транспортна система Львова</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:stopId>S001</mm:stopId>
+    <mm:stopName>Вокзал</mm:stopName>
+    <mm:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.8397</mm:latitude>
+    <mm:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.0045</mm:longitude>
+    <mm:wheelchairAccessible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</mm:wheelchairAccessible>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_25"/>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_31"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#SIRI_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#SIRIFeed"/>
+    <mm:datasetName>SIRI Lviv realtime</mm:datasetName>
+    <mm:datasetDescribes rdf:resource="https://knowledge.uni.lviv.ua/mobility#Network_Lviv"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Bus_2501">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Bus"/>
+    <mm:vehicleId>B2501</mm:vehicleId>
+    <mm:capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</mm:capacity>
+    <mm:assignedToTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#NeTEx_Lviv">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#NeTExDataset"/>
+    <mm:datasetName>NeTEx Lviv 2026</mm:datasetName>
+    <mm:datasetDescribes rdf:resource="https://knowledge.uni.lviv.ua/mobility#Network_Lviv"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Route_9">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#BusRoute"/>
+    <mm:routeId>9</mm:routeId>
+    <mm:routeType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</mm:routeType>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:servesStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Politekhnika"/>
+    <mm:hasTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:hasTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"/>
+    <mm:routeFrequency rdf:resource="https://knowledge.uni.lviv.ua/mobility#Frequency_R9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Calendar_2026">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#ServiceCalendar"/>
+    <mm:validFrom>2026-01-01</mm:validFrom>
+    <mm:validTo>2026-12-31</mm:validTo>
+    <rdfs:label xml:lang="uk">Будні 2026</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Delay_9_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Delay"/>
+    <mm:delayMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</mm:delayMinutes>
+    <mm:measurementOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:measuredBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#GPS_2501"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility/data">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="https://knowledge.uni.lviv.ua/mobility"/>
+    <owl:versionInfo>1.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Tram_0903">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Tram"/>
+    <mm:vehicleId>T0903</mm:vehicleId>
+    <mm:capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</mm:capacity>
+    <mm:assignedToTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Passenger_P02">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Passenger"/>
+    <mm:personName>Софія Бондар</mm:personName>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Load_9_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#LoadFactor"/>
+    <mm:loadFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.92</mm:loadFactor>
+    <mm:measurementOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:measuredBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Counter_2501"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Agency_LvivAvtobus">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportAgency"/>
+    <mm:agencyName>ЛьвівАвтобус</mm:agencyName>
+    <mm:operatesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:operatesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"/>
+    <mm:operatesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_25_0815"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Dispatcher_01">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Dispatcher"/>
+    <mm:personName>Марія Шевчук</mm:personName>
+    <mm:respondsTo rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Flow_Vokzal_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#PassengerFlow"/>
+    <mm:passengerCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</mm:passengerCount>
+    <mm:measuredBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Validator_Vokzal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#State_OnTime_31">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#OnTimeState"/>
+    <mm:stateOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Roadwork_Stryiska">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Roadwork"/>
+    <mm:eventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-10-27T07:00:00</mm:eventTime>
+    <mm:affectsSegment rdf:resource="https://knowledge.uni.lviv.ua/mobility#Seg_Rynok_Politekhnika"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Seg_Vokzal_Rynok">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#NetworkSegment"/>
+    <mm:hasEvent rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska"/>
+    <rdfs:label xml:lang="uk">Вокзал — Площа Ринок</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Counter_2501">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#PassengerCounter"/>
+    <mm:sensorId>CNT-2501</mm:sensorId>
+    <mm:measures rdf:resource="https://knowledge.uni.lviv.ua/mobility#Load_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Frequency_R25">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Frequency"/>
+    <mm:headwayMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</mm:headwayMinutes>
+    <mm:frequencyOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_25"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Congestion_Horodotska">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Congestion"/>
+    <mm:eventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-10-27T08:10:00</mm:eventTime>
+    <mm:affectsSegment rdf:resource="https://knowledge.uni.lviv.ua/mobility#Seg_Vokzal_Rynok"/>
+    <mm:affectsTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+    <mm:handledBy rdf:resource="https://knowledge.uni.lviv.ua/mobility#Dispatcher_01"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Frequency_R9">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Frequency"/>
+    <mm:headwayMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</mm:headwayMinutes>
+    <mm:frequencyOfRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Seg_Rynok_Politekhnika">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#NetworkSegment"/>
+    <mm:hasEvent rdf:resource="https://knowledge.uni.lviv.ua/mobility#Roadwork_Stryiska"/>
+    <rdfs:label xml:lang="uk">Площа Ринок — Політехніка</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Stop_Universytet">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop"/>
+    <mm:stopId>S004</mm:stopId>
+    <mm:stopName>Університет</mm:stopName>
+    <mm:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">49.838</mm:latitude>
+    <mm:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.022</mm:longitude>
+    <mm:wheelchairAccessible rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</mm:wheelchairAccessible>
+    <mm:servedByRoute rdf:resource="https://knowledge.uni.lviv.ua/mobility#Route_25"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Driver_02">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver"/>
+    <mm:personName>Олена Коваль</mm:personName>
+    <mm:drivesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#TravelTime_9_0800">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TravelTime"/>
+    <mm:travelTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</mm:travelTimeMinutes>
+    <mm:measurementOf rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Agency_LvivElektrotrans">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#TransportAgency"/>
+    <mm:agencyName>ЛьвівЕлектротранс</mm:agencyName>
+    <mm:operatesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime_T31_Vokzal">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <mm:departureTime>07:00:00</mm:departureTime>
+    <mm:stopSequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</mm:stopSequence>
+    <mm:atStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Vokzal"/>
+    <mm:stopTimeOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_31_0700"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#State_OnTime_9_0830">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#OnTimeState"/>
+    <mm:stateOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0830"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#StopTime_T9_Rynok">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#StopTime"/>
+    <mm:departureTime>08:20:00</mm:departureTime>
+    <mm:stopSequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</mm:stopSequence>
+    <mm:atStop rdf:resource="https://knowledge.uni.lviv.ua/mobility#Stop_Rynok"/>
+    <mm:stopTimeOfTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://knowledge.uni.lviv.ua/mobility#Driver_01">
+    <rdf:type rdf:resource="https://knowledge.uni.lviv.ua/mobility#Driver"/>
+    <mm:personName>Іван Петренко</mm:personName>
+    <mm:drivesTrip rdf:resource="https://knowledge.uni.lviv.ua/mobility#Trip_9_0800"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,53 @@
+﻿id,classes,properties
+System_Lviv,TransportSystem,hasPart=Network_Lviv;rdfs:label=Транспортна система Львова
+Network_Lviv,TransportNetwork,partOf=System_Lviv
+Route_9,BusRoute,routeId=9;routeType=3;servesStop=Stop_Vokzal;servesStop=Stop_Rynok;servesStop=Stop_Politekhnika;hasTrip=Trip_9_0800;hasTrip=Trip_9_0830;routeFrequency=Frequency_R9
+Route_25,BusRoute,routeId=25;routeType=3;servesStop=Stop_Vokzal;servesStop=Stop_Universytet;hasTrip=Trip_25_0815
+Route_31,TramRoute,routeId=31;routeType=0;servesStop=Stop_Vokzal;servesStop=Stop_Rynok;hasTrip=Trip_31_0700
+Stop_Vokzal,Stop,stopId=S001;stopName=Вокзал;latitude=49.8397;longitude=24.0045;wheelchairAccessible=True;servedByRoute=Route_9;servedByRoute=Route_25;servedByRoute=Route_31
+Stop_Rynok,Stop,stopId=S002;stopName=Площа Ринок;latitude=49.8419;longitude=24.0315;wheelchairAccessible=False;servedByRoute=Route_9;servedByRoute=Route_31
+Stop_Politekhnika,Stop,stopId=S003;stopName=Політехніка;latitude=49.8355;longitude=24.012;wheelchairAccessible=True;servedByRoute=Route_9
+Stop_Universytet,Stop,stopId=S004;stopName=Університет;latitude=49.838;longitude=24.022;wheelchairAccessible=False;servedByRoute=Route_25
+Seg_Vokzal_Rynok,NetworkSegment,hasEvent=Congestion_Horodotska;rdfs:label=Вокзал — Площа Ринок
+Seg_Rynok_Politekhnika,NetworkSegment,hasEvent=Roadwork_Stryiska;rdfs:label=Площа Ринок — Політехніка
+Trip_9_0800,Trip,tripId=T090800;tripOfRoute=Route_9;startsAt=Stop_Vokzal;endsAt=Stop_Rynok;usesVehicle=Bus_2501;operatedBy=Agency_LvivAvtobus;hasDriver=Driver_01;hasState=State_Delayed_9;hasStopTime=StopTime_T9_Vokzal;hasStopTime=StopTime_T9_Rynok;hasStopTime=StopTime_T9_Politekhnika;hasMeasurement=Delay_9_0800;hasMeasurement=Load_9_0800;hasMeasurement=TravelTime_9_0800;affectedByEvent=Congestion_Horodotska
+Trip_9_0830,Trip,tripId=T090830;tripOfRoute=Route_9;startsAt=Stop_Vokzal;endsAt=Stop_Rynok;usesVehicle=Bus_2502;operatedBy=Agency_LvivAvtobus;hasState=State_OnTime_9_0830
+Trip_25_0815,Trip,tripId=T250815;tripOfRoute=Route_25;startsAt=Stop_Vokzal;endsAt=Stop_Universytet;usesVehicle=Bus_2502;operatedBy=Agency_LvivAvtobus;hasState=State_OnTime_25
+Trip_31_0700,Trip,tripId=T310700;tripOfRoute=Route_31;startsAt=Stop_Vokzal;endsAt=Stop_Rynok;usesVehicle=Tram_0903;operatedBy=Agency_LvivElektrotrans;hasDriver=Driver_02;hasState=State_OnTime_31
+Bus_2501,Bus,vehicleId=B2501;capacity=90;assignedToTrip=Trip_9_0800
+Bus_2502,Bus,vehicleId=B2502;capacity=85;assignedToTrip=Trip_9_0830;assignedToTrip=Trip_25_0815
+Tram_0903,Tram,vehicleId=T0903;capacity=180;assignedToTrip=Trip_31_0700
+Trolleybus_1101,Trolleybus,vehicleId=TB1101;capacity=110
+Driver_01,Driver,personName=Іван Петренко;drivesTrip=Trip_9_0800
+Driver_02,Driver,personName=Олена Коваль;drivesTrip=Trip_31_0700
+Dispatcher_01,Dispatcher,personName=Марія Шевчук;respondsTo=Congestion_Horodotska
+Passenger_P01,Passenger,personName=Андрій Мельник;passengerRecommendation=Recommendation_R1
+Passenger_P02,Passenger,personName=Софія Бондар
+Agency_LvivAvtobus,TransportAgency,agencyName=ЛьвівАвтобус;operatesTrip=Trip_9_0800;operatesTrip=Trip_9_0830;operatesTrip=Trip_25_0815
+Agency_LvivElektrotrans,TransportAgency,agencyName=ЛьвівЕлектротранс;operatesTrip=Trip_31_0700
+GPS_2501,GPSTracker,sensorId=GPS-2501;measures=Delay_9_0800;measures=TravelTime_9_0800
+Validator_Vokzal,TicketValidator,sensorId=VAL-S001;measures=Flow_Vokzal_0800
+Counter_2501,PassengerCounter,sensorId=CNT-2501;measures=Load_9_0800
+Delay_9_0800,Delay,delayMinutes=12;measurementOf=Trip_9_0800;measuredBy=GPS_2501
+Load_9_0800,LoadFactor,loadFactor=0.92;measurementOf=Trip_9_0800;measuredBy=Counter_2501
+TravelTime_9_0800,TravelTime,travelTimeMinutes=38;measurementOf=Trip_9_0800
+Flow_Vokzal_0800,PassengerFlow,passengerCount=120;measuredBy=Validator_Vokzal
+Congestion_Horodotska,Congestion,eventTime=2026-10-27T08:10:00;affectsSegment=Seg_Vokzal_Rynok;affectsTrip=Trip_9_0800;handledBy=Dispatcher_01
+Roadwork_Stryiska,Roadwork,eventTime=2026-10-27T07:00:00;affectsSegment=Seg_Rynok_Politekhnika
+State_Delayed_9,DelayedState,stateOfTrip=Trip_9_0800
+State_OnTime_9_0830,OnTimeState,stateOfTrip=Trip_9_0830
+State_OnTime_25,OnTimeState,stateOfTrip=Trip_25_0815
+State_OnTime_31,OnTimeState,stateOfTrip=Trip_31_0700
+Calendar_2026,ServiceCalendar,validFrom=2026-01-01;validTo=2026-12-31;rdfs:label=Будні 2026
+StopTime_T9_Vokzal,StopTime,departureTime=08:00:00;stopSequence=1;atStop=Stop_Vokzal;stopTimeOfTrip=Trip_9_0800
+StopTime_T9_Rynok,StopTime,departureTime=08:20:00;stopSequence=2;atStop=Stop_Rynok;stopTimeOfTrip=Trip_9_0800
+StopTime_T9_Politekhnika,StopTime,departureTime=08:30:00;stopSequence=3;atStop=Stop_Politekhnika;stopTimeOfTrip=Trip_9_0800
+StopTime_T31_Vokzal,StopTime,departureTime=07:00:00;stopSequence=1;atStop=Stop_Vokzal;stopTimeOfTrip=Trip_31_0700
+Frequency_R9,Frequency,headwayMinutes=10;frequencyOfRoute=Route_9
+Frequency_R25,Frequency,headwayMinutes=15;frequencyOfRoute=Route_25
+GTFS_Lviv,GTFSDataset,datasetName=GTFS Lviv 2026;datasetDescribes=Network_Lviv
+SIRI_Lviv,SIRIFeed,datasetName=SIRI Lviv realtime;datasetDescribes=Network_Lviv
+NeTEx_Lviv,NeTExDataset,datasetName=NeTEx Lviv 2026;datasetDescribes=Network_Lviv
+Forecast_9_Peak,Forecast,confidence=0.87;forecastFor=Trip_9_0800
+Decision_D1,DecisionSupport,basedOnForecast=Forecast_9_Peak;hasRecommendation=Recommendation_R1
+Recommendation_R1,Recommendation,recommends=Route_31;forPassenger=Passenger_P01;recommendationOfDecision=Decision_D1

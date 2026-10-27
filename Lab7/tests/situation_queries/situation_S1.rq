@@ -1,0 +1,9 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+SELECT DISTINCT ?trip ?event ?dispatcher WHERE {
+  ?trip mm:hasState ?state ;
+        mm:affectedByEvent ?event .
+  ?state a mm:DelayedState .
+  ?event a mm:Congestion ;
+         mm:handledBy ?dispatcher .
+}

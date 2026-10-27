@@ -1,0 +1,8 @@
+PREFIX mm: <https://knowledge.uni.lviv.ua/mobility#>
+
+SELECT DISTINCT ?flow ?load ?rec ?passenger WHERE {
+  ?flow a mm:PassengerFlow ; mm:passengerCount ?n .
+  ?load a mm:LoadFactor ; mm:loadFactor ?l .
+  ?rec a mm:Recommendation ; mm:forPassenger ?passenger .
+  FILTER(?n > 100 && ?l > 0.85)
+}

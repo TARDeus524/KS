@@ -1,0 +1,59 @@
+﻿class_id,label_uk,definition,parent,key_properties,source,reuse
+MobilitySystem,Інтелектуальна мобільність,"Предметна область, що охоплює транспортну систему, дані, учасників і процеси прийняття рішень для управління міською мобільністю.",—,hasPart; partOf,"ЛР4, ЛР6; Domain Knowledge Hub",—
+TransportSystem,Транспортна система,"Система, що об’єднує транспортну мережу, рухомий склад, рейси, учасників і управлінські процеси міста.",MobilitySystem,—,"ЛР4, ЛР6; GTFS Reference 2026",—
+TransportNetwork,Транспортна мережа,"Транспортна система, що складається з вузлів, ділянок і маршрутів та утворює граф міста.",TransportSystem,describedByDataset,"ЛР4, ЛР6; GTFS Reference 2026",—
+TransportNode,Транспортний вузол,"Елемент транспортної мережі, що є зупинкою або пересадочним вузлом і з’єднує ділянки мережі.",TransportNetwork,—,"ЛР4, ЛР6",—
+Stop,Зупинка,"Транспортний вузол, у якому пасажири здійснюють посадку або висадку, а транспортні засоби зупиняються за розкладом.",TransportNode,servedByRoute; isStartOf; isEndOf; stopAtTime; interchangesWith; locatedAt; stopId; stopName; latitude; longitude; wheelchairAccessible,GTFS stops.txt; schema:BusStop,schema:BusStop (клас місця зупинки)
+InterchangeStop,Пересадочна зупинка,"Зупинка, яку обслуговують щонайменше два різні транспортні маршрути і на якій можлива пересадка.",Stop,—,"ЛР4, ЛР6; GTFS transfers.txt",schema:BusStop (пересадочна зупинка як підтип)
+AccessibleStop,Доступна зупинка,"Зупинка, обладнана для посадки та висадки маломобільних пасажирів, зокрема з ознакою доступності.",Stop,—,GTFS stops.txt; schema:BusStop,—
+NetworkSegment,Ділянка мережі,"Частина транспортної мережі між двома сусідніми зупинками, що має час і відстань проходження.",TransportNetwork,hasEvent,"ЛР5, ЛР6; GTFS shapes.txt",schema:Place (просторова ділянка)
+CongestedSegment,Завантажена ділянка,"Ділянка мережі, на якій зафіксовано подію затору, що впливає на час руху.",NetworkSegment,—,ЛР6; GTFS Reference 2026,—
+TransportRoute,Транспортний маршрут,"Упорядкована послідовність зупинок, що обслуговується рейсами під спільним ідентифікатором.",TransportNetwork,servesStop; hasTrip; recommendedBy; routeFrequency; routeId; routeType,GTFS routes.txt; schema:Route,schema:Route (маршрут як впорядкований шлях)
+BusRoute,Автобусний маршрут,"Транспортний маршрут, що обслуговується автобусами і має GTFS route_type = 3.",TransportRoute,—,GTFS routes.txt,—
+TramRoute,Трамвайний маршрут,"Транспортний маршрут, що обслуговується трамваями і має GTFS route_type = 0.",TransportRoute,—,GTFS routes.txt,—
+TrolleybusRoute,Тролейбусний маршрут,"Транспортний маршрут, що обслуговується тролейбусами і має GTFS route_type = 11.",TransportRoute,—,GTFS routes.txt,—
+Vehicle,Транспортний засіб,"Рухомий склад, що виконує рейси на маршрутах і має ідентифікатор та пасажиромісткість.",TransportSystem,assignedToTrip; vehicleId; capacity,"ЛР4, ЛР6; GTFS trips.txt",—
+Bus,Автобус,"Транспортний засіб, що рухається автомобільною дорогою і використовується на автобусних маршрутах.",Vehicle,—,GTFS route_type = 3,—
+Tram,Трамвай,"Рейковий транспортний засіб, що рухається трамвайною колією у міській мережі.",Vehicle,—,GTFS route_type = 0,—
+Trolleybus,Тролейбус,"Транспортний засіб з електроживленням від контактної мережі, що використовується на тролейбусних маршрутах.",Vehicle,—,GTFS route_type = 11,—
+Trip,Рейс,"Конкретне виконання маршруту в певний час, що складається з послідовності зупинок і зупиночних часів.",TransportSystem,tripOfRoute; startsAt; endsAt; usesVehicle; operatedBy; hasDriver; hasStopTime; affectedByEvent; hasState; hasMeasurement; forecastOfTrip; tripId,"GTFS trips.txt, stop_times.txt",schema:Trip (конкретне виконання маршруту)
+DelayedTrip,Затриманий рейс,"Рейс, фактичний стан якого відхилено від розкладу щонайменше на порогову величину затримки.",Trip,—,ЛР6; SIRI,—
+Schedule,Розклад,"План виконання рейсів, що визначає дати, часи та інтервали руху на маршрутах.",TransportSystem,—,"GTFS calendar.txt, frequencies.txt",—
+ServiceCalendar,Календар обслуговування,"Розклад, що визначає множину дат, у які доступне обслуговування маршруту.",Schedule,validFrom; validTo,"GTFS calendar.txt, calendar_dates.txt",—
+StopTime,Зупиночний час,Запис розкладу про прибуття або відправлення рейсу на конкретній зупинці.,Schedule,stopTimeOfTrip; atStop; departureTime; stopSequence,GTFS stop_times.txt,—
+Frequency,Інтервал руху,Запис розкладу про проміжок часу між послідовними відправленнями рейсів на маршруті.,Schedule,frequencyOfRoute; headwayMinutes,GTFS frequencies.txt,—
+Fare,Тариф,"Правила та вартість оплати проїзду, що застосовуються до маршрутів або поїздок.",TransportSystem,—,GTFS fare_attributes.txt,—
+RouteShape,Форма маршруту,"Геометрія шляху руху транспортного засобу, подана послідовністю координат.",TransportSystem,—,GTFS shapes.txt,—
+Actor,Учасник процесу,"Особа або організація, що бере участь у транспортному процесі та прийнятті рішень.",TransportSystem,personName,"ЛР4, ЛР6",—
+Passenger,Пасажир,"Учасник процесу, що користується транспортом і здійснює поїздку між зупинками.",Actor,passengerRecommendation,"ЛР4, ЛР6; schema:Person",schema:Person (пасажир як особа)
+Driver,Водій,"Учасник процесу, що керує транспортним засобом під час виконання рейсу.",Actor,drivesTrip,"ЛР4, ЛР6",—
+Dispatcher,Диспетчер,"Учасник процесу, що контролює виконання рейсів і реагує на події в реальному часі.",Actor,respondsTo,"ЛР4, ЛР6",—
+TransportAgency,Перевізник,"Організація, що надає транспортні послуги, володіє рухомим складом і публікує дані.",Actor,operatesTrip; agencyName,GTFS agency.txt; schema:Organization,schema:Organization (перевізник як організація)
+DataAsset,Джерело даних,"Ресурс, що містить структуровані дані про мережу, рух або пасажирів і використовується аналітикою.",TransportSystem,datasetDescribes; datasetName,"ЛР4, ЛР6",—
+GTFSDataset,Набір GTFS,"Джерело даних, що складається з CSV-файлів GTFS для опису маршрутів, рейсів, зупинок і розкладів.",DataAsset,—,GTFS Reference 2026,schema:Dataset (набір даних)
+SIRIFeed,Потік SIRI,"Джерело даних, що містить повідомлення SIRI про рух транспорту в реальному часі.",DataAsset,—,SIRI; Transmodel,—
+NeTExDataset,Набір NeTEx,"Джерело даних, що містить XML-описи мережі, розкладів і тарифів за стандартом NeTEx.",DataAsset,—,NeTEx; Transmodel,—
+Sensor,Сенсор,"Пристрій, що автоматично вимірює стан транспортного процесу та передає дані в систему.",DataAsset,measures; sensorId,"ЛР4, ЛР6",—
+GPSTracker,GPS-трекер,"Сенсор, що визначає координати, швидкість і час руху транспортного засобу.",Sensor,—,ЛР6; GTFS realtime,—
+TicketValidator,Валідатор квитків,"Сенсор, що фіксує факти валідації квитків і посадки пасажирів на зупинці.",Sensor,—,ЛР6,—
+PassengerCounter,Лічильник пасажирів,"Сенсор, що вимірює кількість пасажирів у транспортному засобі або на зупинці.",Sensor,—,ЛР6,—
+Analytics,Аналітика,"Процес обробки даних, що перетворює вимірювання на прогнози, оцінки та рекомендації.",TransportSystem,—,"ЛР4, ЛР6",—
+Forecast,Прогноз,"Аналітичний результат, що оцінює майбутній пасажиропотік, затримку або час у дорозі.",Analytics,supportsDecision; forecastFor; confidence,ЛР6,—
+DecisionSupport,Підтримка рішень,"Аналітичний процес, що поєднує прогнози й правила для вибору управлінської дії.",Analytics,basedOnForecast; hasRecommendation,ЛР6,—
+DispatchDecision,Диспетчерське рішення,"Аналітичний результат, що визначає управлінську дію диспетчера на подію або відхилення від розкладу.",Analytics,—,ЛР6,—
+Recommendation,Рекомендація,"Аналітичний результат, що пропонує пасажиру або диспетчеру конкретну дію щодо маршруту чи рейсу.",Analytics,recommendationOfDecision; recommends; forPassenger,ЛР6,—
+Event,Подія,"Зміна умов транспортного процесу, що виникає в часі та впливає на мережу або рейс.",TransportSystem,affectsSegment; affectsTrip; handledBy; eventTime,"ЛР4, ЛР6; schema:Event",schema:Event (подія на мережі)
+VehicleFailure,Поломка транспортного засобу,"Подія, за якої транспортний засіб не може продовжити виконання рейсу без заміни.",Event,—,SIRI; ЛР6,—
+PassengerSurge,Сплеск пасажиропотоку,"Подія, за якої попит на перевезення різко перевищує плановий пасажиропотік.",Event,—,ЛР6; SIRI,—
+WeatherEvent,Погіршення погоди,"Подія, за якої погодні умови знижують швидкість або надійність руху транспорту.",Event,—,SIRI; ЛР6,—
+Congestion,Затор,"Подія, що спричиняє зниження швидкості руху на ділянці мережі та збільшення затримки.",Event,—,"ЛР4, ЛР6",—
+Roadwork,Ремонт дороги,"Подія, що тимчасово обмежує пропускну здатність ділянки мережі через ремонтні роботи.",Event,—,ЛР6,—
+TransportState,Стан рейсу,"Стан виконання рейсу, що характеризує його відповідність розкладу та завантаженість.",TransportSystem,stateOfTrip,ЛР6; SIRI,—
+CrowdedState,Стан перевантаження,"Стан рейсу, за якого завантаженість перевищує допустимий рівень комфорту.",TransportState,—,ЛР6; SIRI,—
+DelayedState,Стан затримки,"Стан рейсу, за якого фактичний час виконання перевищує плановий час розкладу.",TransportState,—,ЛР6; SIRI,—
+OnTimeState,Стан за розкладом,"Стан рейсу, за якого фактичний час виконання відповідає плановому часу розкладу.",TransportState,—,ЛР6; SIRI,—
+Measurement,Вимірювання,"Кількісна характеристика транспортного процесу, отримана від сенсора або обчислена аналітикою.",TransportSystem,measurementOf; measuredBy,ЛР6,—
+PassengerFlow,Пасажиропотік,"Вимірювання кількості пасажирів, що проходять через зупинку або ділянку за одиницю часу.",Measurement,passengerCount,"ЛР4, ЛР6",—
+LoadFactor,Завантаженість,Вимірювання частки використаної місткості транспортного засобу на рейсі.,Measurement,loadFactor,"ЛР4, ЛР6",—
+Delay,Затримка,Вимірювання відхилення фактичного часу руху рейсу від планового часу розкладу.,Measurement,delayMinutes,"ЛР4, ЛР6; SIRI",—
+TravelTime,Час у дорозі,Вимірювання тривалості проходження ділянки або виконання поїздки між зупинками.,Measurement,travelTimeMinutes,"ЛР4, ЛР6",—

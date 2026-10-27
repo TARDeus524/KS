@@ -1,0 +1,12 @@
+{
+  "expert_pass": 10,
+  "llm_pass": 2,
+  "total": 10,
+  "expert_rate": 100.0,
+  "llm_rate": 20.0,
+  "llm_classes": 30,
+  "llm_object_properties": 7,
+  "llm_data_properties": 5,
+  "llm_individuals": 13,
+  "llm_same_iri_overlap": 26
+}

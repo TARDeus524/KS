@@ -1,0 +1,11 @@
+﻿id,question,query,expected_values,expected_count,expert_count,expert_values,expert_status,llm_count,llm_values,llm_status
+CQ1,Які зупинки є пересадочними?,cq01_interchange_stops.rq,Stop_Vokzal; Stop_Rynok,2,2,Stop_Rynok; Stop_Vokzal,PASS,0,,FAIL
+CQ2,Які маршрути обслуговують зупинку «Вокзал»?,cq02_routes_at_vokzal.rq,Route_9; Route_25; Route_31,3,3,Route_25; Route_31; Route_9,PASS,0,,FAIL
+CQ3,Які рейси мають стан затримки?,cq03_delayed_trips.rq,Trip_9_0800,1,1,Trip_9_0800,PASS,0,,FAIL
+CQ4,Яка ділянка і який рейс зазнали впливу затору?,cq04_congestion_impact.rq,Seg_Vokzal_Rynok; Trip_9_0800,2,2,Seg_Vokzal_Rynok; Trip_9_0800,PASS,0,,FAIL
+CQ5,Які зупинки доступні для маломобільних пасажирів?,cq05_accessible_stops.rq,Stop_Vokzal; Stop_Politekhnika,2,2,Stop_Politekhnika; Stop_Vokzal,PASS,0,,FAIL
+CQ6,Які маршрути мають інтервал руху не більше 10 хвилин?,cq06_frequent_routes.rq,Route_9,1,1,Route_9,PASS,0,,FAIL
+CQ7,Які рейси виконуються автобусами?,cq07_bus_trips.rq,Trip_9_0800; Trip_9_0830; Trip_25_0815,3,3,Trip_25_0815; Trip_9_0800; Trip_9_0830,PASS,3,Trip_25_0815; Trip_9_0800; Trip_9_0830,PASS
+CQ8,Яке рішення і рекомендацію підтримує прогноз?,cq08_forecast_decision.rq,Decision_D1; Recommendation_R1; Route_31,3,3,Decision_D1; Recommendation_R1; Route_31,PASS,0,,FAIL
+CQ9,Які рейси мають затримку понад 10 хвилин?,cq09_delay_over_10.rq,Trip_9_0800,1,1,Trip_9_0800,PASS,1,Trip_9_0800,PASS
+CQ10,Які джерела даних описують транспортну мережу?,cq10_datasets_for_network.rq,GTFS_Lviv; SIRI_Lviv; NeTEx_Lviv,3,3,GTFS_Lviv; NeTEx_Lviv; SIRI_Lviv,PASS,0,,FAIL

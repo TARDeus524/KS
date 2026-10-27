@@ -1,0 +1,74 @@
+﻿name,label_uk,type,domain,range,characteristics,description
+hasPart,містить,object,MobilitySystem,MobilitySystem,inverse:partOf,Відношення ціле-частина між елементами предметної області.
+partOf,є частиною,object,MobilitySystem,MobilitySystem,transitive; inverse:hasPart,Обернене до hasPart транзитивне відношення належності цілому.
+servesStop,обслуговує зупинку,object,TransportRoute,Stop,inverse:servedByRoute,"Маршрут обслуговує зупинку, на якій зупиняються його рейси."
+servedByRoute,обслуговується маршрутом,object,Stop,TransportRoute,inverse:servesStop,Зупинка обслуговується транспортним маршрутом.
+hasTrip,має рейс,object,TransportRoute,Trip,inverse:tripOfRoute,"Маршрут містить конкретні рейси, що його виконують."
+tripOfRoute,є рейсом маршруту,object,Trip,TransportRoute,inverse:hasTrip,Рейс належить транспортному маршруту.
+startsAt,починається на,object,Trip,Stop,inverse:isStartOf,Рейс починається на заданій зупинці.
+isStartOf,є початком,object,Stop,Trip,inverse:startsAt,Зупинка є початковою для рейсу.
+endsAt,завершується на,object,Trip,Stop,inverse:isEndOf,Рейс завершується на заданій зупинці.
+isEndOf,є завершенням,object,Stop,Trip,inverse:endsAt,Зупинка є кінцевою для рейсу.
+usesVehicle,використовує транспортний засіб,object,Trip,Vehicle,inverse:assignedToTrip,Рейс виконується конкретним транспортним засобом.
+assignedToTrip,призначений на рейс,object,Vehicle,Trip,inverse:usesVehicle,Транспортний засіб призначено на виконання рейсу.
+operatedBy,виконується перевізником,object,Trip,TransportAgency,inverse:operatesTrip,Рейс виконується транспортним перевізником.
+operatesTrip,виконує рейс,object,TransportAgency,Trip,inverse:operatedBy,Перевізник виконує конкретний рейс.
+hasDriver,має водія,object,Trip,Driver,inverse:drivesTrip,Рейс обслуговує конкретний водій.
+drivesTrip,керує рейсом,object,Driver,Trip,inverse:hasDriver,Водій виконує конкретний рейс.
+hasStopTime,має зупиночний час,object,Trip,StopTime,inverse:stopTimeOfTrip,Рейс містить записи часу прибуття та відправлення на зупинках.
+stopTimeOfTrip,є часом рейсу,object,StopTime,Trip,inverse:hasStopTime,Запис часу зупинки належить конкретному рейсу.
+atStop,на зупинці,object,StopTime,Stop,inverse:stopAtTime,Запис часу зупинки стосується конкретної зупинки.
+stopAtTime,має запис часу,object,Stop,StopTime,inverse:atStop,Зупинка має записи часу прибуття та відправлення.
+hasEvent,має подію,object,NetworkSegment,Event,inverse:affectsSegment,"Ділянка мережі має пов’язану подію, що змінює умови руху."
+affectsSegment,впливає на ділянку,object,Event,NetworkSegment,inverse:hasEvent,Подія впливає на конкретну ділянку транспортної мережі.
+affectsTrip,впливає на рейс,object,Event,Trip,inverse:affectedByEvent,Подія спричиняє зміну виконання конкретного рейсу.
+affectedByEvent,зазнає впливу події,object,Trip,Event,inverse:affectsTrip,Рейс зазнає впливу події на мережі.
+hasState,має стан,object,Trip,TransportState,inverse:stateOfTrip,Рейс перебуває в конкретному стані виконання.
+stateOfTrip,є станом рейсу,object,TransportState,Trip,inverse:hasState,Стан описує конкретний рейс.
+hasMeasurement,має вимірювання,object,Trip,Measurement,inverse:measurementOf,"Рейс має кількісні вимірювання затримки, завантаженості або часу."
+measurementOf,є вимірюванням,object,Measurement,Trip,inverse:hasMeasurement,Вимірювання стосується конкретного рейсу.
+measuredBy,виміряне сенсором,object,Measurement,Sensor,inverse:measures,Вимірювання отримане конкретним сенсором.
+measures,вимірює,object,Sensor,Measurement,inverse:measuredBy,Сенсор формує конкретне вимірювання.
+basedOnForecast,ґрунтується на прогнозі,object,DecisionSupport,Forecast,inverse:supportsDecision,Рішення використовує конкретний прогноз.
+supportsDecision,підтримує рішення,object,Forecast,DecisionSupport,inverse:basedOnForecast,Прогноз є підставою для управлінського рішення.
+hasRecommendation,має рекомендацію,object,DecisionSupport,Recommendation,inverse:recommendationOfDecision,Рішення породжує конкретну рекомендацію.
+recommendationOfDecision,є рекомендацією рішення,object,Recommendation,DecisionSupport,inverse:hasRecommendation,Рекомендація походить від управлінського рішення.
+recommends,рекомендує маршрут,object,Recommendation,TransportRoute,inverse:recommendedBy,Рекомендація пропонує конкретний маршрут.
+recommendedBy,рекомендований,object,TransportRoute,Recommendation,inverse:recommends,Маршрут пропонується рекомендацією.
+forPassenger,призначена пасажиру,object,Recommendation,Passenger,inverse:passengerRecommendation,Рекомендація адресована конкретному пасажиру.
+passengerRecommendation,має рекомендацію,object,Passenger,Recommendation,inverse:forPassenger,Пасажир отримує конкретну рекомендацію.
+respondsTo,реагує на подію,object,Dispatcher,Event,inverse:handledBy,Диспетчер реагує на подію в реальному часі.
+handledBy,опрацьована диспетчером,object,Event,Dispatcher,inverse:respondsTo,Подія опрацьована конкретним диспетчером.
+interchangesWith,має пересадку з,object,Stop,Stop,symmetric,"Симетричне відношення між зупинками, між якими можлива пересадка."
+frequencyOfRoute,є інтервалом маршруту,object,Frequency,TransportRoute,inverse:routeFrequency,Запис інтервалу руху належить конкретному маршруту.
+routeFrequency,має інтервал,object,TransportRoute,Frequency,inverse:frequencyOfRoute,Маршрут має заданий інтервал руху.
+datasetDescribes,описує мережу,object,DataAsset,TransportNetwork,inverse:describedByDataset,Джерело даних описує транспортну мережу.
+describedByDataset,описана джерелом,object,TransportNetwork,DataAsset,inverse:datasetDescribes,Транспортна мережа описана конкретним джерелом даних.
+forecastFor,прогнозує рейс,object,Forecast,Trip,inverse:forecastOfTrip,Прогноз стосується конкретного рейсу.
+forecastOfTrip,має прогноз,object,Trip,Forecast,inverse:forecastFor,Рейс має прогнозне значення.
+locatedAt,розташована в,object,Stop,schema:Place,external mapping,"Зупинка розташована в місці, поданому зовнішнім словником Schema.org."
+routeId,ідентифікатор маршруту,data,TransportRoute,xsd:string,functional,Унікальний ідентифікатор маршруту з GTFS routes.txt.
+routeType,тип маршруту,data,TransportRoute,xsd:integer,functional,"Код виду транспорту GTFS: 3 — автобус, 0 — трамвай, 11 — тролейбус."
+stopId,ідентифікатор зупинки,data,Stop,xsd:string,functional,Унікальний ідентифікатор зупинки з GTFS stops.txt.
+stopName,назва зупинки,data,Stop,xsd:string,functional,Людиночитана назва зупинки.
+latitude,широта,data,Stop,xsd:decimal,functional,Географічна широта зупинки в градусах.
+longitude,довгота,data,Stop,xsd:decimal,functional,Географічна довгота зупинки в градусах.
+wheelchairAccessible,доступність,data,Stop,xsd:boolean,functional,Ознака доступності зупинки для маломобільних пасажирів.
+tripId,ідентифікатор рейсу,data,Trip,xsd:string,functional,Унікальний ідентифікатор рейсу з GTFS trips.txt.
+departureTime,час відправлення,data,StopTime,xsd:string,functional,Плановий час відправлення рейсу з зупинки.
+stopSequence,порядковий номер зупинки,data,StopTime,xsd:integer,functional,Номер зупинки в послідовності рейсу.
+headwayMinutes,"інтервал, хв",data,Frequency,xsd:integer,functional,Проміжок між послідовними відправленнями рейсів у хвилинах.
+passengerCount,кількість пасажирів,data,PassengerFlow,xsd:integer,functional,Кількість валідованих пасажирів за інтервал спостереження.
+loadFactor,коефіцієнт завантаженості,data,LoadFactor,xsd:decimal,functional,Відношення кількості пасажирів до місткості транспортного засобу.
+delayMinutes,"затримка, хв",data,Delay,xsd:integer,functional,Відхилення фактичного часу відправлення від планового в хвилинах.
+travelTimeMinutes,"час у дорозі, хв",data,TravelTime,xsd:integer,functional,Тривалість проходження ділянки або рейсу в хвилинах.
+validFrom,дійсний від,data,ServiceCalendar,xsd:string,functional,Перша дата дії календаря обслуговування.
+validTo,дійсний до,data,ServiceCalendar,xsd:string,functional,Остання дата дії календаря обслуговування.
+agencyName,назва перевізника,data,TransportAgency,xsd:string,functional,Офіційна назва транспортного перевізника.
+personName,ім’я учасника,data,Actor,xsd:string,functional,"Людиночитане ім’я пасажира, водія або диспетчера."
+sensorId,ідентифікатор сенсора,data,Sensor,xsd:string,functional,Унікальний ідентифікатор пристрою вимірювання.
+datasetName,назва набору даних,data,DataAsset,xsd:string,functional,Людиночитана назва джерела даних.
+vehicleId,ідентифікатор транспортного засобу,data,Vehicle,xsd:string,functional,Унікальний ідентифікатор рухомого складу.
+capacity,місткість,data,Vehicle,xsd:integer,functional,Максимальна кількість пасажирів транспортного засобу.
+eventTime,час події,data,Event,xsd:dateTime,functional,Дата й час виникнення події на мережі.
+confidence,впевненість прогнозу,data,Forecast,xsd:decimal,functional,Оцінка достовірності прогнозу від 0 до 1.
